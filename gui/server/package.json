@@ -1,0 +1,25 @@
+{
+  "name": "entraops-server",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch index.ts",
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "express": "5.2.1",
+    "helmet": "8.1.0",
+    "simple-git": "3.33.0",
+    "stream-json": "2.0.0",
+    "zod": "4.3.6"
+  },
+  "devDependencies": {
+    "@types/express": "latest",
+    "@types/stream-json": "latest",
+    "tsx": "4.21.0",
+    "typescript": "6.0.2",
+    "vitest": "4.1.1"
+  }
+}
