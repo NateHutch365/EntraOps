@@ -3,15 +3,15 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: in_progress
-stopped_at: Plan 01-06 complete
-last_updated: "2026-03-24T22:00:00.000Z"
-last_activity: 2026-03-24 — Plan 01-06 complete (Object Browser page: useObjects hook, ObjectFilters, ObjectTable with manual TanStack Table, ObjectBrowser page with nuqs URL state)
+stopped_at: Plan 01-07 complete
+last_updated: "2026-03-24T23:00:00.000Z"
+last_activity: 2026-03-24 — Plan 01-07 complete (Object Detail layer: RoleAssignmentRow Collapsible, ObjectDetailPanel Sheet, ObjectDetail full-page route, ObjectBrowser panel wiring)
 progress:
   total_phases: 5
   completed_phases: 0
   total_plans: 8
-  completed_plans: 6
-  percent: 75
+  completed_plans: 7
+  percent: 87
 ---
 
 # Project State
@@ -26,8 +26,8 @@ See: .planning/PROJECT.md (updated 2026-03-24)
 ## Current Position
 
 Phase: 1 of 5 (Foundation, Dashboard & Object Browser)
-Plan: 01-06 complete (6 of 8)
-Status: In progress — Wave 3 complete, Wave 4 next
+Plan: 01-07 complete (7 of 8)
+Status: In progress — Wave 4 complete, Wave 5 next (checkpoint)
 Last activity: 2026-03-24 — Plan 01-06 complete (Object Browser page with filterable/sortable/paginated TanStack Table, nuqs URL state, manual server-side mode)
 
 Progress: [██████░░░░] 75%
