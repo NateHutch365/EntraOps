@@ -35,7 +35,15 @@ EntraOps GUI starts as a local-only React dashboard that lets security administr
   3. Object browser displays all privileged objects in a sortable, paginated table; user can multi-select filters (tier, RBAC system, object type, PIM type), search by name/UPN, and the resulting URL is bookmarkable and shareable
   4. Clicking any object opens a slide-out detail panel with identity card, all role assignments with expandable `RoleDefinitionActions`, AU memberships, and RMAU status; each object also has a stable full-page URL
   5. When `PrivilegedEAM/` is empty, the app shows a helpful setup guide instead of crashing; the app runs identically on Windows, macOS, and Linux
-**Plans**: TBD
+**Plans**: 8 plans
+- [ ] 01-01-PLAN.md — Monorepo scaffold: workspace package.json files, shared TypeScript types, Vite client skeleton
+- [ ] 01-02-PLAN.md — Express server, security middleware (DNS-rebinding, path traversal), eamReader + gitLog services
+- [ ] 01-03-PLAN.md — Design system: shadcn/ui init, globals.css Tailwind v4 tokens, AppShell + Sidebar, React Router routes
+- [ ] 01-04-PLAN.md — Express API routes: /api/dashboard, /api/git/recent, /api/objects, /api/objects/:id
+- [ ] 01-05-PLAN.md — Dashboard UI: KPI cards, RBAC stacked bar chart, PIM stats, commits + freshness widgets, EmptyState
+- [ ] 01-06-PLAN.md — Object Browser UI: filterable/sortable/paginated TanStack Table + nuqs URL state + filter chips
+- [ ] 01-07-PLAN.md — Object Detail: Sheet panel + RoleAssignmentRow Collapsible + full-page /objects/:objectId route
+- [ ] 01-08-PLAN.md — Checkpoint: Human verification of Phase 1 end-to-end flow
 
 ### Phase 2: Classification Template Editor
 **Goal**: Security admins and EntraOps contributors can safely edit EAM tier classification templates in-browser, with schema validation and diff preview, eliminating the need to hand-edit JSON files
@@ -87,7 +95,7 @@ EntraOps GUI starts as a local-only React dashboard that lets security administr
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation, Dashboard & Object Browser | 0/? | Not started | - |
+| 1. Foundation, Dashboard & Object Browser | 0/8 | In progress | - |
 | 2. Classification Template Editor | 0/? | Not started | - |
 | 3. PowerShell Command Runner *(post-MVP)* | 0/? | Not started | - |
 | 4. Git Change History *(post-MVP)* | 0/? | Not started | - |
