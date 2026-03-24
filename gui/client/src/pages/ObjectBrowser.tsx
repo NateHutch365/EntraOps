@@ -1,28 +1,29 @@
-import { useNavigate } from 'react-router';
+import { useState } from 'react';
 import { parseAsString, parseAsArrayOf, parseAsInteger, useQueryStates } from 'nuqs';
 import { useObjects } from '@/hooks/useObjects';
 import { ObjectFilters } from '@/components/objects/ObjectFilters';
 import { ObjectTable } from '@/components/objects/ObjectTable';
+import { ObjectDetailPanel } from '@/components/objects/ObjectDetailPanel';
 import type { PrivilegedObject } from '../../../shared/types/eam';
 
 // nuqs URL param schema — RESEARCH.md Pattern 5 (react-router/v7 adapter)
 // sort stores an actual PrivilegedObject field name (used as sortBy on server)
 const OBJECT_PARAMS = {
-  q:     parseAsString.withDefault(''),
-  tier:  parseAsArrayOf(parseAsString).withDefault([]),
-  rbac:  parseAsArrayOf(parseAsString).withDefault([]),
-  type:  parseAsArrayOf(parseAsString).withDefault([]),
-  pim:   parseAsArrayOf(parseAsString).withDefault([]),
+  q:      parseAsString.withDefault(''),
+  tier:   parseAsArrayOf(parseAsString).withDefault([]),
+  rbac:   parseAsArrayOf(parseAsString).withDefault([]),
+  type:   parseAsArrayOf(parseAsString).withDefault([]),
+  pim:    parseAsArrayOf(parseAsString).withDefault([]),
   onprem: parseAsString.withDefault(''),
-  sort:  parseAsString.withDefault('ObjectAdminTierLevelName'),
-  order: parseAsString.withDefault('asc'),
-  page:  parseAsInteger.withDefault(1),
+  sort:   parseAsString.withDefault('ObjectAdminTierLevel'),
+  order:  parseAsString.withDefault('asc'),
+  page:   parseAsInteger.withDefault(1),
 };
 
 const PAGE_SIZE = 50;
 
 export function ObjectBrowser() {
-  const navigate = useNavigate();
+  const [selectedObject, setSelectedObject] = useState<PrivilegedObject | null>(null);
   const [params, setParams] = useQueryStates(OBJECT_PARAMS);
 
   const { data, isLoading, error } = useObjects({
@@ -53,7 +54,7 @@ export function ObjectBrowser() {
   }
 
   function handleRowClick(object: PrivilegedObject) {
-    navigate(`/objects/${encodeURIComponent(object.ObjectId)}`);
+    setSelectedObject(object);
   }
 
   return (
@@ -97,6 +98,11 @@ export function ObjectBrowser() {
           onRowClick={handleRowClick}
         />
       )}
+
+      <ObjectDetailPanel
+        object={selectedObject}
+        onClose={() => setSelectedObject(null)}
+      />
     </div>
   );
 }
