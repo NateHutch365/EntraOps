@@ -98,19 +98,46 @@ Deferred to future releases. Tracked but not in current roadmap.
 
 ## Traceability
 
-Populated during roadmap creation.
-
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| FOUND-01 through FOUND-08 | — | Pending |
-| DASH-01 through DASH-07 | — | Pending |
-| OBJ-01 through OBJ-07 | — | Pending |
-| TMPL-01 through TMPL-07 | — | Pending |
+| FOUND-01 | Phase 1 — Foundation, Dashboard & Object Browser | Pending |
+| FOUND-02 | Phase 1 — Foundation, Dashboard & Object Browser | Pending |
+| FOUND-03 | Phase 1 — Foundation, Dashboard & Object Browser | Pending |
+| FOUND-04 | Phase 1 — Foundation, Dashboard & Object Browser | Pending |
+| FOUND-05 | Phase 1 — Foundation, Dashboard & Object Browser | Pending |
+| FOUND-06 | Phase 1 — Foundation, Dashboard & Object Browser | Pending |
+| FOUND-07 | Phase 1 — Foundation, Dashboard & Object Browser | Pending |
+| FOUND-08 | Phase 1 — Foundation, Dashboard & Object Browser | Pending |
+| DASH-01 | Phase 1 — Foundation, Dashboard & Object Browser | Pending |
+| DASH-02 | Phase 1 — Foundation, Dashboard & Object Browser | Pending |
+| DASH-03 | Phase 1 — Foundation, Dashboard & Object Browser | Pending |
+| DASH-04 | Phase 1 — Foundation, Dashboard & Object Browser | Pending |
+| DASH-05 | Phase 1 — Foundation, Dashboard & Object Browser | Pending |
+| DASH-06 | Phase 1 — Foundation, Dashboard & Object Browser | Pending |
+| DASH-07 | Phase 1 — Foundation, Dashboard & Object Browser | Pending |
+| OBJ-01 | Phase 1 — Foundation, Dashboard & Object Browser | Pending |
+| OBJ-02 | Phase 1 — Foundation, Dashboard & Object Browser | Pending |
+| OBJ-03 | Phase 1 — Foundation, Dashboard & Object Browser | Pending |
+| OBJ-04 | Phase 1 — Foundation, Dashboard & Object Browser | Pending |
+| OBJ-05 | Phase 1 — Foundation, Dashboard & Object Browser | Pending |
+| OBJ-06 | Phase 1 — Foundation, Dashboard & Object Browser | Pending |
+| OBJ-07 | Phase 1 — Foundation, Dashboard & Object Browser | Pending |
+| TMPL-01 | Phase 2 — Classification Template Editor | Pending |
+| TMPL-02 | Phase 2 — Classification Template Editor | Pending |
+| TMPL-03 | Phase 2 — Classification Template Editor | Pending |
+| TMPL-04 | Phase 2 — Classification Template Editor | Pending |
+| TMPL-05 | Phase 2 — Classification Template Editor | Pending |
+| TMPL-06 | Phase 2 — Classification Template Editor | Pending |
+| TMPL-07 | Phase 2 — Classification Template Editor | Pending |
 
 **Coverage:**
 - v1 requirements: 29 total
-- Mapped to phases: 0 (pending roadmap)
-- Unmapped: 29 ⚠️
+- Mapped to phases: 29 ✓
+- Unmapped: 0 ✓
+
+**Phase summary:**
+- Phase 1: FOUND-01–08, DASH-01–07, OBJ-01–07 (22 requirements)
+- Phase 2: TMPL-01–07 (7 requirements)
 
 ---
 *Requirements defined: 2026-03-24*
