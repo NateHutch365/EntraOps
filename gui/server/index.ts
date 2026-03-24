@@ -2,6 +2,9 @@ import express from 'express';
 import helmet from 'helmet';
 import path from 'node:path';
 import { securityMiddleware, errorHandler } from './middleware/security.js';
+import { dashboardRouter } from './routes/dashboard.js';
+import { objectsRouter } from './routes/objects.js';
+import { gitRouter } from './routes/git.js';
 
 const app = express();
 const PORT = process.env.PORT ?? 3001;
@@ -11,10 +14,9 @@ app.use(helmet());
 app.use(express.json());
 app.use(securityMiddleware);
 
-// Routes will be registered here in Plan 04
-// app.use('/api/dashboard', dashboardRouter);
-// app.use('/api/objects', objectsRouter);
-// app.use('/api/git', gitRouter);
+app.use('/api/dashboard', dashboardRouter);
+app.use('/api/objects', objectsRouter);
+app.use('/api/git', gitRouter);
 
 // Serve client build in production
 app.use(express.static(CLIENT_BUILD));
