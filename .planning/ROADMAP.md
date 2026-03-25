@@ -74,7 +74,12 @@ Plans:
   1. User can select an EntraOps cmdlet from the command palette and execute it from the browser — only explicitly allowlisted cmdlets are available; there is no way to run arbitrary code
   2. Command output streams in real time to a terminal-style display with ANSI colour preserved; a Stop button kills the running process at any time
   3. Only one command can run at a time; a second run attempt is blocked with a clear error and option to stop the current command; session command history is visible below the terminal
-**Plans**: TBD
+**Plans**: 4 plans
+Plans:
+- [ ] 03-01-PLAN.md — Shared command types, Wave 0 test scaffold, GET /api/config router
+- [ ] 03-02-PLAN.md — Commands service (spawn/stop/history) and commands router
+- [ ] 03-03-PLAN.md — Server route wiring, TerminalOutput + CommandHistory components, RunCommandsPage UI
+- [ ] 03-04-PLAN.md — Checkpoint: Human verification of Phase 3 end-to-end flow
 
 ### Phase 4: Git Change History *(post-MVP)*
 **Goal**: Users can browse the EAM change history from the browser, understand what changed between classification runs, and compare any two snapshots — without opening a terminal or git CLI
@@ -103,6 +108,6 @@ Plans:
 |-------|----------------|--------|-----------|
 | 1. Foundation, Dashboard & Object Browser | 0/8 | In progress | - |
 | 2. Classification Template Editor | 5/5 | Complete   | 2026-03-25 |
-| 3. PowerShell Command Runner *(post-MVP)* | 0/? | Not started | - |
+| 3. PowerShell Command Runner *(post-MVP)* | 0/4 | Not started | - |
 | 4. Git Change History *(post-MVP)* | 0/? | Not started | - |
 | 5. Settings & Polish *(post-MVP)* | 0/? | Not started | - |
