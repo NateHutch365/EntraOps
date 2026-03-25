@@ -25,9 +25,9 @@ See: .planning/PROJECT.md (updated 2026-03-24)
 ## Current Position
 
 Phase: 4 of 5 (Connect-Classify Setup) — **In Progress**
-Plan: 04-01 complete (1 of 4)
+Plan: 04-03 complete (3 of 4)
 Status: Phase 2 complete — all 7 TMPL requirements human-verified in browser (2026-03-25)
-Last activity: 2026-03-25 — 03-03 complete (PowerShell runner UI wired end-to-end)
+Last activity: 2026-03-25 — 04-03 complete (ConnectPage UI + Sidebar)
 
 Progress: [██████████] 100%
 
@@ -100,8 +100,6 @@ None yet.
 
 ## Session Continuity
 
-Next: Execute plan 04-02 (HTTP routes for connect service).
-
-Then commit docs and continue with 04-03 (ConnectPage UI)
+Next: Execute plan 04-04 (final Phase 4 integration + verification).
 
 Then commit docs and stage for review.
