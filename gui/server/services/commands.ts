@@ -28,6 +28,18 @@ export function checkPwshAvailable(): { available: boolean; version?: string } {
 
 // ── Parameter builder (SECURITY: never use shell:true) ────────────────────
 
+// psq — PowerShell single-quote escape for values embedded in -Command strings.
+// shell: false prevents OS-level injection; this handles PS-level injection.
+function psq(s: string): string {
+  return `'${s.replace(/'/g, "''")}'`;
+}
+
+// buildPwshArgs — assembles the pwsh argv for a cmdlet invocation.
+// Import-Module is required because -NoProfile skips profile scripts that load the module.
+// Parameters are embedded in the -Command string (not separate argv) because pwsh only
+// forwards remaining argv as named params for simple command names, not complex expressions.
+// SECURITY: string values are PS-single-quote-escaped via psq(); RbacSystems come from a
+// controlled enum and are joined unquoted; switch params need no quoting.
 function buildPwshArgs(cmdlet: AllowlistedCmdlet, parameters: CmdletParameters): string[] {
   const parts: string[] = [];
   for (const [key, value] of Object.entries(parameters)) {
@@ -35,16 +47,15 @@ function buildPwshArgs(cmdlet: AllowlistedCmdlet, parameters: CmdletParameters):
     if (value === true) {
       parts.push(`-${key}`);
     } else if (Array.isArray(value)) {
-      // RbacSystems: pass as comma-joined e.g. -RbacSystems EntraID,Defender
+      // RbacSystems: from controlled enum — comma-joined, no quoting needed
       parts.push(`-${key}`, (value as string[]).join(','));
     } else {
-      parts.push(`-${key}`, String(value));
+      // String values: PS-single-quote-escaped to prevent injection
+      parts.push(`-${key}`, psq(String(value)));
     }
   }
-  // -NoProfile: skip user profile (faster + no side effects)
-  // -NonInteractive: no prompts (prevents hanging)
-  // -Command: execute the cmdlet as a command string
-  return ['-NoProfile', '-NonInteractive', '-Command', cmdlet, ...parts];
+  const command = `Import-Module './EntraOps/EntraOps.psd1'; ${cmdlet}${parts.length ? ' ' + parts.join(' ') : ''}`;
+  return ['-NoProfile', '-NonInteractive', '-Command', command];
 }
 
 // ── Active process check ──────────────────────────────────────────────────

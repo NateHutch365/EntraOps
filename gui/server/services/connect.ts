@@ -17,8 +17,17 @@ export function isConnecting(): boolean {
   return connectProcess !== null;
 }
 
+// psq — PowerShell single-quote escape. Values embedded in -Command strings must
+// use single-quoted PS strings with doubled-single-quote escaping to prevent injection.
+// shell: false prevents OS-level injection; this handles PS-level injection.
+function psq(s: string): string {
+  return `'${s.replace(/'/g, "''")}'`;
+}
+
 // runConnect — spawns Connect-EntraOps; sets connectionState on exit code 0
-// SECURITY: shell: false mandatory — prevents injection of shell metacharacters
+// SECURITY: shell: false mandatory — prevents injection of shell metacharacters.
+// Import-Module required because -NoProfile skips profile scripts that load the module.
+// All user-supplied values are PS-single-quote-escaped via psq() before embedding in -Command.
 export function runConnect(
   tenantName: string,
   authType: string,
@@ -32,9 +41,8 @@ export function runConnect(
   const proc = spawn(
     'pwsh',
     [
-      '-NoProfile', '-NonInteractive', '-Command', 'Connect-EntraOps',
-      '-TenantName', tenantName,
-      '-AuthenticationType', authType,
+      '-NoProfile', '-NonInteractive', '-Command',
+      `Import-Module './EntraOps/EntraOps.psd1'; Connect-EntraOps -TenantName ${psq(tenantName)} -AuthenticationType ${psq(authType)}`,
     ],
     { shell: false, cwd: REPO_ROOT, env: { ...process.env } },
   );
@@ -74,7 +82,7 @@ export function disconnectEntraOps(
 
   const proc = spawn(
     'pwsh',
-    ['-NoProfile', '-NonInteractive', '-Command', 'Disconnect-EntraOps'],
+    ['-NoProfile', '-NonInteractive', '-Command', "Import-Module './EntraOps/EntraOps.psd1'; Disconnect-EntraOps"],
     { shell: false, cwd: REPO_ROOT, env: { ...process.env } },
   );
 
