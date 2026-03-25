@@ -3,9 +3,9 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Plan 02-01 complete
-last_updated: "2026-03-25T08:42:00.000Z"
-last_activity: 2026-03-25 — Plan 02-01 complete (template TypeScript types + Express REST API for reading/writing classification template JSON files)
+stopped_at: Plan 02-02 complete
+last_updated: "2026-03-25T15:45:00.000Z"
+last_activity: 2026-03-25 — Plan 02-02 complete (TemplatesPage UI shell, TierAccordion, DiffDialog, sidebar nav)
 progress:
   total_phases: 5
   completed_phases: 1
@@ -21,33 +21,33 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-24)
 
 **Core value:** A user who has run `Save-EntraOpsPrivilegedEAMJson` can open a browser and immediately understand who holds ControlPlane access in their tenant — without writing a KQL query, opening Azure Portal, or reading raw JSON.
-**Current focus:** Phase 1 — Foundation, Dashboard & Object Browser
+**Current focus:** Phase 2 — Classification Template Editor
 
 ## Current Position
 
 Phase: 2 of 5 (Classification Template Editor)
-Plan: 02-01 complete (1 of 5)
-Status: In progress — Wave 1 Plan 02-01 complete, 02-02 through 02-05 remaining
-Last activity: 2026-03-25 — Plan 02-01 complete (template types + Express API)
+Plan: 02-02 complete (2 of 5)
+Status: In progress — Wave 2 Plan 02-02 complete, 02-03 through 02-05 remaining
+Last activity: 2026-03-25 — Plan 02-02 complete (TemplatesPage UI shell with 6-tab navigation, read-only TierAccordion, shared DiffDialog)
 
 Progress: [██████░░░░] 75%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 1
-- Average duration: —
-- Total execution time: 0 hours
+- Total plans completed: 2
+- Average duration: ~25 min/plan
+- Total execution time: ~50 min
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
-| - | - | - | - |
+| 02 (partial) | 2/5 | ~50 min | ~25 min |
 
 **Recent Trend:**
-- Last 5 plans: —
-- Trend: —
+- Last 5 plans: 02-01 (25 min), 02-02 (25 min)
+- Trend: Consistent
 
 *Updated after each plan completion*
 
@@ -66,6 +66,15 @@ Decisions are logged in PROJECT.md Key Decisions table. Key decisions affecting 
 - **Server-side pagination**: browser never receives the full dataset; all filtering/slicing in Express — required for large tenants
 - **Atomic template writes**: temp file → rename pattern to avoid partial writes on crash
 
+### Phase 2 Decisions (02-01 + 02-02)
+
+- **TEMPLATE_NAMES constant inlined in routes file**: avoids cross-workspace ESM resolution issues
+- **Zod v4 z.string().uuid() strict RFC compliance**: test GUIDs must use version 4 format
+- **Global endpoint returns { exclusions: [] } not 404**: simplifies client handling when Global.json missing
+- **DiffDialog uses diffLines() from diff package**: renders Change objects as span blocks with bg-green-950/bg-red-950
+- **TemplatesPage activeTab is TemplateName | 'global'**: fetch effect has early-return guard for 'global' tab
+- **diff + @testing-library/jest-dom installed in client workspace**
+
 ### Pending Todos
 
 None yet.
@@ -79,6 +88,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-25T08:42:00.000Z
-Stopped at: Plan 02-01 complete
-Resume: /gsd:execute-phase 2 --plan 02-02
+Next: Execute plan 02-03 (chip editor + save flow for template entries).
+
+Then commit docs and stage for review.
