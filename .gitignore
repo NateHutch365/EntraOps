@@ -31,3 +31,6 @@ build/
 logs/
 *.log
 npm-debug.log*
+
+# EntraOps run history — tenant-specific operational data, not for version control
+gui/.entraops-run-history.json

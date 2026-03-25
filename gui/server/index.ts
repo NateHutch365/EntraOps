@@ -6,6 +6,8 @@ import { dashboardRouter } from './routes/dashboard.js';
 import { objectsRouter } from './routes/objects.js';
 import { gitRouter } from './routes/git.js';
 import { templatesRouter } from './routes/templates.js';
+import { commandsRouter } from './routes/commands.js';
+import { configRouter } from './routes/config.js';
 
 const app = express();
 const PORT = process.env.PORT ?? 3001;
@@ -19,6 +21,8 @@ app.use('/api/dashboard', dashboardRouter);
 app.use('/api/objects', objectsRouter);
 app.use('/api/git', gitRouter);
 app.use('/api/templates', templatesRouter);
+app.use('/api/commands', commandsRouter);
+app.use('/api/config', configRouter);
 
 // Serve client build in production only — in dev, Vite (port 5173) handles the client
 if (process.env.NODE_ENV === 'production') {
