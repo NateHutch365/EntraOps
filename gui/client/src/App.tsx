@@ -5,6 +5,7 @@ import { ObjectBrowser } from '@/pages/ObjectBrowser';
 import { ObjectDetail } from '@/pages/ObjectDetail';
 import { TemplatesPage } from '@/pages/TemplatesPage';
 import { RunCommandsPage } from '@/pages/RunCommandsPage';
+import { ConnectPage } from '@/pages/ConnectPage';
 import { Toaster } from '@/components/ui/sonner';
 
 export default function App() {
@@ -17,6 +18,7 @@ export default function App() {
           <Route path="objects/:objectId" element={<ObjectDetail />} />
           <Route path="templates" element={<TemplatesPage />} />
           <Route path="run" element={<RunCommandsPage />} />
+          <Route path="connect" element={<ConnectPage />} />
         </Route>
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>

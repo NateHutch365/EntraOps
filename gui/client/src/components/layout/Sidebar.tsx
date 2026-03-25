@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { NavLink } from 'react-router';
-import { LayoutDashboard, Users, FileJson, Terminal, PanelLeftClose, PanelLeftOpen } from 'lucide-react';
+import { LayoutDashboard, Users, FileJson, Terminal, PlugZap, PanelLeftClose, PanelLeftOpen } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 
@@ -9,10 +9,28 @@ const NAV_ITEMS = [
   { to: '/objects', icon: Users, label: 'Browse Objects', end: false },
   { to: '/templates', icon: FileJson, label: 'Templates', end: false },
   { to: '/run', icon: Terminal, label: 'Run Commands', end: false },
+  { to: '/connect', icon: PlugZap, label: 'Connect', end: false },
 ] as const;
 
 export function Sidebar() {
   const [expanded, setExpanded] = useState(true);
+  const [connectStatus, setConnectStatus] = useState<{ connected: boolean; tenantName: string | null }>({
+    connected: false,
+    tenantName: null,
+  });
+
+  const fetchConnectStatus = useCallback(() => {
+    fetch('/api/connect/status')
+      .then(r => r.json())
+      .then((data: { connected: boolean; tenantName: string | null }) => setConnectStatus(data))
+      .catch(() => { /* server not ready — leave default */ });
+  }, []);
+
+  useEffect(() => {
+    fetchConnectStatus();
+    window.addEventListener('entraops:connect-status', fetchConnectStatus);
+    return () => window.removeEventListener('entraops:connect-status', fetchConnectStatus);
+  }, [fetchConnectStatus]);
 
   return (
     <aside
@@ -61,6 +79,29 @@ export function Sidebar() {
           </NavLink>
         ))}
       </nav>
+
+      {/* Connection status footer */}
+      {expanded ? (
+        <footer className="border-t border-border px-3 py-3 min-h-[44px] flex items-center gap-2">
+          <span className={cn(
+            'w-2 h-2 rounded-full shrink-0',
+            connectStatus.connected ? 'bg-[oklch(0.68_0.14_145)]' : 'bg-muted-foreground/40',
+          )} />
+          <span className="text-xs text-muted-foreground truncate">
+            {connectStatus.connected ? (connectStatus.tenantName ?? 'Connected') : 'Not connected'}
+          </span>
+        </footer>
+      ) : (
+        <footer className="border-t border-border py-3 flex items-center justify-center min-h-[44px]">
+          <span
+            title={connectStatus.connected ? `Connected: ${connectStatus.tenantName ?? ''}` : 'Not connected'}
+            className={cn(
+              'w-2 h-2 rounded-full',
+              connectStatus.connected ? 'bg-[oklch(0.68_0.14_145)]' : 'bg-muted-foreground/40',
+            )}
+          />
+        </footer>
+      )}
     </aside>
   );
 }
