@@ -22,6 +22,7 @@ EntraOps GUI starts as a local-only React dashboard that lets security administr
 - [ ] **Phase 3: PowerShell Command Runner** — Trigger EntraOps cmdlets from the browser with real-time streamed output *(post-MVP)*
 - [ ] **Phase 4: Connect & Classify Setup** — In-browser connection wizard: tenant sign-in via device code flow, RBAC system selection, and first-time classification run *(post-MVP)*
 - [ ] **Phase 5: Git Change History** — Browse EAM diffs, compare classification runs, and see structured object-level change summaries *(post-MVP)*
+- [ ] **Phase 5.5: Object-Level Reclassification** — Post-classification review screen where users can override individual objects' tier assignments inline, with save-back to classification config *(post-MVP)*
 - [ ] **Phase 6: Settings & Polish** — Structured `EntraOpsConfig.json` editor and cross-cutting UX polish *(post-MVP)*
 
 ## Phase Details
@@ -91,7 +92,12 @@ Plans:
   2. Clicking Connect streams `Connect-EntraOps` output (device code URL + code) in real time so the user can authenticate in their browser
   3. After a successful connection, classification runs automatically via `Save-EntraOpsPrivilegedEAMJson` with selected RBAC systems, streaming output to the same terminal view
   4. On completion, the dashboard reflects the newly classified data without a manual page refresh
-**Plans**: TBD
+**Plans**: 4 plans
+Plans:
+- [ ] 04-01-PLAN.md — Shared connect types + server connect service (spawn + session state)
+- [ ] 04-02-PLAN.md — Connect routes (POST /start SSE, POST /disconnect, GET /status) + sonner Toaster
+- [ ] 04-03-PLAN.md — ConnectPage 4-step wizard + Sidebar connection status indicator
+- [ ] 04-04-PLAN.md — Human verification of end-to-end wizard flow
 
 ### Phase 5: Git Change History *(post-MVP)*
 **Goal**: Users can browse the EAM change history from the browser, understand what changed between classification runs, and compare any two snapshots — without opening a terminal or git CLI
@@ -101,6 +107,15 @@ Plans:
   1. User can see a chronological list of git commits that touched `PrivilegedEAM/` with date, message, and affected files — without opening a terminal
   2. Selecting a commit shows a structured change summary: objects added, objects removed, and objects whose tier changed — not just a raw diff
   3. User can compare any two commits (not just adjacent ones) and view a JSON diff for a chosen RBAC system's aggregate file
+**Plans**: TBD
+
+### Phase 5.5: Object-Level Reclassification *(post-MVP)*
+**Goal**: After a classification run, users can review the classified objects and override individual objects' tier assignments inline — without hand-editing JSON or re-running a full classification
+**Depends on**: Phase 4
+**Requirements**: TBD *(deferred — noted from Phase 4 discussion)*
+**Success Criteria** (what must be TRUE):
+  1. A post-classification review screen shows all classified objects with their assigned tier; user can override the tier for any individual object
+  2. Overrides are saved back to the relevant classification config and a re-classify prompt is shown
 **Plans**: TBD
 
 ### Phase 6: Settings & Polish *(post-MVP)*
@@ -122,4 +137,6 @@ Plans:
 | 2. Classification Template Editor | 5/5 | Complete   | 2026-03-25 |
 | 3. PowerShell Command Runner *(post-MVP)* | 0/4 | Not started | - |
 | 4. Git Change History *(post-MVP)* | 0/? | Not started | - |
-| 5. Settings & Polish *(post-MVP)* | 0/? | Not started | - |
+| 5. Git Change History *(post-MVP)* | 0/? | Not started | - |
+| 5.5. Object-Level Reclassification *(post-MVP)* | 0/? | Not started | - |
+| 6. Settings & Polish *(post-MVP)* | 0/? | Not started | - |
