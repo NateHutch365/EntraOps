@@ -49,6 +49,7 @@ Tailwind default 8-point scale. All values are multiples of 4.
 - Sidebar connection status pill: minimum height `44px` (accessibility touch target)
 - Step indicator circles: exactly `32px × 32px` (`w-8 h-8`)
 - Step connector lines: `h-0.5` (2px) — decorative only
+- Sidebar nav active left-border offset: `pl-[6px]` (6px) — inherited carry-over from Phases 1–3 pattern. `border-l-2` occupies 2px; the remaining 4px visual padding equals 1 spacing unit. Visual consistency with existing pages requires this value — changing it would require a cross-phase refactor.
 
 ---
 
@@ -59,10 +60,10 @@ All sizes reference the existing Segoe UI Variable font stack already declared i
 | Role | Size | Weight | Line Height | Usage |
 |------|------|--------|-------------|-------|
 | Body | 14px (`text-sm`) | 400 (`font-normal`) | 1.5 | Step descriptions, RBAC descriptions, helper text |
-| Label | 14px (`text-sm`) | 500 (`font-medium`) | 1.2 | Form labels, RBAC system names, step labels (upcoming/active) |
+| Label | 14px (`text-sm`) | 600 (`font-semibold`) | 1.2 | Form labels, RBAC system names, step labels (upcoming/active) |
 | Heading | 18px (`text-lg`) | 600 (`font-semibold`) | 1.2 | Step card heading (e.g. "Authenticating…") |
 | Caption | 12px (`text-xs`) | 400 (`font-normal`) | 1.4 | Helper text under inputs, validation errors, sidebar status, terminal header labels |
-| Device code mono | 24px (`text-2xl`) | 700 (`font-bold`) | 1.0 | The one-time device code in the Step 2 callout box |
+| Device code mono | 24px (`text-2xl`) | 600 (`font-semibold`) | 1.0 | The one-time device code in the Step 2 callout box |
 
 **Monospace override:** device code and terminal content use `font-mono` (system mono stack). No additional font loading required.
 
@@ -100,6 +101,8 @@ Uses existing tokens from `globals.css`. No new CSS custom properties added in P
 **Route:** `/connect`
 **Sidebar nav entry:** Add after "Run Commands" — label `"Connect"`, icon `PlugZap` (Lucide)
 **Nav active state:** Identical to existing nav items — `text-fluent-accent font-medium bg-[oklch(0.52_0.22_261_/_0.08)] border-l-2 border-fluent-accent pl-[6px]`
+
+**Primary focal point:** The active WizardCard — centered, `max-w-2xl`, `shadow-sm` to lift it from the background.
 
 **Page layout:**
 ```
@@ -140,7 +143,7 @@ Uses existing tokens from `globals.css`. No new CSS custom properties added in P
 | State | Circle | Label |
 |-------|--------|-------|
 | `completed` | `w-8 h-8 rounded-full bg-fluent-accent flex items-center justify-center` — white `Check` icon (16px) | `text-xs text-muted-foreground mt-1` |
-| `active` | `w-8 h-8 rounded-full border-2 border-fluent-accent bg-background flex items-center justify-center` — `text-fluent-accent text-sm font-semibold` step number | `text-xs font-medium text-foreground mt-1` |
+| `active` | `w-8 h-8 rounded-full border-2 border-fluent-accent bg-background flex items-center justify-center` — `text-fluent-accent text-sm font-semibold` step number | `text-xs font-semibold text-foreground mt-1` |
 | `upcoming` | `w-8 h-8 rounded-full border-2 border-border bg-muted flex items-center justify-center` — `text-muted-foreground text-sm` step number | `text-xs text-muted-foreground mt-1` |
 
 **ConnectorLine:**
@@ -164,8 +167,9 @@ shadcn `<Card>` containing each step. Single card that swaps step content via `c
       <CardTitle className="text-lg font-semibold">{stepHeading}</CardTitle>
       <CardDescription className="text-sm text-muted-foreground mt-1">{stepDescription}</CardDescription>
     </div>
+    {/* Cancel button: "Exit Setup" on steps 1–3; "Stop & Start Over" on step 4 running; hidden on step 4 complete/failed */}
     <Button variant="ghost" size="sm" onClick={handleCancel} className="text-muted-foreground hover:text-destructive">
-      Cancel
+      {cancelLabel}
     </Button>
   </CardHeader>
   <CardContent>
@@ -191,16 +195,16 @@ shadcn `<Card>` containing each step. Single card that swaps step content via `c
 **Card heading:** `"Connect to your Entra tenant"`
 **Card description:** `"Enter your tenant details to begin the connection process."`
 
-**Form layout** (`flex flex-col gap-5`):
+**Form layout** (`flex flex-col gap-4`):
 
 **Tenant Name field:**
-- `<Label htmlFor="tenantName">Tenant name</Label>` — 14px weight 500
+- `<Label htmlFor="tenantName">Tenant name</Label>` — 14px weight 600
 - `<Input id="tenantName" placeholder="contoso.onmicrosoft.com" />` — pre-populated from `/api/config` → `TenantName` if present
 - Helper text: `<p className="text-xs text-muted-foreground">Your tenant's .onmicrosoft.com domain or custom verified domain</p>`
 - Validation error (inline, under input): `<p className="text-xs text-destructive">Tenant name is required</p>` — shown on submit if empty
 
 **Authentication type:**
-- `<Label>Authentication type</Label>` — 14px weight 500, `mb-2`
+- `<Label>Authentication type</Label>` — 14px weight 600, `mb-2`
 - `<RadioGroup defaultValue="DeviceAuthentication">` (shadcn RadioGroup)
   - Option 1: value `"DeviceAuthentication"`, label `"Device Code"`, description `"Sign in using a one-time code — works from any machine"` — selected by default
   - Option 2: value `"UserInteractive"`, label `"User Interactive"`, description `"Opens a login popup (requires desktop session)"`
@@ -226,9 +230,9 @@ shadcn `<Card>` containing each step. Single card that swaps step content via `c
 ```
 <div className="mb-4 rounded-md border border-fluent-accent/30 bg-fluent-accent/8 p-4">
   <p className="text-xs text-muted-foreground mb-1">Visit this URL and enter the code:</p>
-  <p className="text-xs font-medium text-fluent-accent mb-3 break-all">{deviceLoginUrl}</p>
+  <p className="text-xs font-semibold text-fluent-accent mb-2 break-all">{deviceLoginUrl}</p>
   <div className="flex items-center justify-between">
-    <code className="text-2xl font-bold font-mono tracking-[0.3em] text-foreground">{deviceCode}</code>
+    <code className="text-2xl font-semibold font-mono tracking-[0.3em] text-foreground">{deviceCode}</code>
     <Button variant="outline" size="sm" onClick={copyCode}>
       <Clipboard size={14} className="mr-1" /> Copy Code
     </Button>
@@ -261,7 +265,7 @@ Each row:
 >
   <Checkbox id={system} checked={selected[system]} onCheckedChange={...} className="mt-0.5" />
   <div>
-    <p className="text-sm font-medium text-foreground">{systemName}</p>
+    <p className="text-sm font-semibold text-foreground">{systemName}</p>
     <p className="text-xs text-muted-foreground">{systemDescription}</p>
   </div>
 </label>
@@ -408,6 +412,7 @@ toast.error("Classification failed", {
 | Step 2 heading (complete) | `"Authentication complete"` |
 | Step 2 heading (failed) | `"Authentication failed"` |
 | Step 2 description | `"Complete the sign-in prompt in your browser to continue."` |
+| Step 2 description (failed) | `"Authentication failed — check the terminal output above, then exit to try again."` |
 | Step 2 callout URL label | `"Visit this URL and enter the code:"` |
 | Step 2 copy button | `"Copy Code"` |
 | Step 3 heading | `"Select systems to classify"` |
@@ -422,7 +427,8 @@ toast.error("Classification failed", {
 | Step 4 description (failed) | `"Review the output below for error details."` |
 | Step 4 CTA (success) | `"Go to Dashboard"` |
 | Step 4 CTA (failed/stopped) | `"Start Over"` |
-| Cancel button | `"Cancel"` |
+| Cancel button (Steps 1–3) | `"Exit Setup"` |
+| Cancel button (Step 4, running) | `"Stop & Start Over"` |
 | Toast success title | `"Classification complete"` |
 | Toast success body | `"Your dashboard data has been updated."` |
 | Toast success action | `"Go to Dashboard"` |
