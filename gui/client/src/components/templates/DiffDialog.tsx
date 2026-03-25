@@ -18,11 +18,11 @@ export function DiffDialog({ open, title, before, after, onConfirm, onCancel, lo
 
   return (
     <Dialog open={open} onOpenChange={(o) => { if (!o) onCancel(); }}>
-      <DialogContent className="max-w-2xl">
+      <DialogContent className="max-w-2xl max-h-[85vh] grid-rows-[auto_1fr_auto] overflow-hidden">
         <DialogHeader>
           <DialogTitle>{title}</DialogTitle>
         </DialogHeader>
-        <ScrollArea className="max-h-[60vh] rounded border border-border">
+        <ScrollArea className="min-h-0 rounded border border-border">
           <pre className="p-3 text-xs font-mono leading-5">
             {changes.map((change, i) => (
               <span
