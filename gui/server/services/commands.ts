@@ -54,7 +54,14 @@ function buildPwshArgs(cmdlet: AllowlistedCmdlet, parameters: CmdletParameters):
       parts.push(`-${key}`, psq(String(value)));
     }
   }
-  const command = `Import-Module './EntraOps/EntraOps.psd1'; ${cmdlet}${parts.length ? ' ' + parts.join(' ') : ''}`;
+  // Set DefaultFolderClassification/EAM globals that Connect-EntraOps normally sets.
+  // Each pwsh spawn is a fresh process — globals from the connect process don't survive.
+  // $EntraOpsBaseFolder IS set by the .psm1 on module load, so we can derive the paths here.
+  const initGlobals = [
+    `New-Variable -Name DefaultFolderClassification -Value "$EntraOpsBaseFolder/Classification/" -Scope Global -Force`,
+    `New-Variable -Name DefaultFolderClassifiedEam -Value "$EntraOpsBaseFolder/PrivilegedEAM/" -Scope Global -Force`,
+  ].join('; ');
+  const command = `Import-Module './EntraOps/EntraOps.psd1'; ${initGlobals}; ${cmdlet}${parts.length ? ' ' + parts.join(' ') : ''}`;
   return ['-NoProfile', '-NonInteractive', '-Command', command];
 }
 
