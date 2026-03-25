@@ -54,7 +54,13 @@ EntraOps GUI starts as a local-only React dashboard that lets security administr
   2. User can edit `RoleDefinitionActions` for any definition entry inline; saving is blocked with a clear validation error if the edit fails Zod schema validation
   3. Before any file write, the user sees a diff of what will change; after saving, the UI warns that changes should be committed to git
   4. `Classification/Global.json` exclusion list is viewable and editable in the same tabbed interface alongside the five template files
-**Plans**: TBD
+**Plans**: 5 plans
+Plans:
+- [ ] 02-01-PLAN.md — Shared types + Express template API (GET/PUT templates + global, Zod validation, atomic writes)
+- [ ] 02-02-PLAN.md — UI shell: shadcn components, sidebar nav, tabs, TierAccordion read-only, DiffDialog
+- [ ] 02-03-PLAN.md — Chip editor (RoleDefinitionActions) + Preview→Diff→Confirm→Save flow
+- [ ] 02-04-PLAN.md — Global Exclusions tab (GUID list editor) + post-save git warning banner
+- [ ] 02-05-PLAN.md — Checkpoint: Human verification of Phase 2 end-to-end flow
 
 ---
 > **POST-MVP** — The phases below are defined for completeness and future planning. They are not in the current milestone scope.
