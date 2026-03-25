@@ -241,7 +241,7 @@ export function ConnectPage() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           cmdlet: 'Save-EntraOpsPrivilegedEAMJson',
-          parameters: { RbacSystems: selectedRbac, TenantName: tenantName.trim() },
+          parameters: { RbacSystems: selectedRbac },
         }),
         signal: abort.signal,
       });
