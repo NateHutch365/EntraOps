@@ -4,7 +4,7 @@ milestone: v1.0
 milestone_name: milestone
 status: verifying
 last_updated: "2026-03-25T21:04:15.947Z"
-last_activity: 2026-03-25 — 03-03 complete (PowerShell runner UI wired end-to-end)
+last_activity: 2026-03-25 — 04-01 complete (connect types + server service)
 progress:
   total_phases: 5
   completed_phases: 3
@@ -24,8 +24,8 @@ See: .planning/PROJECT.md (updated 2026-03-24)
 
 ## Current Position
 
-Phase: 3 of 5 (PowerShell Command Runner) — **In Progress**
-Plan: 03-03 complete (3 of 4)
+Phase: 4 of 5 (Connect-Classify Setup) — **In Progress**
+Plan: 04-01 complete (1 of 4)
 Status: Phase 2 complete — all 7 TMPL requirements human-verified in browser (2026-03-25)
 Last activity: 2026-03-25 — 03-03 complete (PowerShell runner UI wired end-to-end)
 
@@ -100,6 +100,8 @@ None yet.
 
 ## Session Continuity
 
-Next: Execute plan 03-04 (final Phase 3 plan).
+Next: Execute plan 04-02 (HTTP routes for connect service).
+
+Then commit docs and continue with 04-03 (ConnectPage UI)
 
 Then commit docs and stage for review.
