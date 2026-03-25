@@ -1,6 +1,5 @@
 import { diffLines } from 'diff';
 import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle } from '@/components/ui/dialog';
-import { ScrollArea } from '@/components/ui/scroll-area';
 import { Button } from '@/components/ui/button';
 
 interface DiffDialogProps {
@@ -18,12 +17,12 @@ export function DiffDialog({ open, title, before, after, onConfirm, onCancel, lo
 
   return (
     <Dialog open={open} onOpenChange={(o) => { if (!o) onCancel(); }}>
-      <DialogContent className="max-w-2xl max-h-[85vh] grid-rows-[auto_1fr_auto] overflow-hidden">
+      <DialogContent className="max-w-4xl w-[calc(100vw-4rem)]">
         <DialogHeader>
           <DialogTitle>{title}</DialogTitle>
         </DialogHeader>
-        <ScrollArea className="min-h-0 rounded border border-border">
-          <pre className="p-3 text-xs font-mono leading-5">
+        <div className="overflow-auto max-h-[60vh] rounded border border-border">
+          <pre className="p-3 text-xs font-mono leading-5 w-max min-w-full">
             {changes.map((change, i) => (
               <span
                 key={i}
@@ -39,7 +38,7 @@ export function DiffDialog({ open, title, before, after, onConfirm, onCancel, lo
               </span>
             ))}
           </pre>
-        </ScrollArea>
+        </div>
         <DialogFooter>
           <Button variant="outline" onClick={onCancel} disabled={loading}>
             Cancel
