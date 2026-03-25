@@ -13,7 +13,7 @@ EntraOps GUI starts as a local-only React dashboard that lets security administr
 ---
 
 - [x] **Phase 1: Foundation, Dashboard & Object Browser** — Working read-only app: scaffold, security baseline, data pipeline, tier dashboard, and paginated/filterable object browser from real `PrivilegedEAM/` data ⟵ **MVP**
-- [ ] **Phase 2: Classification Template Editor** — In-browser editing of tier definition JSON files with schema validation, diff preview, and git commit warning ⟵ **MVP**
+- [x] **Phase 2: Classification Template Editor** — In-browser editing of tier definition JSON files with schema validation, diff preview, and git commit warning ⟵ **MVP** (completed 2026-03-25)
 
 ---
 > **MVP BOUNDARY** — Phases 1–2 complete the minimum viable product. Phases 3–5 are post-MVP enhancements.
@@ -56,11 +56,11 @@ EntraOps GUI starts as a local-only React dashboard that lets security administr
   4. `Classification/Global.json` exclusion list is viewable and editable in the same tabbed interface alongside the five template files
 **Plans**: 5 plans
 Plans:
-- [ ] 02-01-PLAN.md — Shared types + Express template API (GET/PUT templates + global, Zod validation, atomic writes)
-- [ ] 02-02-PLAN.md — UI shell: shadcn components, sidebar nav, tabs, TierAccordion read-only, DiffDialog
-- [ ] 02-03-PLAN.md — Chip editor (RoleDefinitionActions) + Preview→Diff→Confirm→Save flow
-- [ ] 02-04-PLAN.md — Global Exclusions tab (GUID list editor) + post-save git warning banner
-- [ ] 02-05-PLAN.md — Checkpoint: Human verification of Phase 2 end-to-end flow
+- [x] 02-01-PLAN.md — Shared types + Express template API (GET/PUT templates + global, Zod validation, atomic writes)
+- [x] 02-02-PLAN.md — UI shell: shadcn components, sidebar nav, tabs, TierAccordion read-only, DiffDialog
+- [x] 02-03-PLAN.md — Chip editor (RoleDefinitionActions) + Preview→Diff→Confirm→Save flow
+- [x] 02-04-PLAN.md — Global Exclusions tab (GUID list editor) + post-save git warning banner
+- [x] 02-05-PLAN.md — Checkpoint: Human verification of Phase 2 end-to-end flow
 
 ---
 > **POST-MVP** — The phases below are defined for completeness and future planning. They are not in the current milestone scope.
@@ -102,7 +102,7 @@ Plans:
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation, Dashboard & Object Browser | 0/8 | In progress | - |
-| 2. Classification Template Editor | 3/5 | In Progress|  |
+| 2. Classification Template Editor | 5/5 | Complete   | 2026-03-25 |
 | 3. PowerShell Command Runner *(post-MVP)* | 0/? | Not started | - |
 | 4. Git Change History *(post-MVP)* | 0/? | Not started | - |
 | 5. Settings & Polish *(post-MVP)* | 0/? | Not started | - |
