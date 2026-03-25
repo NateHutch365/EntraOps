@@ -5,6 +5,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Skeleton } from '@/components/ui/skeleton';
 import { TierAccordion } from '@/components/templates/TierAccordion';
+import { GlobalExclusionsTab } from '@/components/templates/GlobalExclusionsTab';
+import { SaveBanner } from '@/components/templates/SaveBanner';
 
 const TAB_LABELS: Record<TemplateName, string> = {
   Classification_AadResources: 'AadResources',
@@ -20,7 +22,6 @@ export function TemplatesPage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [savedAt, setSavedAt] = useState(0);
-  void savedAt; // consumed by SaveBanner in plan 02-04
 
   useEffect(() => {
     if (activeTab === 'global') return;
@@ -47,6 +48,7 @@ export function TemplatesPage() {
 
   return (
     <div className="p-6">
+      <SaveBanner savedAt={savedAt} />
       <h1 className="text-2xl font-bold mb-6">Classification Templates</h1>
       <Tabs
         value={activeTab}
@@ -87,7 +89,7 @@ export function TemplatesPage() {
         ))}
 
         <TabsContent value="global">
-          <p className="text-muted-foreground">Global Exclusions coming soon</p>
+          <GlobalExclusionsTab onSaved={() => setSavedAt(Date.now())} />
         </TabsContent>
       </Tabs>
     </div>
