@@ -3,6 +3,7 @@ import { AppShell } from '@/components/layout/AppShell';
 import { Dashboard } from '@/pages/Dashboard';
 import { ObjectBrowser } from '@/pages/ObjectBrowser';
 import { ObjectDetail } from '@/pages/ObjectDetail';
+import { TemplatesPage } from '@/pages/TemplatesPage';
 
 export default function App() {
   return (
@@ -11,6 +12,7 @@ export default function App() {
         <Route index element={<Dashboard />} />
         <Route path="objects" element={<ObjectBrowser />} />
         <Route path="objects/:objectId" element={<ObjectDetail />} />
+        <Route path="templates" element={<TemplatesPage />} />
       </Route>
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>

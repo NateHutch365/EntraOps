@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router';
-import { LayoutDashboard, Users, PanelLeftClose, PanelLeftOpen } from 'lucide-react';
+import { LayoutDashboard, Users, FileJson, PanelLeftClose, PanelLeftOpen } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 
 const NAV_ITEMS = [
   { to: '/', icon: LayoutDashboard, label: 'Dashboard', end: true },
   { to: '/objects', icon: Users, label: 'Browse Objects', end: false },
+  { to: '/templates', icon: FileJson, label: 'Templates', end: false },
 ] as const;
 
 export function Sidebar() {
