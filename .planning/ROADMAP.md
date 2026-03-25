@@ -2,7 +2,7 @@
 
 ## Overview
 
-EntraOps GUI starts as a local-only React dashboard that lets security administrators explore classified EAM data from `PrivilegedEAM/` JSON files without touching Azure Portal or writing KQL. The MVP (Phases 1–2) delivers a fully working read-only dashboard, paginated object browser, and a safe classification template editor — enough to validate the core value proposition. Post-MVP phases (3–5) layer in PowerShell command execution, git change history browsing, and a settings editor on top of the proven foundation.
+EntraOps GUI starts as a local-only React dashboard that lets security administrators explore classified EAM data from `PrivilegedEAM/` JSON files without touching Azure Portal or writing KQL. The MVP (Phases 1–2) delivers a fully working read-only dashboard, paginated object browser, and a safe classification template editor — enough to validate the core value proposition. Post-MVP phases (3–6) layer in PowerShell command execution, an in-browser connect & classify wizard, git change history browsing, and a settings editor on top of the proven foundation.
 
 ## Phases
 
@@ -20,8 +20,9 @@ EntraOps GUI starts as a local-only React dashboard that lets security administr
 ---
 
 - [ ] **Phase 3: PowerShell Command Runner** — Trigger EntraOps cmdlets from the browser with real-time streamed output *(post-MVP)*
-- [ ] **Phase 4: Git Change History** — Browse EAM diffs, compare classification runs, and see structured object-level change summaries *(post-MVP)*
-- [ ] **Phase 5: Settings & Polish** — Structured `EntraOpsConfig.json` editor and cross-cutting UX polish *(post-MVP)*
+- [ ] **Phase 4: Connect & Classify Setup** — In-browser connection wizard: tenant sign-in via device code flow, RBAC system selection, and first-time classification run *(post-MVP)*
+- [ ] **Phase 5: Git Change History** — Browse EAM diffs, compare classification runs, and see structured object-level change summaries *(post-MVP)*
+- [ ] **Phase 6: Settings & Polish** — Structured `EntraOpsConfig.json` editor and cross-cutting UX polish *(post-MVP)*
 
 ## Phase Details
 
@@ -81,7 +82,18 @@ Plans:
 - [ ] 03-03-PLAN.md — Server route wiring, TerminalOutput + CommandHistory components, RunCommandsPage UI
 - [ ] 03-04-PLAN.md — Checkpoint: Human verification of Phase 3 end-to-end flow
 
-### Phase 4: Git Change History *(post-MVP)*
+### Phase 4: Connect & Classify Setup *(post-MVP)*
+**Goal**: Users can connect to their Entra tenant and run their first classification entirely from the browser — entering their tenant name, authenticating via device code flow, selecting RBAC systems, and streaming live classification output — without touching a terminal
+**Depends on**: Phase 3
+**Requirements**: CONN-01, CONN-02, CONN-03, CONN-04 *(v2 — deferred)*
+**Success Criteria** (what must be TRUE):
+  1. A Connect page is accessible from the sidebar nav; it shows a form for tenant name and auth type (device code default), and a checklist of RBAC systems to classify
+  2. Clicking Connect streams `Connect-EntraOps` output (device code URL + code) in real time so the user can authenticate in their browser
+  3. After a successful connection, classification runs automatically via `Save-EntraOpsPrivilegedEAMJson` with selected RBAC systems, streaming output to the same terminal view
+  4. On completion, the dashboard reflects the newly classified data without a manual page refresh
+**Plans**: TBD
+
+### Phase 5: Git Change History *(post-MVP)*
 **Goal**: Users can browse the EAM change history from the browser, understand what changed between classification runs, and compare any two snapshots — without opening a terminal or git CLI
 **Depends on**: Phase 2
 **Requirements**: HIST-01, HIST-02, HIST-03, HIST-04, HIST-05 *(v2 — deferred)*
@@ -91,9 +103,9 @@ Plans:
   3. User can compare any two commits (not just adjacent ones) and view a JSON diff for a chosen RBAC system's aggregate file
 **Plans**: TBD
 
-### Phase 5: Settings & Polish *(post-MVP)*
+### Phase 6: Settings & Polish *(post-MVP)*
 **Goal**: Users can view and edit `EntraOpsConfig.json` from the browser in a structured form, and the app delivers a polished, consistent experience across all features
-**Depends on**: Phase 4
+**Depends on**: Phase 5
 **Requirements**: SETT-01, SETT-02, SETT-03 *(v2 — deferred)*
 **Success Criteria** (what must be TRUE):
   1. User can view and edit `EntraOpsConfig.json` in a structured (non-raw JSON) form from the Settings page; changes are validated and saved safely
