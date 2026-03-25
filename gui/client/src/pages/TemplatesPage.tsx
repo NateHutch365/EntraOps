@@ -19,6 +19,8 @@ export function TemplatesPage() {
   const [templateData, setTemplateData] = useState<Partial<Record<TemplateName, TierBlock[]>>>({});
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [savedAt, setSavedAt] = useState(0);
+  void savedAt; // consumed by SaveBanner in plan 02-04
 
   useEffect(() => {
     if (activeTab === 'global') return;
@@ -72,7 +74,14 @@ export function TemplatesPage() {
                 <AlertDescription>{error}</AlertDescription>
               </Alert>
             ) : (
-              <TierAccordion tiers={templateData[name] ?? []} />
+              <TierAccordion
+                tiers={templateData[name] ?? []}
+                templateName={name}
+                onSaved={(updatedTiers) => {
+                  setTemplateData(prev => ({ ...prev, [name]: updatedTiers }));
+                  setSavedAt(Date.now());
+                }}
+              />
             )}
           </TabsContent>
         ))}
