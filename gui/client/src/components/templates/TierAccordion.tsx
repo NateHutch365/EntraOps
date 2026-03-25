@@ -110,6 +110,7 @@ export function TierAccordion({ tiers, templateName, onSaved }: TierAccordionPro
                         size="sm"
                         variant="outline"
                         className="mt-2"
+                        disabled={!dirtyActions[`${tierIndex}-${entryIndex}`]}
                         onClick={() => handlePreview(tierIndex, entryIndex)}
                       >
                         Preview Changes

@@ -6,6 +6,7 @@ import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Skeleton } from '@/components/ui/skeleton';
 import { TierAccordion } from '@/components/templates/TierAccordion';
 import { GlobalExclusionsTab } from '@/components/templates/GlobalExclusionsTab';
+import { AuditLogTab } from '@/components/templates/AuditLogTab';
 import { SaveBanner } from '@/components/templates/SaveBanner';
 
 const TAB_LABELS: Record<TemplateName, string> = {
@@ -17,7 +18,7 @@ const TAB_LABELS: Record<TemplateName, string> = {
 };
 
 export function TemplatesPage() {
-  const [activeTab, setActiveTab] = useState<TemplateName | 'global'>('Classification_AadResources');
+  const [activeTab, setActiveTab] = useState<TemplateName | 'global' | 'audit'>('Classification_AadResources');
   const [templateData, setTemplateData] = useState<Partial<Record<TemplateName, TierBlock[]>>>({});
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -52,7 +53,7 @@ export function TemplatesPage() {
       <h1 className="text-2xl font-bold mb-6">Classification Templates</h1>
       <Tabs
         value={activeTab}
-        onValueChange={(v) => setActiveTab(v as TemplateName | 'global')}
+        onValueChange={(v) => setActiveTab(v as TemplateName | 'global' | 'audit')}
       >
         <TabsList className="mb-4 flex-wrap h-auto gap-1">
           {TEMPLATE_NAMES.map((name) => (
@@ -61,6 +62,7 @@ export function TemplatesPage() {
             </TabsTrigger>
           ))}
           <TabsTrigger value="global">Global Exclusions</TabsTrigger>
+          <TabsTrigger value="audit">Audit Log</TabsTrigger>
         </TabsList>
 
         {TEMPLATE_NAMES.map((name) => (
@@ -90,6 +92,10 @@ export function TemplatesPage() {
 
         <TabsContent value="global">
           <GlobalExclusionsTab onSaved={() => setSavedAt(Date.now())} />
+        </TabsContent>
+
+        <TabsContent value="audit">
+          <AuditLogTab />
         </TabsContent>
       </Tabs>
     </div>

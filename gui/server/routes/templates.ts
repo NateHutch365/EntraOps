@@ -10,6 +10,7 @@ const router = Router();
 const REPO_ROOT = process.env.ENTRAOPS_ROOT ?? path.resolve(import.meta.dirname, '../../..');
 const TEMPLATES_BASE = path.join(REPO_ROOT, 'Classification', 'Templates');
 const GLOBAL_PATH = path.join(REPO_ROOT, 'Classification', 'Global.json');
+const AUDIT_LOG_PATH = path.join(REPO_ROOT, 'Classification', 'audit-log.jsonl');
 
 const safeTemplatePath = assertSafePath(TEMPLATES_BASE);
 
@@ -56,11 +57,35 @@ async function atomicWrite(filePath: string, content: string): Promise<void> {
   await fs.rename(tmp, filePath);
 }
 
+async function appendAuditEntry(entry: { action: string; template: string }): Promise<void> {
+  const line = JSON.stringify({ timestamp: new Date().toISOString(), ...entry }) + '\n';
+  await fs.appendFile(AUDIT_LOG_PATH, line, 'utf-8');
+}
+
 // GET /api/templates — list available template names
 router.get('/', (_req, res) => {
   res.json({ names: TEMPLATE_NAMES });
 });
 
+// GET /api/templates/audit — return audit log entries
+router.get('/audit', async (_req, res, next) => {
+  try {
+    let entries: unknown[] = [];
+    try {
+      const raw = await fs.readFile(AUDIT_LOG_PATH, 'utf-8');
+      entries = raw
+        .split('\n')
+        .filter((line) => line.trim())
+        .map((line) => JSON.parse(line) as unknown)
+        .reverse(); // most recent first
+    } catch {
+      // File missing — return empty
+    }
+    res.json({ entries });
+  } catch (err) {
+    next(err);
+  }
+});
 // GET /api/templates/global — MUST be before /:name to avoid param capture
 router.get('/global', async (_req, res, next) => {
   try {
@@ -94,6 +119,7 @@ router.put('/global', async (req, res, next) => {
       2
     );
     await atomicWrite(GLOBAL_PATH, content);
+    await appendAuditEntry({ action: 'save', template: 'global' });
     res.json({ ok: true });
   } catch (err) {
     next(err);
@@ -137,6 +163,7 @@ router.put('/:name', async (req, res, next) => {
     }
     const filePath = safeTemplatePath(name + '.json');
     await atomicWrite(filePath, JSON.stringify(validated.data, null, 2));
+    await appendAuditEntry({ action: 'save', template: name });
     res.json({ ok: true });
   } catch (err) {
     next(err);
