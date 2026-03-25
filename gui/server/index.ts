@@ -18,12 +18,14 @@ app.use('/api/dashboard', dashboardRouter);
 app.use('/api/objects', objectsRouter);
 app.use('/api/git', gitRouter);
 
-// Serve client build in production
-app.use(express.static(CLIENT_BUILD));
-// Express v5 wildcard — MUST use /{*splat} not /* (/* crashes v5)
-app.get('/{*splat}', (_req, res) => {
-  res.sendFile(path.join(CLIENT_BUILD, 'index.html'));
-});
+// Serve client build in production only — in dev, Vite (port 5173) handles the client
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(CLIENT_BUILD));
+  // Express v5 wildcard — MUST use /{*splat} not /* (/* crashes v5)
+  app.get('/{*splat}', (_req, res) => {
+    res.sendFile(path.join(CLIENT_BUILD, 'index.html'));
+  });
+}
 
 // 4-arg error handler last
 app.use(errorHandler);

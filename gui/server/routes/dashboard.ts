@@ -13,7 +13,7 @@ import type {
 
 const router = Router();
 
-const REPO_ROOT = process.env.ENTRAOPS_ROOT ?? path.resolve('../../..');
+const REPO_ROOT = process.env.ENTRAOPS_ROOT ?? path.resolve(import.meta.dirname, '../../..');
 const EAM_BASE = path.join(REPO_ROOT, 'PrivilegedEAM');
 const RBAC_SYSTEMS: RbacSystem[] = [
   'EntraID',
