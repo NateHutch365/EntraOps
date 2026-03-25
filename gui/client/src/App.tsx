@@ -4,6 +4,7 @@ import { Dashboard } from '@/pages/Dashboard';
 import { ObjectBrowser } from '@/pages/ObjectBrowser';
 import { ObjectDetail } from '@/pages/ObjectDetail';
 import { TemplatesPage } from '@/pages/TemplatesPage';
+import { RunCommandsPage } from '@/pages/RunCommandsPage';
 
 export default function App() {
   return (
@@ -13,6 +14,7 @@ export default function App() {
         <Route path="objects" element={<ObjectBrowser />} />
         <Route path="objects/:objectId" element={<ObjectDetail />} />
         <Route path="templates" element={<TemplatesPage />} />
+        <Route path="run" element={<RunCommandsPage />} />
       </Route>
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
