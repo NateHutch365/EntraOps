@@ -3,14 +3,13 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Plan 02-02 complete
-last_updated: "2026-03-25T15:45:00.000Z"
-last_activity: 2026-03-25 — Plan 02-02 complete (TemplatesPage UI shell, TierAccordion, DiffDialog, sidebar nav)
+last_updated: "2026-03-25T16:43:16.128Z"
+last_activity: 2026-03-25 — Plan 02-03 complete (ChipEditor, TierAccordion edit surface + Preview/Diff/Save flow)
 progress:
   total_phases: 5
   completed_phases: 1
-  total_plans: 8
-  completed_plans: 8
+  total_plans: 13
+  completed_plans: 11
   percent: 75
 ---
 
@@ -26,9 +25,9 @@ See: .planning/PROJECT.md (updated 2026-03-24)
 ## Current Position
 
 Phase: 2 of 5 (Classification Template Editor)
-Plan: 02-02 complete (2 of 5)
-Status: In progress — Wave 2 Plan 02-02 complete, 02-03 through 02-05 remaining
-Last activity: 2026-03-25 — Plan 02-02 complete (TemplatesPage UI shell with 6-tab navigation, read-only TierAccordion, shared DiffDialog)
+Plan: 02-03 complete (3 of 5)
+Status: In progress — Wave 3 Plan 02-03 complete, 02-04 through 02-05 remaining
+Last activity: 2026-03-25 — Plan 02-03 complete (ChipEditor, TierAccordion edit surface + Preview/Diff/Save flow)
 
 Progress: [██████░░░░] 75%
 
@@ -50,6 +49,7 @@ Progress: [██████░░░░] 75%
 - Trend: Consistent
 
 *Updated after each plan completion*
+| Phase 02-classification-template-editor P03 | 20 | 2 tasks | 4 files |
 
 ## Accumulated Context
 
@@ -75,6 +75,13 @@ Decisions are logged in PROJECT.md Key Decisions table. Key decisions affecting 
 - **TemplatesPage activeTab is TemplateName | 'global'**: fetch effect has early-return guard for 'global' tab
 - **diff + @testing-library/jest-dom installed in client workspace**
 
+### Phase 2 Decisions (02-03)
+
+- **Dirty state map keyed by 'tierIdx-entryIdx'**: per-entry edits in TierAccordion without managing an array of state objects — clean string-key lookup
+- **void savedAt pattern**: satisfies noUnusedLocals while preserving variable name for plan 02-04 SaveBanner (avoids renaming later)
+- **ChipEditor silently ignores empty/duplicate additions**: no error state needed; placeholder text communicates intent
+- **Robust PUT error handling**: try/catch around res.json() in error path — falls back to HTTP status string for non-JSON error bodies
+
 ### Pending Todos
 
 None yet.
@@ -88,6 +95,6 @@ None yet.
 
 ## Session Continuity
 
-Next: Execute plan 02-03 (chip editor + save flow for template entries).
+Next: Execute plan 02-04 (Global Exclusions editor + SaveBanner).
 
 Then commit docs and stage for review.

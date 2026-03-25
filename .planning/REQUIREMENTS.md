@@ -40,9 +40,9 @@
 
 - [ ] **TMPL-01**: Template editor presents all five classification files in a tabbed interface: AadResources, AppRoles, Defender, DeviceManagement, IdentityGovernance
 - [ ] **TMPL-02**: Each template is displayed as a structured tree grouped by tier (ControlPlane, ManagementPlane, UserAccess) then by Category and Service
-- [ ] **TMPL-03**: User can edit the `RoleDefinitionActions` list for any definition entry inline
-- [ ] **TMPL-04**: Changes are validated against the expected JSON schema before saving (Zod runtime validation)
-- [ ] **TMPL-05**: Saving writes back to the corresponding `Classification/Templates/*.json` file on disk
+- [x] **TMPL-03**: User can edit the `RoleDefinitionActions` list for any definition entry inline
+- [x] **TMPL-04**: Changes are validated against the expected JSON schema before saving (Zod runtime validation)
+- [x] **TMPL-05**: Saving writes back to the corresponding `Classification/Templates/*.json` file on disk
 - [ ] **TMPL-06**: `Classification/Global.json` exclusion list is viewable and editable in the same UI
 - [ ] **TMPL-07**: The UI warns the user after saving that edits should be committed to git
 
@@ -124,9 +124,9 @@ Deferred to future releases. Tracked but not in current roadmap.
 | OBJ-07 | Phase 1 — Foundation, Dashboard & Object Browser | Pending |
 | TMPL-01 | Phase 2 — Classification Template Editor | Pending |
 | TMPL-02 | Phase 2 — Classification Template Editor | Pending |
-| TMPL-03 | Phase 2 — Classification Template Editor | Pending |
-| TMPL-04 | Phase 2 — Classification Template Editor | Pending |
-| TMPL-05 | Phase 2 — Classification Template Editor | Pending |
+| TMPL-03 | Phase 2 — Classification Template Editor | Complete |
+| TMPL-04 | Phase 2 — Classification Template Editor | Complete |
+| TMPL-05 | Phase 2 — Classification Template Editor | Complete |
 | TMPL-06 | Phase 2 — Classification Template Editor | Pending |
 | TMPL-07 | Phase 2 — Classification Template Editor | Pending |
 

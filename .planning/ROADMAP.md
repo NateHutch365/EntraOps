@@ -102,7 +102,7 @@ Plans:
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation, Dashboard & Object Browser | 0/8 | In progress | - |
-| 2. Classification Template Editor | 0/? | Not started | - |
+| 2. Classification Template Editor | 3/5 | In Progress|  |
 | 3. PowerShell Command Runner *(post-MVP)* | 0/? | Not started | - |
 | 4. Git Change History *(post-MVP)* | 0/? | Not started | - |
 | 5. Settings & Polish *(post-MVP)* | 0/? | Not started | - |
