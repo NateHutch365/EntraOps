@@ -130,11 +130,11 @@ router.put('/global', async (req, res, next) => {
 router.get('/:name', async (req, res, next) => {
   try {
     const name = req.params.name as TemplateName;
+    const filePath = safeTemplatePath(name + '.json'); // throws 403 on traversal
     if (!(TEMPLATE_NAMES as string[]).includes(name)) {
       res.status(400).json({ error: `Unknown template name: ${name}` });
       return;
     }
-    const filePath = safeTemplatePath(name + '.json');
     const raw = await fs.readFile(filePath, 'utf-8');
     const json = parseBomJson(raw);
     const validated = TemplateFileSchema.safeParse(json);
@@ -152,6 +152,7 @@ router.get('/:name', async (req, res, next) => {
 router.put('/:name', async (req, res, next) => {
   try {
     const name = req.params.name as TemplateName;
+    const filePath = safeTemplatePath(name + '.json'); // throws 403 on traversal
     if (!(TEMPLATE_NAMES as string[]).includes(name)) {
       res.status(400).json({ error: `Unknown template name: ${name}` });
       return;
@@ -161,7 +162,6 @@ router.put('/:name', async (req, res, next) => {
       res.status(400).json({ error: validated.error.flatten() });
       return;
     }
-    const filePath = safeTemplatePath(name + '.json');
     await atomicWrite(filePath, JSON.stringify(validated.data, null, 2));
     await appendAuditEntry({ action: 'save', template: name });
     res.json({ ok: true });
