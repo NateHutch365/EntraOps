@@ -17,7 +17,7 @@ export function DiffDialog({ open, title, before, after, onConfirm, onCancel, lo
 
   return (
     <Dialog open={open} onOpenChange={(o) => { if (!o) onCancel(); }}>
-      <DialogContent className="max-w-4xl w-[calc(100vw-4rem)]">
+      <DialogContent className="max-w-6xl w-[calc(100vw-4rem)]">
         <DialogHeader>
           <DialogTitle>{title}</DialogTitle>
         </DialogHeader>
