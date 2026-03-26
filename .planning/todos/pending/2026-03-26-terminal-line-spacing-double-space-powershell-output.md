@@ -1,20 +1,27 @@
-# Todo: Fix terminal line spacing — double-spaced PowerShell output
+# Todo: Fix terminal line spacing — inconsistent gaps in ConnectPage output
 
 **Captured:** 2026-03-26
-**Phase:** 6 (Settings & Polish) — in scope
+**Phase:** post-6 gap
 
 ## Problem
 
-The `TerminalOutput` component shows large gaps between each line of PowerShell output (reported on ConnectPage classification step). Two root causes:
+The ConnectPage terminal (auth + classify steps) shows inconsistent gaps between output lines — some lines appear with normal spacing, others have a blank line below them. The spacing is not uniform.
 
-1. `<pre>` uses `leading-relaxed` (line-height 1.625) — too generous for dense terminal output
-2. PowerShell emits `\r\n` line endings; `whitespace-pre-wrap` renders the `\r` as an extra blank line
+Already applied (did not fully fix):
+- `leading-normal` on the `<pre>` in `TerminalOutput.tsx`
+- `\r` stripping before `ansi-to-html` in `ConnectPage.tsx`
+- Skip empty/whitespace-only SSE chunks
+- Collapse consecutive `\n` within each chunk (`/\n{2,}/g → '\n'`)
 
-## Fix
+Still reproducing after all of the above. Suspect the issue is in how `ansi-to-html` renders chunks — each chunk is converted independently so the converter may be injecting wrapping `<span>` or `<div>` elements that add block-level spacing between chunks, rather than the newlines themselves being the problem.
 
-- `gui/client/src/components/commands/TerminalOutput.tsx`: change `leading-relaxed` → `leading-normal` on the `<pre>` element
-- Strip `\r` from raw output before passing to `AnsiConvert` — either in the server SSE stream or client-side in the conversion step
-- Affects: `ConnectPage.tsx` and `RunCommandsPage.tsx` (both use `TerminalOutput`)
+## Solution
 
-## Status
-Tracked in Phase 6 Polish plan.
+Investigate `ansi-to-html` output: log the raw HTML being appended per chunk and inspect what tags it produces. Likely need one of:
+1. Keep a single `Convert` instance per terminal session and pass all output through it — already doing this (refs). Verify state is not being reset between chunks.
+2. Post-process the accumulated HTML to remove any block-level wrapper elements injected by the library.
+3. Render output as plain text (strip ANSI codes) if colour is not critical on ConnectPage.
+
+## Files
+- `gui/client/src/pages/ConnectPage.tsx` — auth and classify SSE handlers
+- `gui/client/src/components/commands/TerminalOutput.tsx` — `<pre>` render
