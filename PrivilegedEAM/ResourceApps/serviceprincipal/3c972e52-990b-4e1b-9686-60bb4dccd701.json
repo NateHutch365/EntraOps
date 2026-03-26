@@ -1,0 +1,126 @@
+{
+  "ObjectId": "3c972e52-990b-4e1b-9686-60bb4dccd701",
+  "ObjectType": "serviceprincipal",
+  "ObjectSubType": "Application",
+  "ObjectDisplayName": "IntuneGet by UgurLabs.com",
+  "ObjectUserPrincipalName": "21e155a5-87ed-4422-8766-c1e750921940",
+  "ObjectAdminTierLevel": "Unclassified",
+  "ObjectAdminTierLevelName": "Unclassified",
+  "OnPremSynchronized": false,
+  "AssignedAdministrativeUnits": [],
+  "RestrictedManagementByRAG": false,
+  "RestrictedManagementByAadRole": false,
+  "RestrictedManagementByRMAU": false,
+  "RoleSystem": "ResourceApps",
+  "Classification": [
+    {
+      "AdminTierLevel": "2",
+      "AdminTierLevelName": "UserAccess",
+      "Service": "Default member"
+    }
+  ],
+  "RoleAssignments": [
+    {
+      "RoleAssignmentId": "Ui6XPAuZG06WhmC7TczXAZM7yOVfwchFpX2lbOPM5xVA8PmItv-OQ6XuWpOZznEA",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "offline_access",
+      "RoleDefinitionId": "7427e0e9-2fba-42fe-b0c0-848c9e6a8182",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "3c972e52-990b-4e1b-9686-60bb4dccd701",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "2",
+          "AdminTierLevelName": "UserAccess",
+          "Service": "Default member",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "Ui6XPAuZG06WhmC7TczXAZM7yOVfwchFpX2lbOPM5xVA8PmItv-OQ6XuWpOZznEA",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "openid",
+      "RoleDefinitionId": "37f7f235-527c-4136-accd-4a02d197296e",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "3c972e52-990b-4e1b-9686-60bb4dccd701",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "2",
+          "AdminTierLevelName": "UserAccess",
+          "Service": "Default member",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "Ui6XPAuZG06WhmC7TczXAZM7yOVfwchFpX2lbOPM5xVA8PmItv-OQ6XuWpOZznEA",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "profile",
+      "RoleDefinitionId": "14dad69e-099b-42c9-810b-d002981feec1",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "3c972e52-990b-4e1b-9686-60bb4dccd701",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "2",
+          "AdminTierLevelName": "UserAccess",
+          "Service": "Default member",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "Ui6XPAuZG06WhmC7TczXAZM7yOVfwchFpX2lbOPM5xVA8PmItv-OQ6XuWpOZznEA",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "User.Read",
+      "RoleDefinitionId": "e1fe6dd8-ba31-4d61-89e7-88639da4683d",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "3c972e52-990b-4e1b-9686-60bb4dccd701",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "2",
+          "AdminTierLevelName": "UserAccess",
+          "Service": "Default member",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    }
+  ],
+  "Sponsors": [],
+  "Owners": [],
+  "OwnedObjects": [],
+  "OwnedDevices": [],
+  "AssociatedWorkAccount": [],
+  "AssociatedPawDevice": []
+}

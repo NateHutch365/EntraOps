@@ -1,0 +1,822 @@
+{
+  "ObjectId": "9f87cc0a-80aa-4c4a-b301-40ff7752c51b",
+  "ObjectType": "serviceprincipal",
+  "ObjectSubType": "Application",
+  "ObjectDisplayName": "Visual Studio Code",
+  "ObjectUserPrincipalName": "aebc6443-996d-45c2-90f0-388ff96faa56",
+  "ObjectAdminTierLevel": "Unclassified",
+  "ObjectAdminTierLevelName": "Unclassified",
+  "OnPremSynchronized": false,
+  "AssignedAdministrativeUnits": [],
+  "RestrictedManagementByRAG": false,
+  "RestrictedManagementByAadRole": false,
+  "RestrictedManagementByRMAU": false,
+  "RoleSystem": "ResourceApps",
+  "Classification": [
+    {
+      "AdminTierLevel": "Unclassified",
+      "AdminTierLevelName": "Unclassified",
+      "Service": "Unclassified"
+    }
+  ],
+  "RoleAssignments": [
+    {
+      "RoleAssignmentId": "CsyHn6qASkyzAUD_d1LFG-ujOO-3cDRLgLRo-VYoDhI",
+      "RoleAssignmentScopeId": "ef38a3eb-70b7-4b34-80b4-68f956280e12",
+      "RoleAssignmentScopeName": "Microsoft MCP Server for Enterprise",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "MCP.AccessReview.Read.All",
+      "RoleDefinitionId": "6cf9faf6-39e1-452d-830c-f20e2d64dc6e",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "9f87cc0a-80aa-4c4a-b301-40ff7752c51b",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "Unclassified",
+          "AdminTierLevelName": "Unclassified",
+          "Service": "Unclassified",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "CsyHn6qASkyzAUD_d1LFG-ujOO-3cDRLgLRo-VYoDhI",
+      "RoleAssignmentScopeId": "ef38a3eb-70b7-4b34-80b4-68f956280e12",
+      "RoleAssignmentScopeName": "Microsoft MCP Server for Enterprise",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "MCP.AdministrativeUnit.Read.All",
+      "RoleDefinitionId": "52402f2e-e689-42f1-b3e0-50901eb109c6",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "9f87cc0a-80aa-4c4a-b301-40ff7752c51b",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "Unclassified",
+          "AdminTierLevelName": "Unclassified",
+          "Service": "Unclassified",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "CsyHn6qASkyzAUD_d1LFG-ujOO-3cDRLgLRo-VYoDhI",
+      "RoleAssignmentScopeId": "ef38a3eb-70b7-4b34-80b4-68f956280e12",
+      "RoleAssignmentScopeName": "Microsoft MCP Server for Enterprise",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "MCP.Application.Read.All",
+      "RoleDefinitionId": "a2ddddeb-88ad-44c0-a32d-becde828221d",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "9f87cc0a-80aa-4c4a-b301-40ff7752c51b",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "Unclassified",
+          "AdminTierLevelName": "Unclassified",
+          "Service": "Unclassified",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "CsyHn6qASkyzAUD_d1LFG-ujOO-3cDRLgLRo-VYoDhI",
+      "RoleAssignmentScopeId": "ef38a3eb-70b7-4b34-80b4-68f956280e12",
+      "RoleAssignmentScopeName": "Microsoft MCP Server for Enterprise",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "MCP.AuditLog.Read.All",
+      "RoleDefinitionId": "f3eb9c27-bccf-4252-a3d7-bd6d5124670a",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "9f87cc0a-80aa-4c4a-b301-40ff7752c51b",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "Unclassified",
+          "AdminTierLevelName": "Unclassified",
+          "Service": "Unclassified",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "CsyHn6qASkyzAUD_d1LFG-ujOO-3cDRLgLRo-VYoDhI",
+      "RoleAssignmentScopeId": "ef38a3eb-70b7-4b34-80b4-68f956280e12",
+      "RoleAssignmentScopeName": "Microsoft MCP Server for Enterprise",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "MCP.AuthenticationContext.Read.All",
+      "RoleDefinitionId": "12c8877d-b3b7-401f-9e5e-97f52074da34",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "9f87cc0a-80aa-4c4a-b301-40ff7752c51b",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "Unclassified",
+          "AdminTierLevelName": "Unclassified",
+          "Service": "Unclassified",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "CsyHn6qASkyzAUD_d1LFG-ujOO-3cDRLgLRo-VYoDhI",
+      "RoleAssignmentScopeId": "ef38a3eb-70b7-4b34-80b4-68f956280e12",
+      "RoleAssignmentScopeName": "Microsoft MCP Server for Enterprise",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "MCP.Device.Read.All",
+      "RoleDefinitionId": "058ae1da-f939-4eba-b3fc-2ff8296a449d",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "9f87cc0a-80aa-4c4a-b301-40ff7752c51b",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "Unclassified",
+          "AdminTierLevelName": "Unclassified",
+          "Service": "Unclassified",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "CsyHn6qASkyzAUD_d1LFG-ujOO-3cDRLgLRo-VYoDhI",
+      "RoleAssignmentScopeId": "ef38a3eb-70b7-4b34-80b4-68f956280e12",
+      "RoleAssignmentScopeName": "Microsoft MCP Server for Enterprise",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "MCP.DirectoryRecommendations.Read.All",
+      "RoleDefinitionId": "a955768d-4f23-42ff-9deb-452934db97af",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "9f87cc0a-80aa-4c4a-b301-40ff7752c51b",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "Unclassified",
+          "AdminTierLevelName": "Unclassified",
+          "Service": "Unclassified",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "CsyHn6qASkyzAUD_d1LFG-ujOO-3cDRLgLRo-VYoDhI",
+      "RoleAssignmentScopeId": "ef38a3eb-70b7-4b34-80b4-68f956280e12",
+      "RoleAssignmentScopeName": "Microsoft MCP Server for Enterprise",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "MCP.Domain.Read.All",
+      "RoleDefinitionId": "02b51d3f-84d2-448d-972b-29c812fd0b67",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "9f87cc0a-80aa-4c4a-b301-40ff7752c51b",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "Unclassified",
+          "AdminTierLevelName": "Unclassified",
+          "Service": "Unclassified",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "CsyHn6qASkyzAUD_d1LFG-ujOO-3cDRLgLRo-VYoDhI",
+      "RoleAssignmentScopeId": "ef38a3eb-70b7-4b34-80b4-68f956280e12",
+      "RoleAssignmentScopeName": "Microsoft MCP Server for Enterprise",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "MCP.EntitlementManagement.Read.All",
+      "RoleDefinitionId": "446af22b-91ac-4208-9782-057f76096fa8",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "9f87cc0a-80aa-4c4a-b301-40ff7752c51b",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "Unclassified",
+          "AdminTierLevelName": "Unclassified",
+          "Service": "Unclassified",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "CsyHn6qASkyzAUD_d1LFG-ujOO-3cDRLgLRo-VYoDhI",
+      "RoleAssignmentScopeId": "ef38a3eb-70b7-4b34-80b4-68f956280e12",
+      "RoleAssignmentScopeName": "Microsoft MCP Server for Enterprise",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "MCP.GroupMember.Read.All",
+      "RoleDefinitionId": "234b4023-31c0-414a-94a8-e7d1637620b7",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "9f87cc0a-80aa-4c4a-b301-40ff7752c51b",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "Unclassified",
+          "AdminTierLevelName": "Unclassified",
+          "Service": "Unclassified",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "CsyHn6qASkyzAUD_d1LFG-ujOO-3cDRLgLRo-VYoDhI",
+      "RoleAssignmentScopeId": "ef38a3eb-70b7-4b34-80b4-68f956280e12",
+      "RoleAssignmentScopeName": "Microsoft MCP Server for Enterprise",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "MCP.HealthMonitoringAlert.Read.All",
+      "RoleDefinitionId": "5fd2c00a-811a-470e-8ef1-c83100548695",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "9f87cc0a-80aa-4c4a-b301-40ff7752c51b",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "Unclassified",
+          "AdminTierLevelName": "Unclassified",
+          "Service": "Unclassified",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "CsyHn6qASkyzAUD_d1LFG-ujOO-3cDRLgLRo-VYoDhI",
+      "RoleAssignmentScopeId": "ef38a3eb-70b7-4b34-80b4-68f956280e12",
+      "RoleAssignmentScopeName": "Microsoft MCP Server for Enterprise",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "MCP.IdentityRiskEvent.Read.All",
+      "RoleDefinitionId": "c8b806a9-247e-4442-a3cf-62f023ec8e17",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "9f87cc0a-80aa-4c4a-b301-40ff7752c51b",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "Unclassified",
+          "AdminTierLevelName": "Unclassified",
+          "Service": "Unclassified",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "CsyHn6qASkyzAUD_d1LFG-ujOO-3cDRLgLRo-VYoDhI",
+      "RoleAssignmentScopeId": "ef38a3eb-70b7-4b34-80b4-68f956280e12",
+      "RoleAssignmentScopeName": "Microsoft MCP Server for Enterprise",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "MCP.IdentityRiskyServicePrincipal.Read.All",
+      "RoleDefinitionId": "594012af-854c-4515-b0bd-200de54adc59",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "9f87cc0a-80aa-4c4a-b301-40ff7752c51b",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "Unclassified",
+          "AdminTierLevelName": "Unclassified",
+          "Service": "Unclassified",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "CsyHn6qASkyzAUD_d1LFG-ujOO-3cDRLgLRo-VYoDhI",
+      "RoleAssignmentScopeId": "ef38a3eb-70b7-4b34-80b4-68f956280e12",
+      "RoleAssignmentScopeName": "Microsoft MCP Server for Enterprise",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "MCP.IdentityRiskyUser.Read.All",
+      "RoleDefinitionId": "094612a9-3be6-46cf-b11b-ad0f99df6952",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "9f87cc0a-80aa-4c4a-b301-40ff7752c51b",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "Unclassified",
+          "AdminTierLevelName": "Unclassified",
+          "Service": "Unclassified",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "CsyHn6qASkyzAUD_d1LFG-ujOO-3cDRLgLRo-VYoDhI",
+      "RoleAssignmentScopeId": "ef38a3eb-70b7-4b34-80b4-68f956280e12",
+      "RoleAssignmentScopeName": "Microsoft MCP Server for Enterprise",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "MCP.LicenseAssignment.Read.All",
+      "RoleDefinitionId": "c3bd8ba2-6331-43b9-8339-03a07002c7a8",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "9f87cc0a-80aa-4c4a-b301-40ff7752c51b",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "Unclassified",
+          "AdminTierLevelName": "Unclassified",
+          "Service": "Unclassified",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "CsyHn6qASkyzAUD_d1LFG-ujOO-3cDRLgLRo-VYoDhI",
+      "RoleAssignmentScopeId": "ef38a3eb-70b7-4b34-80b4-68f956280e12",
+      "RoleAssignmentScopeName": "Microsoft MCP Server for Enterprise",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "MCP.LifecycleWorkflows-CustomExt.Read.All",
+      "RoleDefinitionId": "f3594342-fda4-4acd-9ad5-dac9adf4245a",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "9f87cc0a-80aa-4c4a-b301-40ff7752c51b",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "Unclassified",
+          "AdminTierLevelName": "Unclassified",
+          "Service": "Unclassified",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "CsyHn6qASkyzAUD_d1LFG-ujOO-3cDRLgLRo-VYoDhI",
+      "RoleAssignmentScopeId": "ef38a3eb-70b7-4b34-80b4-68f956280e12",
+      "RoleAssignmentScopeName": "Microsoft MCP Server for Enterprise",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "MCP.LifecycleWorkflows-Reports.Read.All",
+      "RoleDefinitionId": "bc63163a-6558-4f7e-8f15-bdaf34ae5b8e",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "9f87cc0a-80aa-4c4a-b301-40ff7752c51b",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "Unclassified",
+          "AdminTierLevelName": "Unclassified",
+          "Service": "Unclassified",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "CsyHn6qASkyzAUD_d1LFG-ujOO-3cDRLgLRo-VYoDhI",
+      "RoleAssignmentScopeId": "ef38a3eb-70b7-4b34-80b4-68f956280e12",
+      "RoleAssignmentScopeName": "Microsoft MCP Server for Enterprise",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "MCP.LifecycleWorkflows-Workflow.Read.All",
+      "RoleDefinitionId": "3d28ea86-1dff-4dbf-a10c-ee00f1ad798a",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "9f87cc0a-80aa-4c4a-b301-40ff7752c51b",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "Unclassified",
+          "AdminTierLevelName": "Unclassified",
+          "Service": "Unclassified",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "CsyHn6qASkyzAUD_d1LFG-ujOO-3cDRLgLRo-VYoDhI",
+      "RoleAssignmentScopeId": "ef38a3eb-70b7-4b34-80b4-68f956280e12",
+      "RoleAssignmentScopeName": "Microsoft MCP Server for Enterprise",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "MCP.LifecycleWorkflows-Workflow.ReadBasic.All",
+      "RoleDefinitionId": "0d33f8a7-782e-416c-8b84-26463f9c70f4",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "9f87cc0a-80aa-4c4a-b301-40ff7752c51b",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "Unclassified",
+          "AdminTierLevelName": "Unclassified",
+          "Service": "Unclassified",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "CsyHn6qASkyzAUD_d1LFG-ujOO-3cDRLgLRo-VYoDhI",
+      "RoleAssignmentScopeId": "ef38a3eb-70b7-4b34-80b4-68f956280e12",
+      "RoleAssignmentScopeName": "Microsoft MCP Server for Enterprise",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "MCP.LifecycleWorkflows.Read.All",
+      "RoleDefinitionId": "666b7493-b4e0-4114-b372-7504de8418ab",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "9f87cc0a-80aa-4c4a-b301-40ff7752c51b",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "Unclassified",
+          "AdminTierLevelName": "Unclassified",
+          "Service": "Unclassified",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "CsyHn6qASkyzAUD_d1LFG-ujOO-3cDRLgLRo-VYoDhI",
+      "RoleAssignmentScopeId": "ef38a3eb-70b7-4b34-80b4-68f956280e12",
+      "RoleAssignmentScopeName": "Microsoft MCP Server for Enterprise",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "MCP.NetworkAccess-Reports.Read.All",
+      "RoleDefinitionId": "6a9d2b32-5765-4bfa-ae4d-cc6271758ccb",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "9f87cc0a-80aa-4c4a-b301-40ff7752c51b",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "Unclassified",
+          "AdminTierLevelName": "Unclassified",
+          "Service": "Unclassified",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "CsyHn6qASkyzAUD_d1LFG-ujOO-3cDRLgLRo-VYoDhI",
+      "RoleAssignmentScopeId": "ef38a3eb-70b7-4b34-80b4-68f956280e12",
+      "RoleAssignmentScopeName": "Microsoft MCP Server for Enterprise",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "MCP.NetworkAccess.Read.All",
+      "RoleDefinitionId": "ebaf8853-0de9-4327-8dca-be8a11285fa0",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "9f87cc0a-80aa-4c4a-b301-40ff7752c51b",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "Unclassified",
+          "AdminTierLevelName": "Unclassified",
+          "Service": "Unclassified",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "CsyHn6qASkyzAUD_d1LFG-ujOO-3cDRLgLRo-VYoDhI",
+      "RoleAssignmentScopeId": "ef38a3eb-70b7-4b34-80b4-68f956280e12",
+      "RoleAssignmentScopeName": "Microsoft MCP Server for Enterprise",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "MCP.Organization.Read.All",
+      "RoleDefinitionId": "b2bedc2c-0796-4745-bce7-9e84b85694ae",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "9f87cc0a-80aa-4c4a-b301-40ff7752c51b",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "Unclassified",
+          "AdminTierLevelName": "Unclassified",
+          "Service": "Unclassified",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "CsyHn6qASkyzAUD_d1LFG-ujOO-3cDRLgLRo-VYoDhI",
+      "RoleAssignmentScopeId": "ef38a3eb-70b7-4b34-80b4-68f956280e12",
+      "RoleAssignmentScopeName": "Microsoft MCP Server for Enterprise",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "MCP.Policy.Read.All",
+      "RoleDefinitionId": "d7c1f6c5-19ae-4ab1-8e2f-3f0acd924892",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "9f87cc0a-80aa-4c4a-b301-40ff7752c51b",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "Unclassified",
+          "AdminTierLevelName": "Unclassified",
+          "Service": "Unclassified",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "CsyHn6qASkyzAUD_d1LFG-ujOO-3cDRLgLRo-VYoDhI",
+      "RoleAssignmentScopeId": "ef38a3eb-70b7-4b34-80b4-68f956280e12",
+      "RoleAssignmentScopeName": "Microsoft MCP Server for Enterprise",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "MCP.Policy.Read.ConditionalAccess",
+      "RoleDefinitionId": "967a9c53-1338-41f2-86c3-2cdd5bae005c",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "9f87cc0a-80aa-4c4a-b301-40ff7752c51b",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "Unclassified",
+          "AdminTierLevelName": "Unclassified",
+          "Service": "Unclassified",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "CsyHn6qASkyzAUD_d1LFG-ujOO-3cDRLgLRo-VYoDhI",
+      "RoleAssignmentScopeId": "ef38a3eb-70b7-4b34-80b4-68f956280e12",
+      "RoleAssignmentScopeName": "Microsoft MCP Server for Enterprise",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "MCP.ProvisioningLog.Read.All",
+      "RoleDefinitionId": "ccfde2a1-2548-43c5-9686-9f97e4a88c84",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "9f87cc0a-80aa-4c4a-b301-40ff7752c51b",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "Unclassified",
+          "AdminTierLevelName": "Unclassified",
+          "Service": "Unclassified",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "CsyHn6qASkyzAUD_d1LFG-ujOO-3cDRLgLRo-VYoDhI",
+      "RoleAssignmentScopeId": "ef38a3eb-70b7-4b34-80b4-68f956280e12",
+      "RoleAssignmentScopeName": "Microsoft MCP Server for Enterprise",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "MCP.Reports.Read.All",
+      "RoleDefinitionId": "949b897c-4e71-48b5-b78d-b4ae0f2a019c",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "9f87cc0a-80aa-4c4a-b301-40ff7752c51b",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "Unclassified",
+          "AdminTierLevelName": "Unclassified",
+          "Service": "Unclassified",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "CsyHn6qASkyzAUD_d1LFG-ujOO-3cDRLgLRo-VYoDhI",
+      "RoleAssignmentScopeId": "ef38a3eb-70b7-4b34-80b4-68f956280e12",
+      "RoleAssignmentScopeName": "Microsoft MCP Server for Enterprise",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "MCP.RoleAssignmentSchedule.Read.Directory",
+      "RoleDefinitionId": "afff8f89-cb64-406b-9317-0eb56dba9b1d",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "9f87cc0a-80aa-4c4a-b301-40ff7752c51b",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "Unclassified",
+          "AdminTierLevelName": "Unclassified",
+          "Service": "Unclassified",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "CsyHn6qASkyzAUD_d1LFG-ujOO-3cDRLgLRo-VYoDhI",
+      "RoleAssignmentScopeId": "ef38a3eb-70b7-4b34-80b4-68f956280e12",
+      "RoleAssignmentScopeName": "Microsoft MCP Server for Enterprise",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "MCP.RoleEligibilitySchedule.Read.Directory",
+      "RoleDefinitionId": "710f8d43-9edf-4c61-9800-1cc0d855d972",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "9f87cc0a-80aa-4c4a-b301-40ff7752c51b",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "Unclassified",
+          "AdminTierLevelName": "Unclassified",
+          "Service": "Unclassified",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "CsyHn6qASkyzAUD_d1LFG-ujOO-3cDRLgLRo-VYoDhI",
+      "RoleAssignmentScopeId": "ef38a3eb-70b7-4b34-80b4-68f956280e12",
+      "RoleAssignmentScopeName": "Microsoft MCP Server for Enterprise",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "MCP.RoleManagement.Read.Directory",
+      "RoleDefinitionId": "14a3f9d4-ddd0-405b-ae0b-865e6734a5e0",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "9f87cc0a-80aa-4c4a-b301-40ff7752c51b",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "Unclassified",
+          "AdminTierLevelName": "Unclassified",
+          "Service": "Unclassified",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "CsyHn6qASkyzAUD_d1LFG-ujOO-3cDRLgLRo-VYoDhI",
+      "RoleAssignmentScopeId": "ef38a3eb-70b7-4b34-80b4-68f956280e12",
+      "RoleAssignmentScopeName": "Microsoft MCP Server for Enterprise",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "MCP.Synchronization.Read.All",
+      "RoleDefinitionId": "f2a386b4-64df-48c5-9005-d2b4b8f4639f",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "9f87cc0a-80aa-4c4a-b301-40ff7752c51b",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "Unclassified",
+          "AdminTierLevelName": "Unclassified",
+          "Service": "Unclassified",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "CsyHn6qASkyzAUD_d1LFG-ujOO-3cDRLgLRo-VYoDhI",
+      "RoleAssignmentScopeId": "ef38a3eb-70b7-4b34-80b4-68f956280e12",
+      "RoleAssignmentScopeName": "Microsoft MCP Server for Enterprise",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "MCP.User.Read.All",
+      "RoleDefinitionId": "98caa7ee-5b52-4b41-829f-c090dc6087f1",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "9f87cc0a-80aa-4c4a-b301-40ff7752c51b",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "Unclassified",
+          "AdminTierLevelName": "Unclassified",
+          "Service": "Unclassified",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "CsyHn6qASkyzAUD_d1LFG-ujOO-3cDRLgLRo-VYoDhI",
+      "RoleAssignmentScopeId": "ef38a3eb-70b7-4b34-80b4-68f956280e12",
+      "RoleAssignmentScopeName": "Microsoft MCP Server for Enterprise",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "MCP.UserAuthenticationMethod.Read.All",
+      "RoleDefinitionId": "8ee370d3-efe6-4532-a181-96969c32aa4c",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "9f87cc0a-80aa-4c4a-b301-40ff7752c51b",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "Unclassified",
+          "AdminTierLevelName": "Unclassified",
+          "Service": "Unclassified",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    }
+  ],
+  "Sponsors": [],
+  "Owners": [],
+  "OwnedObjects": [],
+  "OwnedDevices": [],
+  "AssociatedWorkAccount": [],
+  "AssociatedPawDevice": []
+}

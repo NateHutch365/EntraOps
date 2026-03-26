@@ -1,0 +1,49 @@
+{
+  "ObjectId": "892a1704-37b0-4e0a-9974-7892f71eaa32",
+  "ObjectType": "serviceprincipal",
+  "ObjectSubType": "Application",
+  "ObjectDisplayName": "Microsoft Office 365 Portal",
+  "ObjectUserPrincipalName": "00000006-0000-0ff1-ce00-000000000000",
+  "ObjectAdminTierLevel": "Unclassified",
+  "ObjectAdminTierLevelName": "Unclassified",
+  "OnPremSynchronized": false,
+  "AssignedAdministrativeUnits": [],
+  "RestrictedManagementByRAG": false,
+  "RestrictedManagementByAadRole": false,
+  "RestrictedManagementByRMAU": false,
+  "RoleSystem": "EntraID",
+  "Classification": [
+    {
+      "AdminTierLevel": "Unclassified",
+      "AdminTierLevelName": "Unclassified",
+      "Service": "Unclassified"
+    }
+  ],
+  "RoleAssignments": [
+    {
+      "RoleAssignmentId": "NIwd6_WsDUaEJMHxpvvbhQQXKomwNwpOmXR4kvceqjI-1",
+      "RoleAssignmentScopeId": "/",
+      "RoleAssignmentScopeName": "Directory",
+      "RoleAssignmentType": "Direct",
+      "RoleAssignmentSubType": "",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "AdHoc License Administrator",
+      "RoleDefinitionId": "eb1d8c34-acf5-460d-8424-c1f1a6fbdb85",
+      "RoleType": "BuiltInRole",
+      "RoleIsPrivileged": true,
+      "Classification": [],
+      "ObjectId": "892a1704-37b0-4e0a-9974-7892f71eaa32",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null
+    }
+  ],
+  "Sponsors": [],
+  "Owners": [],
+  "OwnedObjects": [],
+  "OwnedDevices": [],
+  "IdentityParent": null,
+  "AssociatedWorkAccount": [],
+  "AssociatedPawDevice": []
+}

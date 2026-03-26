@@ -1,0 +1,78 @@
+{
+  "ObjectId": "03c14f8b-a9e5-40a1-b96f-5884ee65d043",
+  "ObjectType": "serviceprincipal",
+  "ObjectSubType": "Application",
+  "ObjectDisplayName": "MicrosoftAzureActiveAuthn",
+  "ObjectUserPrincipalName": "0000001a-0000-0000-c000-000000000000",
+  "ObjectAdminTierLevel": "Unclassified",
+  "ObjectAdminTierLevelName": "Unclassified",
+  "OnPremSynchronized": false,
+  "AssignedAdministrativeUnits": [],
+  "RestrictedManagementByRAG": false,
+  "RestrictedManagementByAadRole": false,
+  "RestrictedManagementByRMAU": false,
+  "RoleSystem": "EntraID",
+  "Classification": [
+    {
+      "AdminTierLevel": "1",
+      "AdminTierLevelName": "ManagementPlane",
+      "Service": "Tenant Configuration (Reader)"
+    },
+    {
+      "AdminTierLevel": "2",
+      "AdminTierLevelName": "UserAccess",
+      "Service": "Default member"
+    },
+    {
+      "AdminTierLevel": "2",
+      "AdminTierLevelName": "UserAccess",
+      "Service": "Guest user"
+    }
+  ],
+  "RoleAssignments": [
+    {
+      "RoleAssignmentId": "4-PYiFWPHkqVOpuYmLiHa4tPwQPlqaFAuW9YhO5l0EM-1",
+      "RoleAssignmentScopeId": "/",
+      "RoleAssignmentScopeName": "Directory",
+      "RoleAssignmentType": "Direct",
+      "RoleAssignmentSubType": "",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "Directory Readers",
+      "RoleDefinitionId": "88d8e3e3-8f55-4a1e-953a-9b9898b8876b",
+      "RoleType": "BuiltInRole",
+      "RoleIsPrivileged": false,
+      "Classification": [
+        {
+          "AdminTierLevel": "1",
+          "AdminTierLevelName": "ManagementPlane",
+          "Service": "Tenant Configuration (Reader)",
+          "TaggedBy": "JSONwithAction"
+        },
+        {
+          "AdminTierLevel": "2",
+          "AdminTierLevelName": "UserAccess",
+          "Service": "Default member",
+          "TaggedBy": "JSONwithAction"
+        },
+        {
+          "AdminTierLevel": "2",
+          "AdminTierLevelName": "UserAccess",
+          "Service": "Guest user",
+          "TaggedBy": "JSONwithAction"
+        }
+      ],
+      "ObjectId": "03c14f8b-a9e5-40a1-b96f-5884ee65d043",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null
+    }
+  ],
+  "Sponsors": [],
+  "Owners": [],
+  "OwnedObjects": [],
+  "OwnedDevices": [],
+  "IdentityParent": null,
+  "AssociatedWorkAccount": [],
+  "AssociatedPawDevice": []
+}

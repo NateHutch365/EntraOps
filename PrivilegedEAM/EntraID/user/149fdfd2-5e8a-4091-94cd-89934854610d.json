@@ -1,0 +1,573 @@
+{
+  "ObjectId": "149fdfd2-5e8a-4091-94cd-89934854610d",
+  "ObjectType": "user",
+  "ObjectSubType": "Member",
+  "ObjectDisplayName": "Break Glass 1",
+  "ObjectUserPrincipalName": "bg1@natehutchinson.onmicrosoft.com",
+  "ObjectAdminTierLevel": "Unclassified",
+  "ObjectAdminTierLevelName": "Unclassified",
+  "OnPremSynchronized": false,
+  "AssignedAdministrativeUnits": [],
+  "RestrictedManagementByRAG": false,
+  "RestrictedManagementByAadRole": true,
+  "RestrictedManagementByRMAU": false,
+  "RoleSystem": "EntraID",
+  "Classification": [
+    {
+      "AdminTierLevel": "0",
+      "AdminTierLevelName": "ControlPlane",
+      "Service": "Agent Identity"
+    },
+    {
+      "AdminTierLevel": "0",
+      "AdminTierLevelName": "ControlPlane",
+      "Service": "Application and Workload Identity"
+    },
+    {
+      "AdminTierLevel": "0",
+      "AdminTierLevelName": "ControlPlane",
+      "Service": "Authentication"
+    },
+    {
+      "AdminTierLevel": "0",
+      "AdminTierLevelName": "ControlPlane",
+      "Service": "Backup and Recovery"
+    },
+    {
+      "AdminTierLevel": "0",
+      "AdminTierLevelName": "ControlPlane",
+      "Service": "Cloud Access Security Broker"
+    },
+    {
+      "AdminTierLevel": "0",
+      "AdminTierLevelName": "ControlPlane",
+      "Service": "Cloud Infrastructure Entitlement Management"
+    },
+    {
+      "AdminTierLevel": "0",
+      "AdminTierLevelName": "ControlPlane",
+      "Service": "Conditional Access"
+    },
+    {
+      "AdminTierLevel": "0",
+      "AdminTierLevelName": "ControlPlane",
+      "Service": "Entitlement Management"
+    },
+    {
+      "AdminTierLevel": "0",
+      "AdminTierLevelName": "ControlPlane",
+      "Service": "Global Endpoint Credential Management"
+    },
+    {
+      "AdminTierLevel": "0",
+      "AdminTierLevelName": "ControlPlane",
+      "Service": "Global Endpoint Management"
+    },
+    {
+      "AdminTierLevel": "0",
+      "AdminTierLevelName": "ControlPlane",
+      "Service": "Global Secure Access Management"
+    },
+    {
+      "AdminTierLevel": "0",
+      "AdminTierLevelName": "ControlPlane",
+      "Service": "Global Security and Compliance Management"
+    },
+    {
+      "AdminTierLevel": "0",
+      "AdminTierLevelName": "ControlPlane",
+      "Service": "Global User Management"
+    },
+    {
+      "AdminTierLevel": "0",
+      "AdminTierLevelName": "ControlPlane",
+      "Service": "Group Management"
+    },
+    {
+      "AdminTierLevel": "0",
+      "AdminTierLevelName": "ControlPlane",
+      "Service": "Hybrid Identity Synchronization"
+    },
+    {
+      "AdminTierLevel": "0",
+      "AdminTierLevelName": "ControlPlane",
+      "Service": "Identity Threat Detection and Response"
+    },
+    {
+      "AdminTierLevel": "0",
+      "AdminTierLevelName": "ControlPlane",
+      "Service": "License Management"
+    },
+    {
+      "AdminTierLevel": "0",
+      "AdminTierLevelName": "ControlPlane",
+      "Service": "Multi Tenant Management"
+    },
+    {
+      "AdminTierLevel": "0",
+      "AdminTierLevelName": "ControlPlane",
+      "Service": "Private Secure Access"
+    },
+    {
+      "AdminTierLevel": "0",
+      "AdminTierLevelName": "ControlPlane",
+      "Service": "Privileged IAM"
+    },
+    {
+      "AdminTierLevel": "0",
+      "AdminTierLevelName": "ControlPlane",
+      "Service": "Tenant Management"
+    },
+    {
+      "AdminTierLevel": "0",
+      "AdminTierLevelName": "ControlPlane",
+      "Service": "Tenant Policy Management"
+    },
+    {
+      "AdminTierLevel": "0",
+      "AdminTierLevelName": "ControlPlane",
+      "Service": "User Lifecycle and Provisioning Management"
+    },
+    {
+      "AdminTierLevel": "0",
+      "AdminTierLevelName": "ControlPlane",
+      "Service": "Verified ID"
+    },
+    {
+      "AdminTierLevel": "1",
+      "AdminTierLevelName": "ManagementPlane",
+      "Service": "Business Apps Management"
+    },
+    {
+      "AdminTierLevel": "1",
+      "AdminTierLevelName": "ManagementPlane",
+      "Service": "Cross Tenant Partner Management"
+    },
+    {
+      "AdminTierLevel": "1",
+      "AdminTierLevelName": "ManagementPlane",
+      "Service": "Dynamics 365"
+    },
+    {
+      "AdminTierLevel": "1",
+      "AdminTierLevelName": "ManagementPlane",
+      "Service": "Microsoft 365 Backup"
+    },
+    {
+      "AdminTierLevel": "1",
+      "AdminTierLevelName": "ManagementPlane",
+      "Service": "Microsoft 365 Billing Management"
+    },
+    {
+      "AdminTierLevel": "1",
+      "AdminTierLevelName": "ManagementPlane",
+      "Service": "Microsoft 365 Platform Operations"
+    },
+    {
+      "AdminTierLevel": "1",
+      "AdminTierLevelName": "ManagementPlane",
+      "Service": "Microsoft 365 Support Operations"
+    },
+    {
+      "AdminTierLevel": "1",
+      "AdminTierLevelName": "ManagementPlane",
+      "Service": "Microsoft Copilot"
+    },
+    {
+      "AdminTierLevel": "1",
+      "AdminTierLevelName": "ManagementPlane",
+      "Service": "Microsoft Dragon"
+    },
+    {
+      "AdminTierLevel": "1",
+      "AdminTierLevelName": "ManagementPlane",
+      "Service": "Microsoft Exchange Online"
+    },
+    {
+      "AdminTierLevel": "1",
+      "AdminTierLevelName": "ManagementPlane",
+      "Service": "Microsoft Information Protection"
+    },
+    {
+      "AdminTierLevel": "1",
+      "AdminTierLevelName": "ManagementPlane",
+      "Service": "Microsoft People"
+    },
+    {
+      "AdminTierLevel": "1",
+      "AdminTierLevelName": "ManagementPlane",
+      "Service": "Microsoft SharePoint"
+    },
+    {
+      "AdminTierLevel": "1",
+      "AdminTierLevelName": "ManagementPlane",
+      "Service": "Microsoft Viva"
+    },
+    {
+      "AdminTierLevel": "1",
+      "AdminTierLevelName": "ManagementPlane",
+      "Service": "Security and Compliance"
+    },
+    {
+      "AdminTierLevel": "1",
+      "AdminTierLevelName": "ManagementPlane",
+      "Service": "Support and Service Health"
+    },
+    {
+      "AdminTierLevel": "1",
+      "AdminTierLevelName": "ManagementPlane",
+      "Service": "Teams"
+    },
+    {
+      "AdminTierLevel": "1",
+      "AdminTierLevelName": "ManagementPlane",
+      "Service": "Tenant Configuration (Reader)"
+    },
+    {
+      "AdminTierLevel": "1",
+      "AdminTierLevelName": "ManagementPlane",
+      "Service": "User Hardware Management"
+    },
+    {
+      "AdminTierLevel": "1",
+      "AdminTierLevelName": "ManagementPlane",
+      "Service": "User Virtual Endpoint Management"
+    },
+    {
+      "AdminTierLevel": "1",
+      "AdminTierLevelName": "ManagementPlane",
+      "Service": "Virtual Visits"
+    },
+    {
+      "AdminTierLevel": "1",
+      "AdminTierLevelName": "ManagementPlane",
+      "Service": "Yammer"
+    },
+    {
+      "AdminTierLevel": "2",
+      "AdminTierLevelName": "UserAccess",
+      "Service": "Default member"
+    },
+    {
+      "AdminTierLevel": "2",
+      "AdminTierLevelName": "UserAccess",
+      "Service": "Guest user"
+    }
+  ],
+  "RoleAssignments": [
+    {
+      "RoleAssignmentId": "lAPpYvVpN0KRkAEhdxReENLfnxSKXpFAlM2Jk0hUYQ0-1",
+      "RoleAssignmentScopeId": "/",
+      "RoleAssignmentScopeName": "Directory",
+      "RoleAssignmentType": "Direct",
+      "RoleAssignmentSubType": "",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "Global Administrator",
+      "RoleDefinitionId": "62e90394-69f5-4237-9190-012177145e10",
+      "RoleType": "BuiltInRole",
+      "RoleIsPrivileged": true,
+      "Classification": [
+        {
+          "AdminTierLevel": "0",
+          "AdminTierLevelName": "ControlPlane",
+          "Service": "Agent Identity",
+          "TaggedBy": "JSONwithAction"
+        },
+        {
+          "AdminTierLevel": "0",
+          "AdminTierLevelName": "ControlPlane",
+          "Service": "Application and Workload Identity",
+          "TaggedBy": "JSONwithAction"
+        },
+        {
+          "AdminTierLevel": "0",
+          "AdminTierLevelName": "ControlPlane",
+          "Service": "Authentication",
+          "TaggedBy": "JSONwithAction"
+        },
+        {
+          "AdminTierLevel": "0",
+          "AdminTierLevelName": "ControlPlane",
+          "Service": "Backup and Recovery",
+          "TaggedBy": "JSONwithAction"
+        },
+        {
+          "AdminTierLevel": "0",
+          "AdminTierLevelName": "ControlPlane",
+          "Service": "Cloud Access Security Broker",
+          "TaggedBy": "JSONwithAction"
+        },
+        {
+          "AdminTierLevel": "0",
+          "AdminTierLevelName": "ControlPlane",
+          "Service": "Cloud Infrastructure Entitlement Management",
+          "TaggedBy": "JSONwithAction"
+        },
+        {
+          "AdminTierLevel": "0",
+          "AdminTierLevelName": "ControlPlane",
+          "Service": "Conditional Access",
+          "TaggedBy": "JSONwithAction"
+        },
+        {
+          "AdminTierLevel": "0",
+          "AdminTierLevelName": "ControlPlane",
+          "Service": "Entitlement Management",
+          "TaggedBy": "JSONwithAction"
+        },
+        {
+          "AdminTierLevel": "0",
+          "AdminTierLevelName": "ControlPlane",
+          "Service": "Global Endpoint Credential Management",
+          "TaggedBy": "JSONwithAction"
+        },
+        {
+          "AdminTierLevel": "0",
+          "AdminTierLevelName": "ControlPlane",
+          "Service": "Global Endpoint Management",
+          "TaggedBy": "JSONwithAction"
+        },
+        {
+          "AdminTierLevel": "0",
+          "AdminTierLevelName": "ControlPlane",
+          "Service": "Global Secure Access Management",
+          "TaggedBy": "JSONwithAction"
+        },
+        {
+          "AdminTierLevel": "0",
+          "AdminTierLevelName": "ControlPlane",
+          "Service": "Global Security and Compliance Management",
+          "TaggedBy": "JSONwithAction"
+        },
+        {
+          "AdminTierLevel": "0",
+          "AdminTierLevelName": "ControlPlane",
+          "Service": "Global User Management",
+          "TaggedBy": "JSONwithAction"
+        },
+        {
+          "AdminTierLevel": "0",
+          "AdminTierLevelName": "ControlPlane",
+          "Service": "Group Management",
+          "TaggedBy": "JSONwithAction"
+        },
+        {
+          "AdminTierLevel": "0",
+          "AdminTierLevelName": "ControlPlane",
+          "Service": "Hybrid Identity Synchronization",
+          "TaggedBy": "JSONwithAction"
+        },
+        {
+          "AdminTierLevel": "0",
+          "AdminTierLevelName": "ControlPlane",
+          "Service": "Identity Threat Detection and Response",
+          "TaggedBy": "JSONwithAction"
+        },
+        {
+          "AdminTierLevel": "0",
+          "AdminTierLevelName": "ControlPlane",
+          "Service": "License Management",
+          "TaggedBy": "JSONwithAction"
+        },
+        {
+          "AdminTierLevel": "0",
+          "AdminTierLevelName": "ControlPlane",
+          "Service": "Multi Tenant Management",
+          "TaggedBy": "JSONwithAction"
+        },
+        {
+          "AdminTierLevel": "0",
+          "AdminTierLevelName": "ControlPlane",
+          "Service": "Private Secure Access",
+          "TaggedBy": "JSONwithAction"
+        },
+        {
+          "AdminTierLevel": "0",
+          "AdminTierLevelName": "ControlPlane",
+          "Service": "Privileged IAM",
+          "TaggedBy": "JSONwithAction"
+        },
+        {
+          "AdminTierLevel": "0",
+          "AdminTierLevelName": "ControlPlane",
+          "Service": "Tenant Management",
+          "TaggedBy": "JSONwithAction"
+        },
+        {
+          "AdminTierLevel": "0",
+          "AdminTierLevelName": "ControlPlane",
+          "Service": "Tenant Policy Management",
+          "TaggedBy": "JSONwithAction"
+        },
+        {
+          "AdminTierLevel": "0",
+          "AdminTierLevelName": "ControlPlane",
+          "Service": "User Lifecycle and Provisioning Management",
+          "TaggedBy": "JSONwithAction"
+        },
+        {
+          "AdminTierLevel": "0",
+          "AdminTierLevelName": "ControlPlane",
+          "Service": "Verified ID",
+          "TaggedBy": "JSONwithAction"
+        },
+        {
+          "AdminTierLevel": "1",
+          "AdminTierLevelName": "ManagementPlane",
+          "Service": "Business Apps Management",
+          "TaggedBy": "JSONwithAction"
+        },
+        {
+          "AdminTierLevel": "1",
+          "AdminTierLevelName": "ManagementPlane",
+          "Service": "Cross Tenant Partner Management",
+          "TaggedBy": "JSONwithAction"
+        },
+        {
+          "AdminTierLevel": "1",
+          "AdminTierLevelName": "ManagementPlane",
+          "Service": "Dynamics 365",
+          "TaggedBy": "JSONwithAction"
+        },
+        {
+          "AdminTierLevel": "1",
+          "AdminTierLevelName": "ManagementPlane",
+          "Service": "Microsoft 365 Backup",
+          "TaggedBy": "JSONwithAction"
+        },
+        {
+          "AdminTierLevel": "1",
+          "AdminTierLevelName": "ManagementPlane",
+          "Service": "Microsoft 365 Billing Management",
+          "TaggedBy": "JSONwithAction"
+        },
+        {
+          "AdminTierLevel": "1",
+          "AdminTierLevelName": "ManagementPlane",
+          "Service": "Microsoft 365 Platform Operations",
+          "TaggedBy": "JSONwithAction"
+        },
+        {
+          "AdminTierLevel": "1",
+          "AdminTierLevelName": "ManagementPlane",
+          "Service": "Microsoft 365 Support Operations",
+          "TaggedBy": "JSONwithAction"
+        },
+        {
+          "AdminTierLevel": "1",
+          "AdminTierLevelName": "ManagementPlane",
+          "Service": "Microsoft Copilot",
+          "TaggedBy": "JSONwithAction"
+        },
+        {
+          "AdminTierLevel": "1",
+          "AdminTierLevelName": "ManagementPlane",
+          "Service": "Microsoft Dragon",
+          "TaggedBy": "JSONwithAction"
+        },
+        {
+          "AdminTierLevel": "1",
+          "AdminTierLevelName": "ManagementPlane",
+          "Service": "Microsoft Exchange Online",
+          "TaggedBy": "JSONwithAction"
+        },
+        {
+          "AdminTierLevel": "1",
+          "AdminTierLevelName": "ManagementPlane",
+          "Service": "Microsoft Information Protection",
+          "TaggedBy": "JSONwithAction"
+        },
+        {
+          "AdminTierLevel": "1",
+          "AdminTierLevelName": "ManagementPlane",
+          "Service": "Microsoft People",
+          "TaggedBy": "JSONwithAction"
+        },
+        {
+          "AdminTierLevel": "1",
+          "AdminTierLevelName": "ManagementPlane",
+          "Service": "Microsoft SharePoint",
+          "TaggedBy": "JSONwithAction"
+        },
+        {
+          "AdminTierLevel": "1",
+          "AdminTierLevelName": "ManagementPlane",
+          "Service": "Microsoft Viva",
+          "TaggedBy": "JSONwithAction"
+        },
+        {
+          "AdminTierLevel": "1",
+          "AdminTierLevelName": "ManagementPlane",
+          "Service": "Security and Compliance",
+          "TaggedBy": "JSONwithAction"
+        },
+        {
+          "AdminTierLevel": "1",
+          "AdminTierLevelName": "ManagementPlane",
+          "Service": "Support and Service Health",
+          "TaggedBy": "JSONwithAction"
+        },
+        {
+          "AdminTierLevel": "1",
+          "AdminTierLevelName": "ManagementPlane",
+          "Service": "Teams",
+          "TaggedBy": "JSONwithAction"
+        },
+        {
+          "AdminTierLevel": "1",
+          "AdminTierLevelName": "ManagementPlane",
+          "Service": "Tenant Configuration (Reader)",
+          "TaggedBy": "JSONwithAction"
+        },
+        {
+          "AdminTierLevel": "1",
+          "AdminTierLevelName": "ManagementPlane",
+          "Service": "User Hardware Management",
+          "TaggedBy": "JSONwithAction"
+        },
+        {
+          "AdminTierLevel": "1",
+          "AdminTierLevelName": "ManagementPlane",
+          "Service": "User Virtual Endpoint Management",
+          "TaggedBy": "JSONwithAction"
+        },
+        {
+          "AdminTierLevel": "1",
+          "AdminTierLevelName": "ManagementPlane",
+          "Service": "Virtual Visits",
+          "TaggedBy": "JSONwithAction"
+        },
+        {
+          "AdminTierLevel": "1",
+          "AdminTierLevelName": "ManagementPlane",
+          "Service": "Yammer",
+          "TaggedBy": "JSONwithAction"
+        },
+        {
+          "AdminTierLevel": "2",
+          "AdminTierLevelName": "UserAccess",
+          "Service": "Default member",
+          "TaggedBy": "JSONwithAction"
+        },
+        {
+          "AdminTierLevel": "2",
+          "AdminTierLevelName": "UserAccess",
+          "Service": "Guest user",
+          "TaggedBy": "JSONwithAction"
+        }
+      ],
+      "ObjectId": "149fdfd2-5e8a-4091-94cd-89934854610d",
+      "ObjectType": "user",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null
+    }
+  ],
+  "Sponsors": [],
+  "Owners": [],
+  "OwnedObjects": [],
+  "OwnedDevices": [],
+  "IdentityParent": null,
+  "AssociatedWorkAccount": [],
+  "AssociatedPawDevice": []
+}
