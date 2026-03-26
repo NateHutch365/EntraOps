@@ -1,5 +1,32 @@
 # EntraOps GUI
 
+## Current State
+
+**Shipped: v1.0** ✅ (2026-03-26)
+
+The GUI is fully functional and delivered. A user who forks EntraOps and runs `Save-EntraOpsPrivilegedEAMJson` can then `cd gui && npm install && npm run dev` to get a working local browser dashboard with:
+- Tier dashboard (ControlPlane / ManagementPlane / UserAccess KPI cards, RBAC breakdown, PIM chart)
+- Filterable/sortable/paginated object browser with URL-bookmarkable state and detail panel
+- Safe in-browser classification template editor with Zod validation and diff preview
+- PowerShell command runner (13 allowlisted cmdlets, real-time SSE streaming)
+- Connect & Classify wizard (device code auth → classification → dashboard)
+- Git change history browser (commit list, structured diffs, any-two-commit compare)
+- Settings page for `EntraOpsConfig.json` editing
+
+See [.planning/milestones/v1.0-ROADMAP.md](.planning/milestones/v1.0-ROADMAP.md) for full milestone archive.
+
+## Next Milestone Goals
+
+*Not yet defined. Run `/gsd-new-milestone` to start planning v1.1 or v2.0.*
+
+**Known deferred items from v1.0 available as starting points:**
+- HIST-05: Empty state when `PrivilegedEAM/` has no git history
+- ConnectPage terminal line-spacing bug (tracked in `.planning/todos/`)
+- Incomplete shared types barrel (`connect.ts`, `config.ts` not re-exported)
+- Duplicate `RbacSystem` type consolidation
+- Nyquist VALIDATION.md cleanup for all 6 phases
+- Future roadmap candidates: alerting on new ControlPlane identities, attack path analysis, AI/Copilot integration, exposure scoring
+
 ## What This Is
 
 EntraOps GUI is a locally-hosted web application that gives security administrators a visual interface for the EntraOps PowerShell module. It enables users to explore classified privileged identity data, edit tier classification rules, trigger automation, and track changes over time — all without leaving the repo or requiring a Microsoft Sentinel workspace. It ships in the same repository so any user who forks EntraOps gets the GUI automatically.
@@ -10,9 +37,10 @@ A user who has run `Save-EntraOpsPrivilegedEAMJson` can open a browser and immed
 
 ## Requirements
 
-### Validated
+### Validated (v1.0)
 
-(None yet — ship to validate)
+All 29 v1 requirements delivered. See [.planning/milestones/v1.0-REQUIREMENTS.md](.planning/milestones/v1.0-REQUIREMENTS.md) for full traceability.
+Additionally delivered 17 originally-deferred v2 requirements (RUN-01–06, CONN-01–04, HIST-01–04, SETT-01–03).
 
 ### Active
 
