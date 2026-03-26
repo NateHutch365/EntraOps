@@ -6,6 +6,7 @@ import { ObjectDetail } from '@/pages/ObjectDetail';
 import { TemplatesPage } from '@/pages/TemplatesPage';
 import { RunCommandsPage } from '@/pages/RunCommandsPage';
 import { ConnectPage } from '@/pages/ConnectPage';
+import { SettingsPage } from '@/pages/SettingsPage';
 import { HistoryPage } from '@/pages/HistoryPage';
 import { ComparePage } from '@/pages/ComparePage';
 import { Toaster } from '@/components/ui/sonner';
@@ -23,6 +24,7 @@ export default function App() {
           <Route path="history" element={<HistoryPage />} />
           <Route path="run" element={<RunCommandsPage />} />
           <Route path="connect" element={<ConnectPage />} />
+          <Route path="settings" element={<SettingsPage />} />
         </Route>
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
