@@ -2,6 +2,7 @@ import { spawn, spawnSync, type ChildProcess } from 'node:child_process';
 import { randomUUID } from 'node:crypto';
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { getAuthTokens } from './connect.js';
 import type {
   AllowlistedCmdlet,
   CmdletParameters,
@@ -36,10 +37,11 @@ function psq(s: string): string {
 
 // buildPwshArgs — assembles the pwsh argv for a cmdlet invocation.
 // Import-Module is required because -NoProfile skips profile scripts that load the module.
-// Parameters are embedded in the -Command string (not separate argv) because pwsh only
-// forwards remaining argv as named params for simple command names, not complex expressions.
-// SECURITY: string values are PS-single-quote-escaped via psq(); RbacSystems come from a
-// controlled enum and are joined unquoted; switch params need no quoting.
+// When auth tokens are present (post-connect), we prepend Connect-EntraOps AlreadyAuthenticated
+// so the cmdlet process has a live Az + MgGraph session. Connect-EntraOps also sets all
+// required globals (DefaultFolderClassification, TenantNameContext, etc.) in the same process.
+// Without tokens (e.g. Phase 3 Run Commands), we manually set the folder globals as a fallback.
+// SECURITY: all user-supplied string values are PS-single-quote-escaped via psq().
 function buildPwshArgs(cmdlet: AllowlistedCmdlet, parameters: CmdletParameters): string[] {
   const parts: string[] = [];
   for (const [key, value] of Object.entries(parameters)) {
@@ -54,14 +56,31 @@ function buildPwshArgs(cmdlet: AllowlistedCmdlet, parameters: CmdletParameters):
       parts.push(`-${key}`, psq(String(value)));
     }
   }
-  // Set DefaultFolderClassification/EAM globals that Connect-EntraOps normally sets.
-  // Each pwsh spawn is a fresh process — globals from the connect process don't survive.
-  // $EntraOpsBaseFolder IS set by the .psm1 on module load, so we can derive the paths here.
-  const initGlobals = [
-    `New-Variable -Name DefaultFolderClassification -Value "$EntraOpsBaseFolder/Classification/" -Scope Global -Force`,
-    `New-Variable -Name DefaultFolderClassifiedEam -Value "$EntraOpsBaseFolder/PrivilegedEAM/" -Scope Global -Force`,
-  ].join('; ');
-  const command = `Import-Module './EntraOps/EntraOps.psd1'; ${initGlobals}; ${cmdlet}${parts.length ? ' ' + parts.join(' ') : ''}`;
+  const tokens = getAuthTokens();
+  let prefix: string;
+  if (tokens) {
+    // Re-establish auth session from stored tokens — Connect-EntraOps AlreadyAuthenticated
+    // also sets DefaultFolderClassification, DefaultFolderClassifiedEam, TenantNameContext globals.
+    // -NoWelcome suppresses the splash banner and connection summary from stdout.
+    const authInit = [
+      `Import-Module './EntraOps/EntraOps.psd1'`,
+      `Connect-EntraOps -AuthenticationType 'AlreadyAuthenticated'`,
+      `-TenantName ${psq(tokens.tenantName)}`,
+      `-AccountId ${psq(tokens.accountId)}`,
+      `-AzArmAccessToken ${psq(tokens.azArmToken)}`,
+      `-MsGraphAccessToken ${psq(tokens.msGraphToken)}`,
+      `-NoWelcome`,
+    ].join(' ');
+    prefix = authInit;
+  } else {
+    // No auth session — set folder globals manually so classification path resolution works.
+    const initGlobals = [
+      `New-Variable -Name DefaultFolderClassification -Value "$EntraOpsBaseFolder/Classification/" -Scope Global -Force`,
+      `New-Variable -Name DefaultFolderClassifiedEam -Value "$EntraOpsBaseFolder/PrivilegedEAM/" -Scope Global -Force`,
+    ].join('; ');
+    prefix = `Import-Module './EntraOps/EntraOps.psd1'; ${initGlobals}`;
+  }
+  const command = `${prefix}; ${cmdlet}${parts.length ? ' ' + parts.join(' ') : ''}`;
   return ['-NoProfile', '-NonInteractive', '-Command', command];
 }
 
