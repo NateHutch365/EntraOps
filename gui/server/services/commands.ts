@@ -63,8 +63,7 @@ function buildPwshArgs(cmdlet: AllowlistedCmdlet, parameters: CmdletParameters):
     // also sets DefaultFolderClassification, DefaultFolderClassifiedEam, TenantNameContext globals.
     // -NoWelcome suppresses the splash banner and connection summary from stdout.
     const authInit = [
-      `Import-Module './EntraOps/EntraOps.psd1'`,
-      `Connect-EntraOps -AuthenticationType 'AlreadyAuthenticated'`,
+      `Import-Module './EntraOps/EntraOps.psd1'; Connect-EntraOps -AuthenticationType 'AlreadyAuthenticated'`,
       `-TenantName ${psq(tokens.tenantName)}`,
       `-AccountId ${psq(tokens.accountId)}`,
       `-AzArmAccessToken ${psq(tokens.azArmToken)}`,
