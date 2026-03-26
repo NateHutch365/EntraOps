@@ -107,7 +107,13 @@ Plans:
   1. User can see a chronological list of git commits that touched `PrivilegedEAM/` with date, message, and affected files — without opening a terminal
   2. Selecting a commit shows a structured change summary: objects added, objects removed, and objects whose tier changed — not just a raw diff
   3. User can compare any two commits (not just adjacent ones) and view a JSON diff for a chosen RBAC system's aggregate file
-**Plans**: TBD
+**Plans**: 5 plans
+Plans:
+- [ ] 05-01-PLAN.md — Shared history types + gitHistory service + changeSummary service
+- [ ] 05-02-PLAN.md — API routes: /commits, /commits/:hash/systems, /commits/:hash/changes, /compare
+- [ ] 05-03-PLAN.md — HistoryPage UI: commit list, expandable rows, RBAC filter, checkboxes, pagination, sidebar nav
+- [ ] 05-04-PLAN.md — ComparePage UI: commit comparison header, RBAC tabs, raw diff viewer, route wiring
+- [ ] 05-05-PLAN.md — Checkpoint: Human verification of Phase 5 end-to-end flow
 
 ### Phase 5.5: Object-Level Reclassification *(post-MVP)*
 **Goal**: After a classification run, users can review the classified objects and override individual objects' tier assignments inline — without hand-editing JSON or re-running a full classification
@@ -133,10 +139,10 @@ Plans:
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation, Dashboard & Object Browser | 0/8 | In progress | - |
-| 2. Classification Template Editor | 5/5 | Complete   | 2026-03-25 |
-| 3. PowerShell Command Runner *(post-MVP)* | 0/4 | Not started | - |
-| 4. Git Change History *(post-MVP)* | 0/? | Not started | - |
-| 5. Git Change History *(post-MVP)* | 0/? | Not started | - |
+| 1. Foundation, Dashboard & Object Browser | 8/8 | Complete | - |
+| 2. Classification Template Editor | 5/5 | Complete | 2026-03-25 |
+| 3. PowerShell Command Runner *(post-MVP)* | 4/4 | Complete | - |
+| 4. Connect & Classify Setup *(post-MVP)* | 4/4 | Complete | - |
+| 5. Git Change History *(post-MVP)* | 0/5 | Planned | - |
 | 5.5. Object-Level Reclassification *(post-MVP)* | 0/? | Not started | - |
 | 6. Settings & Polish *(post-MVP)* | 0/? | Not started | - |
