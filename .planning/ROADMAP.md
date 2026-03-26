@@ -20,7 +20,7 @@ EntraOps GUI starts as a local-only React dashboard that lets security administr
 ---
 
 - [ ] **Phase 3: PowerShell Command Runner** — Trigger EntraOps cmdlets from the browser with real-time streamed output *(post-MVP)*
-- [ ] **Phase 4: Connect & Classify Setup** — In-browser connection wizard: tenant sign-in via device code flow, RBAC system selection, and first-time classification run *(post-MVP)*
+- [x] **Phase 4: Connect & Classify Setup** — In-browser connection wizard: tenant sign-in via device code flow, RBAC system selection, and first-time classification run *(post-MVP)*
 - [ ] **Phase 5: Git Change History** — Browse EAM diffs, compare classification runs, and see structured object-level change summaries *(post-MVP)*
 - [ ] **Phase 5.5: Object-Level Reclassification** — Post-classification review screen where users can override individual objects' tier assignments inline, with save-back to classification config *(post-MVP)*
 - [ ] **Phase 6: Settings & Polish** — Structured `EntraOpsConfig.json` editor and cross-cutting UX polish *(post-MVP)*
@@ -94,10 +94,10 @@ Plans:
   4. On completion, the dashboard reflects the newly classified data without a manual page refresh
 **Plans**: 4 plans
 Plans:
-- [ ] 04-01-PLAN.md — Shared connect types + server connect service (spawn + session state)
-- [ ] 04-02-PLAN.md — Connect routes (POST /start SSE, POST /disconnect, GET /status) + sonner Toaster
-- [ ] 04-03-PLAN.md — ConnectPage 4-step wizard + Sidebar connection status indicator
-- [ ] 04-04-PLAN.md — Human verification of end-to-end wizard flow
+- [x] 04-01-PLAN.md — Shared connect types + server connect service (spawn + session state)
+- [x] 04-02-PLAN.md — Connect routes (POST /start SSE, POST /disconnect, GET /status) + sonner Toaster
+- [x] 04-03-PLAN.md — ConnectPage 4-step wizard + Sidebar connection status indicator
+- [x] 04-04-PLAN.md — Human verification of end-to-end wizard flow
 
 ### Phase 5: Git Change History *(post-MVP)*
 **Goal**: Users can browse the EAM change history from the browser, understand what changed between classification runs, and compare any two snapshots — without opening a terminal or git CLI

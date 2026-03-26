@@ -2,14 +2,14 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: verifying
-last_updated: "2026-03-25T21:04:15.947Z"
-last_activity: 2026-03-25 — 04-01 complete (connect types + server service)
+status: active
+last_updated: "2026-03-26"
+last_activity: 2026-03-26 — 04-04 complete (Phase 4 human-verified end-to-end)
 progress:
-  total_phases: 5
-  completed_phases: 3
-  total_plans: 17
-  completed_plans: 17
+  total_phases: 7
+  completed_phases: 4
+  total_plans: 21
+  completed_plans: 21
   percent: 100
 ---
 
@@ -24,10 +24,10 @@ See: .planning/PROJECT.md (updated 2026-03-24)
 
 ## Current Position
 
-Phase: 4 of 5 (Connect-Classify Setup) — **In Progress**
-Plan: 04-03 complete (3 of 4)
-Status: Phase 2 complete — all 7 TMPL requirements human-verified in browser (2026-03-25)
-Last activity: 2026-03-25 — 04-03 complete (ConnectPage UI + Sidebar)
+Phase: 4 of 5 (Connect-Classify Setup) — **Complete**
+Plan: 04-04 complete (4 of 4)
+Status: Phase 4 complete — all CONN requirements human-verified in browser (2026-03-26)
+Last activity: 2026-03-26 — 04-04 complete (Phase 4 human-verified end-to-end)
 
 Progress: [██████████] 100%
 
@@ -53,6 +53,7 @@ Progress: [██████████] 100%
 *Updated after each plan completion*
 | Phase 02-classification-template-editor P03 | 20 | 2 tasks | 4 files |
 | Phase 02-classification-template-editor P05 | 5 | 2 tasks | 1 files |
+| Phase 04-connect-classify-setup P04 | 45 | 1 tasks | 1 files |
 
 ## Accumulated Context
 
@@ -70,6 +71,8 @@ Decisions are logged in PROJECT.md Key Decisions table. Key decisions affecting 
 - **Atomic template writes**: temp file → rename pattern to avoid partial writes on crash
 - [Phase 02-classification-template-editor]: DiffDialog cosmetic overflow is non-blocking: affects large templates in small windows, captured as polish todo
 - [Phase 02-classification-template-editor]: All 7 TMPL requirements human-verified in browser before Phase 2 closed
+- [Phase 04-connect-classify-setup]: Each pwsh spawn is isolated: Az/MgGraph tokens must be forwarded to classify process via AlreadyAuthenticated env vars
+- [Phase 04-connect-classify-setup]: Import-Module and subsequent cmdlet calls must be separated by semicolon — missing separator causes cmdlet name to be parsed as Import-Module argument
 
 ### Phase 2 Decisions (02-01 + 02-02)
 
@@ -100,6 +103,6 @@ None yet.
 
 ## Session Continuity
 
-Next: Execute plan 04-04 (final Phase 4 integration + verification).
+Phase 4 complete (2026-03-26). All 4 plans and CONN-01, CONN-02, CONN-03 requirements verified.
 
-Then commit docs and stage for review.
+Next: Phase 5 (Git Change History) or Phase 5.5 (Object-Level Reclassification) — plan when ready.
