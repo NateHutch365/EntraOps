@@ -121,7 +121,12 @@ Plans:
 **Success Criteria** (what must be TRUE):
   1. User can view and edit `EntraOpsConfig.json` in a structured (non-raw JSON) form from the Settings page; changes are validated and saved safely
   2. When no config file exists, the Settings page shows a clear empty state with instructions for `New-EntraOpsConfigFile` — no crash, no blank page
-**Plans**: TBD
+**Plans**: 4 plans
+Plans:
+- [ ] 06-01-PLAN.md — Shared EntraOpsConfig type, atomicWrite extraction, PUT /api/config with Zod validation
+- [ ] 06-02-PLAN.md — Polish: terminal line spacing fix, \r stripping, sidebar nav audit + Settings entry
+- [ ] 06-03-PLAN.md — SettingsPage UI: ConfigForm, ConfigEmptyState, CronPicker, DiffDialog/SaveBanner save flow
+- [ ] 06-04-PLAN.md — Checkpoint: Human verification of Phase 6 end-to-end flow
 
 ## Progress
 
@@ -134,4 +139,4 @@ Plans:
 | 3. PowerShell Command Runner *(post-MVP)* | 4/4 | Complete | - |
 | 4. Connect & Classify Setup *(post-MVP)* | 4/4 | Complete | - |
 | 5. Git Change History *(post-MVP)* | 0/5 | Planned | - |
-| 6. Settings & Polish *(post-MVP)* | 0/? | Not started | - |
+| 6. Settings & Polish *(post-MVP)* | 0/4 | Planned | - |
