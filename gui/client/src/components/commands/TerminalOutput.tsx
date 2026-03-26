@@ -70,7 +70,7 @@ export function TerminalOutput({ htmlContent, status, onStop }: TerminalOutputPr
       <pre
         ref={scrollRef}
         onScroll={handleScroll}
-        className="h-80 overflow-y-auto p-3 text-xs font-mono text-green-300 leading-relaxed whitespace-pre-wrap break-all"
+        className="h-80 overflow-y-auto p-3 text-xs font-mono text-green-300 leading-normal whitespace-pre-wrap break-all"
         // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{
           __html: htmlContent || '<span class="text-zinc-600">No output yet — run a command above.</span>',

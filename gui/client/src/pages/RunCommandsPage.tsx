@@ -148,7 +148,7 @@ export function RunCommandsPage() {
           try {
             const event = JSON.parse(line) as { type: string; data: string };
             if (event.type === 'stdout' || event.type === 'stderr') {
-              const html = converterRef.current.toHtml(event.data);
+              const html = converterRef.current.toHtml(event.data.replace(/\r/g, ''));
               setHtmlContent((prev) => prev + html);
             } else if (event.type === 'exit') {
               const code = parseInt(event.data, 10);

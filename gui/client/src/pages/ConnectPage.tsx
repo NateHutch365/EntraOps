@@ -213,7 +213,7 @@ export function ConnectPage() {
             } else if (event.type === 'error') {
               setAuthStatus('failed');
             } else {
-              const html = authConverterRef.current.toHtml(event.data);
+              const html = authConverterRef.current.toHtml(event.data.replace(/\r/g, ''));
               setAuthHtml(prev => prev + html);
               setRawAuthOutput(prev => prev + event.data);
             }
@@ -269,7 +269,7 @@ export function ConnectPage() {
             } else if (event.type === 'error') {
               setClassifyStatus('failed');
             } else {
-              const html = classifyConverterRef.current.toHtml(event.data);
+              const html = classifyConverterRef.current.toHtml(event.data.replace(/\r/g, ''));
               setClassifyHtml(prev => prev + html);
             }
           } catch { /* malformed frame — skip */ }
