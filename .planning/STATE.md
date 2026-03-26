@@ -3,10 +3,10 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-last_updated: "2026-03-26T18:32:37.704Z"
+last_updated: "2026-03-26T18:34:49.285Z"
 last_activity: 2026-03-26 — 05-04 complete (ComparePage, CommitCompareHeader, RawDiffViewer, useCompare hook)
 progress:
-  total_phases: 7
+  total_phases: 6
   completed_phases: 5
   total_plans: 26
   completed_plans: 26
@@ -24,7 +24,7 @@ See: .planning/PROJECT.md (updated 2026-03-24)
 
 ## Current Position
 
-Phase: 5 of 7 (Git Change History) — **In Progress**
+Phase: 5 of 6 (Git Change History) — **In Progress**
 Plan: 05-04 complete (4 of 5)
 Status: Phase 5 in progress — 05-04 complete (Compare page)
 Last activity: 2026-03-26 — 05-04 complete (ComparePage, CommitCompareHeader, RawDiffViewer, useCompare hook)
@@ -94,7 +94,7 @@ Decisions are logged in PROJECT.md Key Decisions table. Key decisions affecting 
 
 ### Pending Todos
 
-None yet.
+- **Object-Level Reclassification** (`2026-03-26-object-level-reclassification.md`) — post-classification review screen for overriding individual object tier assignments inline. Deferred from Phase 5.5 to next milestone.
 
 ### Blockers / Concerns
 

@@ -22,7 +22,6 @@ EntraOps GUI starts as a local-only React dashboard that lets security administr
 - [ ] **Phase 3: PowerShell Command Runner** — Trigger EntraOps cmdlets from the browser with real-time streamed output *(post-MVP)*
 - [x] **Phase 4: Connect & Classify Setup** — In-browser connection wizard: tenant sign-in via device code flow, RBAC system selection, and first-time classification run *(post-MVP)*
 - [ ] **Phase 5: Git Change History** — Browse EAM diffs, compare classification runs, and see structured object-level change summaries *(post-MVP)*
-- [ ] **Phase 5.5: Object-Level Reclassification** — Post-classification review screen where users can override individual objects' tier assignments inline, with save-back to classification config *(post-MVP)*
 - [ ] **Phase 6: Settings & Polish** — Structured `EntraOpsConfig.json` editor and cross-cutting UX polish *(post-MVP)*
 
 ## Phase Details
@@ -115,15 +114,6 @@ Plans:
 - [ ] 05-04-PLAN.md — ComparePage UI: commit comparison header, RBAC tabs, raw diff viewer, route wiring
 - [ ] 05-05-PLAN.md — Checkpoint: Human verification of Phase 5 end-to-end flow
 
-### Phase 5.5: Object-Level Reclassification *(post-MVP)*
-**Goal**: After a classification run, users can review the classified objects and override individual objects' tier assignments inline — without hand-editing JSON or re-running a full classification
-**Depends on**: Phase 4
-**Requirements**: TBD *(deferred — noted from Phase 4 discussion)*
-**Success Criteria** (what must be TRUE):
-  1. A post-classification review screen shows all classified objects with their assigned tier; user can override the tier for any individual object
-  2. Overrides are saved back to the relevant classification config and a re-classify prompt is shown
-**Plans**: TBD
-
 ### Phase 6: Settings & Polish *(post-MVP)*
 **Goal**: Users can view and edit `EntraOpsConfig.json` from the browser in a structured form, and the app delivers a polished, consistent experience across all features
 **Depends on**: Phase 5
@@ -144,5 +134,4 @@ Plans:
 | 3. PowerShell Command Runner *(post-MVP)* | 4/4 | Complete | - |
 | 4. Connect & Classify Setup *(post-MVP)* | 4/4 | Complete | - |
 | 5. Git Change History *(post-MVP)* | 0/5 | Planned | - |
-| 5.5. Object-Level Reclassification *(post-MVP)* | 0/? | Not started | - |
 | 6. Settings & Polish *(post-MVP)* | 0/? | Not started | - |
