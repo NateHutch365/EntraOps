@@ -4,6 +4,7 @@ import fs from 'node:fs/promises';
 import { z } from 'zod';
 import { assertSafePath } from '../middleware/security.js';
 import type { TemplateName } from '../../shared/types/templates.js';
+import { atomicWrite } from '../utils/atomicWrite.js';
 
 const router = Router();
 
@@ -51,11 +52,6 @@ function parseBomJson(raw: string): unknown {
   return JSON.parse(raw.replace(/^\uFEFF/, ''));
 }
 
-async function atomicWrite(filePath: string, content: string): Promise<void> {
-  const tmp = filePath + '.tmp';
-  await fs.writeFile(tmp, content, 'utf-8');
-  await fs.rename(tmp, filePath);
-}
 
 async function appendAuditEntry(entry: { action: string; template: string }): Promise<void> {
   const line = JSON.stringify({ timestamp: new Date().toISOString(), ...entry }) + '\n';
