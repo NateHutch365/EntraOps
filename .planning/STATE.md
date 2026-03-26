@@ -25,9 +25,9 @@ See: .planning/PROJECT.md (updated 2026-03-24)
 ## Current Position
 
 Phase: 6 of 6 (Settings Polish) — **In Progress**
-Plan: 06-01 complete (1 of 4)
-Status: Phase 6 in progress — 06-01 complete (Config type + API)
-Last activity: 2026-03-26 — 05-04 complete (ComparePage, CommitCompareHeader, RawDiffViewer, useCompare hook)
+Plan: 06-02 complete (2 of 4)
+Status: Phase 6 in progress — 06-02 complete (terminal line spacing fix, \r stripping, Settings nav + route)
+Last activity: 2026-03-26 — 06-02 complete (TerminalOutput leading-normal, \r strip in RunCommandsPage/ConnectPage, Settings sidebar + /settings route)
 
 Progress: [██████████] 96%
 
