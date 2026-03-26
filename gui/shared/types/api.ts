@@ -60,3 +60,60 @@ export interface ObjectsResponse {
   page: number;
   pageSize: number;
 }
+
+// --- Phase 5: Git Change History types ---
+
+export interface CommitListItem extends GitCommit {
+  /** Full 40-char hash for git operations */
+  fullHash: string;
+  /** RBAC systems that had PrivilegedEAM/ file changes in this commit */
+  affectedSystems: RbacSystem[];
+  /** Whether this commit touched any PrivilegedEAM/ files */
+  hasPrivilegedEAMChanges: boolean;
+}
+
+export interface CommitListResponse {
+  commits: CommitListItem[];
+  total: number;
+  page: number;
+  pageSize: number;
+}
+
+export interface RoleAssignmentDelta {
+  action: 'added' | 'removed';
+  roleDefinitionName: string;
+  tier: EamTier;
+}
+
+export interface ObjectChange {
+  objectId: string;
+  objectDisplayName: string;
+  objectType: string;
+  changeType: 'added' | 'removed' | 'tierChanged';
+  /** Only present for tierChanged */
+  previousTier?: EamTier;
+  currentTier?: EamTier;
+  /** Only present for tierChanged — role assignments that caused the shift */
+  roleAssignmentDelta?: RoleAssignmentDelta[];
+}
+
+export interface TierSectionChanges {
+  tier: 'ControlPlane' | 'ManagementPlane' | 'UserAccess';
+  added: ObjectChange[];
+  removed: ObjectChange[];
+  tierChanged: ObjectChange[];
+}
+
+export interface CommitChangeSummary {
+  commitHash: string;
+  rbacSystem: RbacSystem;
+  sections: TierSectionChanges[];
+}
+
+export interface ComparisonResult {
+  from: GitCommit & { fullHash: string };
+  to: GitCommit & { fullHash: string };
+  rbacSystem: RbacSystem;
+  sections: TierSectionChanges[];
+  rawDiff: string;
+}
