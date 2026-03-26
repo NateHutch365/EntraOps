@@ -15,17 +15,13 @@ The GUI is fully functional and delivered. A user who forks EntraOps and runs `S
 
 See [.planning/milestones/v1.0-ROADMAP.md](.planning/milestones/v1.0-ROADMAP.md) for full milestone archive.
 
-## Next Milestone Goals
+## Current Milestone: v1.1 Pre-Apply Intelligence
 
-*Not yet defined. Run `/gsd-new-milestone` to start planning v1.1 or v2.0.*
+**Goal:** Surface the engine's computed classification before the apply step, and give admins an inline review screen to override individual object tier assignments.
 
-**Known deferred items from v1.0 available as starting points:**
-- HIST-05: Empty state when `PrivilegedEAM/` has no git history
-- ConnectPage terminal line-spacing bug (tracked in `.planning/todos/`)
-- Incomplete shared types barrel (`connect.ts`, `config.ts` not re-exported)
-- Duplicate `RbacSystem` type consolidation
-- Nyquist VALIDATION.md cleanup for all 6 phases
-- Future roadmap candidates: alerting on new ControlPlane identities, attack path analysis, AI/Copilot integration, exposure scoring
+**Target features:**
+- Computed/suggested tier visible in Object Browser (fallback badge when unclassified) and Dashboard (applied vs. suggested counts side-by-side)
+- Object-Level Reclassification screen: browse post-classification objects, override tier assignments inline, save back to classification config files
 
 ## What This Is
 
