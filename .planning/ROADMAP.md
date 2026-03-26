@@ -123,9 +123,9 @@ Plans:
   2. When no config file exists, the Settings page shows a clear empty state with instructions for `New-EntraOpsConfigFile` — no crash, no blank page
 **Plans**: 4 plans
 Plans:
-- [ ] 06-01-PLAN.md — Shared EntraOpsConfig type, atomicWrite extraction, PUT /api/config with Zod validation
-- [ ] 06-02-PLAN.md — Polish: terminal line spacing fix, \r stripping, sidebar nav audit + Settings entry
-- [ ] 06-03-PLAN.md — SettingsPage UI: ConfigForm, ConfigEmptyState, CronPicker, DiffDialog/SaveBanner save flow
+- [x] 06-01-PLAN.md — Shared EntraOpsConfig type, atomicWrite extraction, PUT /api/config with Zod validation
+- [x] 06-02-PLAN.md — Polish: terminal line spacing fix, \r stripping, sidebar nav audit + Settings entry
+- [x] 06-03-PLAN.md — SettingsPage UI: ConfigForm, ConfigEmptyState, CronPicker, DiffDialog/SaveBanner save flow
 - [ ] 06-04-PLAN.md — Checkpoint: Human verification of Phase 6 end-to-end flow
 
 ## Progress
