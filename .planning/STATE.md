@@ -24,10 +24,10 @@ See: .planning/PROJECT.md (updated 2026-03-24)
 
 ## Current Position
 
-Phase: 4 of 5 (Connect-Classify Setup) — **Complete**
-Plan: 04-04 complete (4 of 4)
-Status: Phase 4 complete — all CONN requirements human-verified in browser (2026-03-26)
-Last activity: 2026-03-26 — 04-04 complete (Phase 4 human-verified end-to-end)
+Phase: 5 of 7 (Git Change History) — **In Progress**
+Plan: 05-01 complete (1 of 5)
+Status: Phase 5 in progress — 05-01 complete (shared types + server services data layer)
+Last activity: 2026-03-26 — 05-01 complete (Phase 5 git history data layer: api types, changeSummary, gitHistory services)
 
 Progress: [██████████] 100%
 
