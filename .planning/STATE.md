@@ -6,7 +6,7 @@ status: in_progress
 last_updated: "2026-03-26T00:00:00.000Z"
 last_activity: 2026-03-26 — Milestone v1.1 started
 progress:
-  total_phases: 0
+  total_phases: 2
   completed_phases: 0
   total_plans: 0
   completed_plans: 0
@@ -24,10 +24,10 @@ See: .planning/PROJECT.md (updated 2026-03-26)
 
 ## Current Position
 
-Phase: Not started (defining requirements)
+Phase: Phase 7 (Computed Tier Surfaces) — not started
 Plan: —
-Status: Defining requirements
-Last activity: 2026-03-26 — Milestone v1.1 started
+Status: Roadmap defined — awaiting phase planning
+Last activity: 2026-03-26 — Roadmap created (Phases 7–8)
 
 Progress: [░░░░░░░░░░] 0%
 

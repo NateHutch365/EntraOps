@@ -55,14 +55,14 @@ Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| DASH-01 | — | Pending |
-| DASH-02 | — | Pending |
-| DASH-03 | — | Pending |
-| OBJ-01 | — | Pending |
-| OBJ-02 | — | Pending |
-| OBJ-03 | — | Pending |
-| RECL-01 | — | Pending |
-| RECL-02 | — | Pending |
-| RECL-03 | — | Pending |
-| RECL-04 | — | Pending |
-| RECL-05 | — | Pending |
+| DASH-01 | Phase 7 | Pending |
+| DASH-02 | Phase 7 | Pending |
+| DASH-03 | Phase 7 | Pending |
+| OBJ-01 | Phase 7 | Pending |
+| OBJ-02 | Phase 7 | Pending |
+| OBJ-03 | Phase 7 | Pending |
+| RECL-01 | Phase 8 | Pending |
+| RECL-02 | Phase 8 | Pending |
+| RECL-03 | Phase 8 | Pending |
+| RECL-04 | Phase 8 | Pending |
+| RECL-05 | Phase 8 | Pending |
