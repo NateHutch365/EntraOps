@@ -4,13 +4,13 @@ milestone: v1.1
 milestone_name: Pre-Apply Intelligence
 status: in_progress
 last_updated: "2026-03-26T00:00:00.000Z"
-last_activity: 2026-03-26 — Milestone v1.1 started
+last_activity: 2026-03-26 — Phase 7 (Computed Tier Surfaces) COMPLETE — 2 plans done
 progress:
   total_phases: 2
-  completed_phases: 0
-  total_plans: 0
-  completed_plans: 0
-  percent: 0
+  completed_phases: 1
+  total_plans: 2
+  completed_plans: 2
+  percent: 50
 ---
 
 # Project State
@@ -24,12 +24,12 @@ See: .planning/PROJECT.md (updated 2026-03-26)
 
 ## Current Position
 
-Phase: Phase 7 (Computed Tier Surfaces) — not started
-Plan: —
-Status: Roadmap defined — awaiting phase planning
-Last activity: 2026-03-26 — Roadmap created (Phases 7–8)
+Phase: Phase 7 (Computed Tier Surfaces) — COMPLETE ✅
+Plan: 07-02 (done)
+Status: Phase 7 COMPLETE. Next: Phase 8 (Object Reclassification Screen)
+Last activity: 2026-03-26 — Phase 7 complete (07-01—07-02 done, human-verified)
 
-Progress: [░░░░░░░░░░] 0%
+Progress: [█████░░░░░] 50%
 
 ## Performance Metrics
 
@@ -105,6 +105,7 @@ Decisions are logged in PROJECT.md Key Decisions table. Key decisions affecting 
 
 ## Session Continuity
 
-Phase 4 complete (2026-03-26). All 4 plans and CONN-01, CONN-02, CONN-03 requirements verified.
+Phase 7 (Computed Tier Surfaces) complete (2026-03-26). All 2 plans done, human-verified in browser.
+Requirements DASH-01, DASH-02, DASH-03, OBJ-01, OBJ-02, OBJ-03 complete.
 
-Next: Phase 5 (Git Change History) or Phase 5.5 (Object-Level Reclassification) — plan when ready.
+Next: Phase 8 (Object Reclassification Screen) — plan with `/gsd:plan-phase 8` when ready.

@@ -13,7 +13,7 @@
 
 ## Phases
 
-- [ ] **Phase 7: Computed Tier Surfaces** — Computed (suggested) tier derived from `Classification[]` is visible in the Dashboard and Object Browser alongside applied tier
+- [x] **Phase 7: Computed Tier Surfaces** ✅ — Computed (suggested) tier derived from `Classification[]` is visible in the Dashboard and Object Browser alongside applied tier
 - [ ] **Phase 8: Object Reclassification Screen** — Admins can review all objects' applied and computed tiers on a dedicated screen and save inline tier overrides to classification config files
 
 ## Phase Details
@@ -29,8 +29,8 @@
   4. Objects with an applied tier show no change to their existing Tier column appearance
 **Plans**: 2 plans
 Plans:
-- [ ] 07-01-PLAN.md — Shared computedTierName utility + API types + server aggregation
-- [ ] 07-02-PLAN.md — KPICard suggested count + ObjectTable dashed badge
+- [x] 07-01-PLAN.md — Shared computedTierName utility + API types + server aggregation
+- [x] 07-02-PLAN.md — KPICard suggested count + ObjectTable dashed badge
 **UI hint**: yes
 
 ---
