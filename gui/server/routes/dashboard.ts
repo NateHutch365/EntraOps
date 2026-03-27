@@ -3,12 +3,14 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { readEamJson } from '../services/eamReader.js';
 import { getRecentPrivilegedEAMCommits } from '../services/gitLog.js';
+import { computedTierName } from '../../shared/utils/tier.js';
 import type { PrivilegedObject, EamTier, RbacSystem } from '../../shared/types/eam.js';
 import type {
   DashboardResponse,
   TierCounts,
   TierPimCounts,
   RbacBreakdown,
+  SuggestedTierCounts,
 } from '../../shared/types/api.js';
 
 const router = Router();
@@ -48,6 +50,7 @@ const EMPTY_RESPONSE: DashboardResponse = {
     ManagementPlane: { Permanent: 0, Eligible: 0 },
     UserAccess: { Permanent: 0, Eligible: 0 },
   },
+  suggestedTiers: { ControlPlane: 0, ManagementPlane: 0, UserAccess: 0 },
   freshness: null,
   recentCommits: [],
 };
@@ -110,6 +113,12 @@ router.get('/', async (_req, res) => {
     }
   }
 
+  const suggestedTiers: SuggestedTierCounts = { ControlPlane: 0, ManagementPlane: 0, UserAccess: 0 };
+  for (const obj of allObjects) {
+    const computedTier = computedTierName(obj.Classification);
+    if (computedTier) suggestedTiers[computedTier]++;
+  }
+
   const rbacBreakdown: RbacBreakdown[] = [];
   for (const [tier, counts] of rbacByTier.entries()) {
     rbacBreakdown.push({ tier, ...counts });
@@ -123,6 +132,7 @@ router.get('/', async (_req, res) => {
   const response: DashboardResponse = {
     hasData: true,
     tiers,
+    suggestedTiers,
     objectTypes,
     rbacBreakdown,
     pimTypes,

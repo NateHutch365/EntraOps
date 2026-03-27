@@ -31,6 +31,12 @@ export interface GitCommit {
   date: string;
 }
 
+export interface SuggestedTierCounts {
+  ControlPlane: number;
+  ManagementPlane: number;
+  UserAccess: number;
+}
+
 export interface DashboardResponse {
   hasData: boolean;
   tiers: TierCounts;
@@ -39,6 +45,7 @@ export interface DashboardResponse {
   pimTypes: TierPimCounts;
   freshness: string | null;
   recentCommits: GitCommit[];
+  suggestedTiers: SuggestedTierCounts;
 }
 
 export interface ObjectsQuery {
