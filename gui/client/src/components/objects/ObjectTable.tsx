@@ -24,6 +24,7 @@ import {
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import type { PrivilegedObject } from '../../../../shared/types/eam';
+import { computedTierName } from '../../../../shared/utils/tier.js';
 
 // ----------------------------------------------------------------
 // Tier badge colour map — CSS custom properties from globals.css
@@ -66,8 +67,21 @@ const columns: ColumnDef<PrivilegedObject>[] = [
   {
     accessorKey: 'ObjectAdminTierLevelName',
     header: 'Tier',
-    cell: ({ getValue }) => {
+    cell: ({ getValue, row }) => {
       const tier = getValue() as string;
+      if (tier === 'Unclassified') {
+        const suggestedTier = computedTierName(row.original.Classification ?? []);
+        if (suggestedTier !== null) {
+          return (
+            <Badge
+              variant="outline"
+              className={cn('text-xs font-medium border-dashed', TIER_BADGE_CLASS[suggestedTier] ?? '')}
+            >
+              {suggestedTier}
+            </Badge>
+          );
+        }
+      }
       return (
         <Badge
           variant="outline"
