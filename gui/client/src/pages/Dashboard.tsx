@@ -83,6 +83,7 @@ export function Dashboard() {
             key={tier}
             tier={tier}
             count={data.tiers[tier]}
+            suggestedCount={data.suggestedTiers[tier]}
             permanentCount={data.pimTypes[tier].Permanent}
             eligibleCount={data.pimTypes[tier].Eligible}
           />

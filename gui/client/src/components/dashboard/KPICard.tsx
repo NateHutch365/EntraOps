@@ -11,11 +11,12 @@ const TIER_STYLES = {
 interface KPICardProps {
   tier: keyof typeof TIER_STYLES;
   count: number;
+  suggestedCount?: number;
   permanentCount: number;
   eligibleCount: number;
 }
 
-export function KPICard({ tier, count, permanentCount, eligibleCount }: KPICardProps) {
+export function KPICard({ tier, count, suggestedCount, permanentCount, eligibleCount }: KPICardProps) {
   const total = permanentCount + eligibleCount;
   const tierColorText = TIER_STYLES[tier].split(' ')[0];
 
@@ -34,12 +35,18 @@ export function KPICard({ tier, count, permanentCount, eligibleCount }: KPICardP
       </CardHeader>
       <CardContent>
         {/* KPI count — display size 28px per UI-SPEC.md */}
-        <div className={cn('text-[28px] font-semibold leading-none mb-3', tierColorText)}>
+        <div className={cn('text-[28px] font-semibold leading-none mb-2', tierColorText)}>
           {count.toLocaleString()}
         </div>
+        {/* Suggested count — secondary line between main count and PIM stats */}
+        {suggestedCount !== undefined && (
+          <p className="text-sm text-muted-foreground mb-3">
+            Suggested: {suggestedCount.toLocaleString()}
+          </p>
+        )}
         {/* PIM mini-stat — 12px per UI-SPEC.md */}
         {total > 0 && (
-          <div className="space-y-1">
+          <div className={cn('space-y-1', suggestedCount === undefined && 'mt-3')}>
             <div className="flex items-center justify-between text-xs text-muted-foreground">
               <span>Permanent</span>
               <span className="font-medium text-foreground">{permanentCount}</span>
