@@ -27,7 +27,10 @@
   2. Suggested counts reflect the lowest `AdminTierLevel` number in each object's `Classification[]` array; objects with no `Classification[]` entries contribute 0 to Suggested counts
   3. An unclassified object in the Object Browser shows its computed tier badge with a visually distinct dashed outline style in the Tier column
   4. Objects with an applied tier show no change to their existing Tier column appearance
-**Plans**: TBD
+**Plans**: 2 plans
+Plans:
+- [ ] 07-01-PLAN.md — Shared computedTierName utility + API types + server aggregation
+- [ ] 07-02-PLAN.md — KPICard suggested count + ObjectTable dashed badge
 **UI hint**: yes
 
 ---
@@ -50,5 +53,5 @@
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 7. Computed Tier Surfaces | 0/? | Not started | - |
+| 7. Computed Tier Surfaces | 0/2 | Planned | - |
 | 8. Object Reclassification Screen | 0/? | Not started | - |
