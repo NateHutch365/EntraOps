@@ -21,9 +21,9 @@
 
 - [ ] **RECL-01**: User can navigate to an Object Reclassification screen listing all objects with their applied and computed tiers
 - [x] **RECL-02**: User can select an override tier for an individual object inline
-- [ ] **RECL-03**: Pending overrides are tracked visually before save
+- [x] **RECL-03**: Pending overrides are tracked visually before save
 - [x] **RECL-04**: User can save overrides — changes persist to classification config files
-- [ ] **RECL-05**: User can discard unsaved override selections
+- [x] **RECL-05**: User can discard unsaved override selections
 
 ## Future Requirements
 
@@ -63,6 +63,6 @@ Updated during roadmap creation.
 | OBJ-03 | Phase 7 | Pending |
 | RECL-01 | Phase 8 | Pending |
 | RECL-02 | Phase 8 | Complete |
-| RECL-03 | Phase 8 | Pending |
+| RECL-03 | Phase 8 | Complete |
 | RECL-04 | Phase 8 | Complete |
-| RECL-05 | Phase 8 | Pending |
+| RECL-05 | Phase 8 | Complete |

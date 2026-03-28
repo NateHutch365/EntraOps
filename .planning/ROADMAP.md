@@ -48,7 +48,7 @@ Plans:
 Plans:
 - [x] 08-01-PLAN.md — Foundation: Override types + select.tsx scaffold + failing test stubs (Wave 1)
 - [x] 08-02-PLAN.md — Server: GET + POST /api/overrides route, tests GREEN (Wave 2)
-- [ ] 08-03-PLAN.md — Client: useOverrides hook + ReclassifyPage with inline edit logic (Wave 3)
+- [x] 08-03-PLAN.md — Client: useOverrides hook + ReclassifyPage with inline edit logic (Wave 3)
 - [ ] 08-04-PLAN.md — Wiring: App.tsx route + Sidebar nav item + human verification (Wave 4)
 **UI hint**: yes
 
