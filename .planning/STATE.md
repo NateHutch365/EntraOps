@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.1
 milestone_name: Pre-Apply Intelligence
 status: completed
-last_updated: "2026-03-28T14:37:34.502Z"
-last_activity: 2026-03-28 — 08-03 useOverrides hook + ReclassifyPage complete, 60/60 server tests GREEN
+last_updated: "2026-03-28T15:00:00.000Z"
+last_activity: 2026-03-28 — 08-04 route wiring + browser verification complete, all 5 RECL requirements passed
 progress:
   total_phases: 2
-  completed_phases: 1
+  completed_phases: 2
   total_plans: 6
-  completed_plans: 5
-  percent: 83
+  completed_plans: 6
+  percent: 100
 ---
 
 # Project State
@@ -24,12 +24,12 @@ See: .planning/PROJECT.md (updated 2026-03-26)
 
 ## Current Position
 
-Phase: Phase 8 (Object Reclassification Screen) — IN PROGRESS
-Plan: 08-03 (done) → Next: 08-04
-Status: 08-03 COMPLETE. useOverrides hook + ReclassifyPage implemented, TypeScript clean, 60/60 server tests pass.
-Last activity: 2026-03-28 — 08-03 useOverrides hook + ReclassifyPage complete, 60/60 server tests GREEN
+Phase: Phase 8 (Object Reclassification Screen) — COMPLETE
+Plan: 08-04 (done) → Phase 8 complete
+Status: 08-04 COMPLETE. /reclassify route wired, sidebar nav added, all 5 RECL requirements browser-verified.
+Last activity: 2026-03-28 — 08-04 route wiring + browser verification complete, all 5 RECL requirements passed
 
-Progress: [████████░░] 83%
+Progress: [██████████] 100%
 
 ## Performance Metrics
 
@@ -83,6 +83,8 @@ Decisions are logged in PROJECT.md Key Decisions table. Key decisions affecting 
 - [Phase 08-object-reclassification-screen]: Inner try/catch in GET swallows ENOENT and JSON.parse errors silently — returns empty overrides array
 - [Phase 08-03]: refreshKey pattern (not TanStack Query) matches existing useObjects.ts convention
 - [Phase 08-03]: empty string sentinel for Select maps to null in pending Map — avoids undefined ambiguity
+- [Phase 08-04]: Radix SelectItem rejects empty-string value — use `__none__` sentinel constant and convert to null on save
+- [Phase 08-04]: pageSize cap raised 200 → 10000 on GET /api/objects for bulk-load admin screens
 
 ### Phase 2 Decisions (02-01 + 02-02)
 
@@ -113,7 +115,6 @@ Decisions are logged in PROJECT.md Key Decisions table. Key decisions affecting 
 
 ## Session Continuity
 
-Phase 7 (Computed Tier Surfaces) complete (2026-03-26). All 2 plans done, human-verified in browser.
-Requirements DASH-01, DASH-02, DASH-03, OBJ-01, OBJ-02, OBJ-03 complete.
+Phase 8 (Object Reclassification Screen) complete (2026-03-28). All 4 plans done, all 5 RECL requirements human-verified in browser.
 
-Next: Phase 8 (Object Reclassification Screen) — plan with `/gsd:plan-phase 8` when ready.
+Milestone v1.1 (Pre-Apply Intelligence) complete. Run `/gsd-complete-milestone` to archive and prepare for next milestone.

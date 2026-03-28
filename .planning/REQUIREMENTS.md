@@ -19,7 +19,7 @@
 
 ### Object-Level Reclassification
 
-- [ ] **RECL-01**: User can navigate to an Object Reclassification screen listing all objects with their applied and computed tiers
+- [x] **RECL-01**: User can navigate to an Object Reclassification screen listing all objects with their applied and computed tiers
 - [x] **RECL-02**: User can select an override tier for an individual object inline
 - [x] **RECL-03**: Pending overrides are tracked visually before save
 - [x] **RECL-04**: User can save overrides — changes persist to classification config files
@@ -61,7 +61,7 @@ Updated during roadmap creation.
 | OBJ-01 | Phase 7 | Pending |
 | OBJ-02 | Phase 7 | Pending |
 | OBJ-03 | Phase 7 | Pending |
-| RECL-01 | Phase 8 | Pending |
+| RECL-01 | Phase 8 | Complete |
 | RECL-02 | Phase 8 | Complete |
 | RECL-03 | Phase 8 | Complete |
 | RECL-04 | Phase 8 | Complete |

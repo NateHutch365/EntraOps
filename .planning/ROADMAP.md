@@ -49,7 +49,7 @@ Plans:
 - [x] 08-01-PLAN.md — Foundation: Override types + select.tsx scaffold + failing test stubs (Wave 1)
 - [x] 08-02-PLAN.md — Server: GET + POST /api/overrides route, tests GREEN (Wave 2)
 - [x] 08-03-PLAN.md — Client: useOverrides hook + ReclassifyPage with inline edit logic (Wave 3)
-- [ ] 08-04-PLAN.md — Wiring: App.tsx route + Sidebar nav item + human verification (Wave 4)
+- [x] 08-04-PLAN.md — Wiring: App.tsx route + Sidebar nav item + human verification (Wave 4)
 **UI hint**: yes
 
 ---
@@ -59,4 +59,4 @@ Plans:
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 7. Computed Tier Surfaces | 0/2 | Planned | - |
-| 8. Object Reclassification Screen | 2/4 | In Progress|  |
+| 8. Object Reclassification Screen | 4/4 | Complete | 2026-03-28 |
