@@ -29,13 +29,15 @@ const TIER_BADGE_CLASS: Record<string, string> = {
   Unclassified: 'border-tier-unclassified text-tier-unclassified',
 };
 
+const NO_OVERRIDE = '__none__';
+
 function getEffectiveOverride(
   objectId: string,
   persisted: Override[],
   pending: Map<string, string | null>,
 ): string {
-  if (pending.has(objectId)) return pending.get(objectId) ?? '';
-  return persisted.find((o) => o.ObjectId === objectId)?.OverrideTierLevelName ?? '';
+  if (pending.has(objectId)) return pending.get(objectId) ?? NO_OVERRIDE;
+  return persisted.find((o) => o.ObjectId === objectId)?.OverrideTierLevelName ?? NO_OVERRIDE;
 }
 
 function isDirty(
@@ -90,7 +92,7 @@ export function ReclassifyPage() {
   function handleOverrideChange(objectId: string, value: string) {
     setPending((prev) => {
       const next = new Map(prev);
-      next.set(objectId, value === '' ? null : value);
+      next.set(objectId, value === NO_OVERRIDE ? null : value);
       return next;
     });
   }
@@ -225,7 +227,7 @@ export function ReclassifyPage() {
                         <SelectValue placeholder="— No override" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="">— No override</SelectItem>
+                        <SelectItem value={NO_OVERRIDE}>— No override</SelectItem>
                         <SelectItem value="ControlPlane">Control Plane</SelectItem>
                         <SelectItem value="ManagementPlane">Management Plane</SelectItem>
                         <SelectItem value="UserAccess">User Access</SelectItem>
