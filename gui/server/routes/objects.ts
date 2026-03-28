@@ -31,7 +31,7 @@ const QuerySchema = z.object({
   onprem:   coerceArray.optional(),
   q:        z.string().optional(),
   page:     z.coerce.number().int().min(0).default(0),
-  pageSize: z.coerce.number().int().min(1).max(200).default(50),
+  pageSize: z.coerce.number().int().min(1).max(10000).default(50),
   sortBy:   z.string().default('ObjectAdminTierLevel'),
   sortDir:  z.enum(['asc', 'desc']).default('asc'),
 });
