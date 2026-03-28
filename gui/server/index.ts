@@ -9,6 +9,7 @@ import { templatesRouter } from './routes/templates.js';
 import { commandsRouter } from './routes/commands.js';
 import { connectRouter } from './routes/connect.js';
 import { configRouter } from './routes/config.js';
+import { overridesRouter } from './routes/overrides.js';
 
 const app = express();
 const PORT = process.env.PORT ?? 3001;
@@ -25,6 +26,7 @@ app.use('/api/templates', templatesRouter);
 app.use('/api/commands', commandsRouter);
 app.use('/api/connect', connectRouter);
 app.use('/api/config', configRouter);
+app.use('/api/overrides', overridesRouter);
 
 // Serve client build in production only — in dev, Vite (port 5173) handles the client
 if (process.env.NODE_ENV === 'production') {
