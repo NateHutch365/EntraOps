@@ -124,3 +124,14 @@ export interface ComparisonResult {
   sections: TierSectionChanges[];
   rawDiff: string;
 }
+
+// --- Phase 8: Object Reclassification types ---
+
+export interface Override {
+  ObjectId: string;
+  OverrideTierLevelName: 'ControlPlane' | 'ManagementPlane' | 'UserAccess';
+}
+
+export interface OverridesResponse {
+  overrides: Override[];
+}
