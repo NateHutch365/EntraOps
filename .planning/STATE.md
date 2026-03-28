@@ -2,14 +2,14 @@
 gsd_state_version: 1.0
 milestone: v1.1
 milestone_name: Pre-Apply Intelligence
-status: in_progress
-last_updated: "2026-03-26T00:00:00.000Z"
-last_activity: 2026-03-26 — Phase 7 (Computed Tier Surfaces) COMPLETE — 2 plans done
+status: completed
+last_updated: "2026-03-28T14:30:39.591Z"
+last_activity: 2026-03-28 — 08-01 Wave 0 prerequisites complete
 progress:
   total_phases: 2
   completed_phases: 1
-  total_plans: 2
-  completed_plans: 2
+  total_plans: 6
+  completed_plans: 3
   percent: 50
 ---
 
@@ -24,10 +24,10 @@ See: .planning/PROJECT.md (updated 2026-03-26)
 
 ## Current Position
 
-Phase: Phase 7 (Computed Tier Surfaces) — COMPLETE ✅
-Plan: 07-02 (done)
-Status: Phase 7 COMPLETE. Next: Phase 8 (Object Reclassification Screen)
-Last activity: 2026-03-26 — Phase 7 complete (07-01—07-02 done, human-verified)
+Phase: Phase 8 (Object Reclassification Screen) — IN PROGRESS
+Plan: 08-01 (done) → Next: 08-02
+Status: 08-01 COMPLETE. Shared types, Select component, failing test stubs (RED) ready.
+Last activity: 2026-03-28 — 08-01 Wave 0 prerequisites complete
 
 Progress: [█████░░░░░] 50%
 
@@ -55,6 +55,7 @@ Progress: [█████░░░░░] 50%
 | Phase 02-classification-template-editor P05 | 5 | 2 tasks | 1 files |
 | Phase 04-connect-classify-setup P04 | 45 | 1 tasks | 1 files |
 | Phase 05 P04 | 20 | 2 tasks | 5 files |
+| Phase 08-object-reclassification-screen P01 | 2 | 3 tasks | 3 files |
 
 ## Accumulated Context
 
@@ -75,6 +76,7 @@ Decisions are logged in PROJECT.md Key Decisions table. Key decisions affecting 
 - [Phase 04-connect-classify-setup]: Each pwsh spawn is isolated: Az/MgGraph tokens must be forwarded to classify process via AlreadyAuthenticated env vars
 - [Phase 04-connect-classify-setup]: Import-Module and subsequent cmdlet calls must be separated by semicolon — missing separator causes cmdlet name to be parsed as Import-Module argument
 - [Phase 05]: useCompare aggregates 5 parallel compare API calls (per-system endpoint requires rbac param)
+- [Phase 08-01]: Import Select from 'radix-ui' unified package consistent with all other ui/ components
 
 ### Phase 2 Decisions (02-01 + 02-02)
 
