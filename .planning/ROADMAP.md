@@ -44,7 +44,12 @@ Plans:
   2. User can select a different (override) tier for any individual object directly in the list via an inline control, and pending overrides are highlighted visually before any save
   3. Clicking Save commits all pending overrides to the appropriate classification config files — overrides persist across GUI restarts
   4. User can discard all pending overrides with a Discard/Cancel action, returning the list to its pre-edit state
-**Plans**: TBD
+**Plans**: 4 plans
+Plans:
+- [ ] 08-01-PLAN.md — Foundation: Override types + select.tsx scaffold + failing test stubs (Wave 1)
+- [ ] 08-02-PLAN.md — Server: GET + POST /api/overrides route, tests GREEN (Wave 2)
+- [ ] 08-03-PLAN.md — Client: useOverrides hook + ReclassifyPage with inline edit logic (Wave 3)
+- [ ] 08-04-PLAN.md — Wiring: App.tsx route + Sidebar nav item + human verification (Wave 4)
 **UI hint**: yes
 
 ---
