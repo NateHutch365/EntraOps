@@ -2,26 +2,19 @@
 
 ## Current State
 
-**Shipped: v1.0** ✅ (2026-03-26)
+**Shipped: v1.1 Pre-Apply Intelligence** ✅ (2026-03-29)
 
-The GUI is fully functional and delivered. A user who forks EntraOps and runs `Save-EntraOpsPrivilegedEAMJson` can then `cd gui && npm install && npm run dev` to get a working local browser dashboard with:
-- Tier dashboard (ControlPlane / ManagementPlane / UserAccess KPI cards, RBAC breakdown, PIM chart)
-- Filterable/sortable/paginated object browser with URL-bookmarkable state and detail panel
+The GUI is fully functional and shipped through two milestones. A user who forks EntraOps and runs `Save-EntraOpsPrivilegedEAMJson` can then `cd gui && npm install && npm run dev` to get a working local browser dashboard with:
+- Tier dashboard (ControlPlane / ManagementPlane / UserAccess KPI cards, **applied + suggested counts**, RBAC breakdown, PIM chart)
+- Filterable/sortable/paginated object browser with URL-bookmarkable state, detail panel, **and dashed computed-tier badge for unclassified objects**
 - Safe in-browser classification template editor with Zod validation and diff preview
 - PowerShell command runner (13 allowlisted cmdlets, real-time SSE streaming)
 - Connect & Classify wizard (device code auth → classification → dashboard)
 - Git change history browser (commit list, structured diffs, any-two-commit compare)
 - Settings page for `EntraOpsConfig.json` editing
+- **Object Reclassification screen** — inline tier overrides with atomic persistence to classification config files
 
-See [.planning/milestones/v1.0-ROADMAP.md](.planning/milestones/v1.0-ROADMAP.md) for full milestone archive.
-
-## Current Milestone: v1.1 Pre-Apply Intelligence
-
-**Goal:** Surface the engine's computed classification before the apply step, and give admins an inline review screen to override individual object tier assignments.
-
-**Target features:**
-- Computed/suggested tier visible in Object Browser (fallback badge when unclassified) and Dashboard (applied vs. suggested counts side-by-side)
-- Object-Level Reclassification screen: browse post-classification objects, override tier assignments inline, save back to classification config files
+See [.planning/milestones/v1.1-ROADMAP.md](.planning/milestones/v1.1-ROADMAP.md) for full milestone archive.
 
 ## What This Is
 
@@ -38,31 +31,27 @@ A user who has run `Save-EntraOpsPrivilegedEAMJson` can open a browser and immed
 All 29 v1 requirements delivered. See [.planning/milestones/v1.0-REQUIREMENTS.md](.planning/milestones/v1.0-REQUIREMENTS.md) for full traceability.
 Additionally delivered 17 originally-deferred v2 requirements (RUN-01–06, CONN-01–04, HIST-01–04, SETT-01–03).
 
-### Active
+### Validated (v1.1)
 
-**Dashboard & Data**
-- [ ] Display privileged objects broken down by EAM tier (ControlPlane, ManagementPlane, UserAccess)
-- [ ] Show counts per tier by object type and RBAC system
-- [ ] Show PIM assignment type breakdown (Permanent vs Eligible) per tier
-- [ ] Display data freshness timestamp
-- [ ] Show recent git changes widget (last 5 commits touching PrivilegedEAM/)
-- [ ] Graceful empty states when no PrivilegedEAM/ data exists
+- ✓ DASH-01: Dashboard applied + suggested tier counts side-by-side — v1.1
+- ✓ DASH-02: Computed tier derived from lowest `AdminTierLevel` in `Classification[]` — v1.1
+- ✓ DASH-03: Dashboard "Applied" / "Suggested" labels clearly distinguish counts — v1.1
+- ✓ OBJ-01: Unclassified objects show computed tier in Object Browser — v1.1
+- ✓ OBJ-02: Computed tier badge uses dashed outline style — v1.1
+- ✓ OBJ-03: Applied-tier objects unchanged in Object Browser — v1.1
+- ✓ RECL-01: Object Reclassification screen navigable from sidebar — v1.1
+- ✓ RECL-02: Per-row inline tier override select — v1.1
+- ✓ RECL-03: Pending overrides highlighted with amber dirty-row style — v1.1
+- ✓ RECL-04: Save All persists overrides to classification config files atomically — v1.1
+- ✓ RECL-05: Discard resets pending overrides with no server calls — v1.1
 
-**Object Browser**
-- [ ] Sortable, paginated table of all privileged objects
-- [ ] Multi-dimensional filtering: tier, RBAC system, object type, PIM type, on-prem sync, free-text search
-- [ ] Filter state reflected in URL (bookmarkable/shareable)
-- [ ] Object detail panel: identity card, role assignments, AU memberships, owners, owned objects
-- [ ] Role assignments expandable to show full RoleDefinitionActions list
-- [ ] Full-page object detail view navigable via URL
+### Active (v1.2 candidates)
 
-**Classification Template Editor**
-- [ ] Tabbed interface for all five classification template files (AadResources, AppRoles, Defender, DeviceManagement, IdentityGovernance)
-- [ ] Structured view grouped by tier and Category/Service
-- [ ] Edit and save RoleDefinitionActions per definition entry
-- [ ] JSON schema validation before writing to disk
-- [ ] Global.json exclusion list viewable and editable
-- [ ] Warning prompt before committing changes to git
+- [ ] Pre-install prerequisite PowerShell modules (Az.Accounts, Az.Resources, Az.ResourceGraph) in UI setup gate — currently requires manual install
+- [ ] Fix terminal line spacing in ConnectPage SSE output (ansi-to-html block-level wrapper injection)
+- [ ] Alerting / notifications — flag new ControlPlane identities after classification run
+- [ ] Attack path analysis — privilege chain tracing, blast radius, exposure scoring
+- [ ] AI/Copilot integration — plain-English tier explanations, remediation suggestions, natural language search
 
 ### Out of Scope (v1)
 
@@ -124,5 +113,12 @@ The codebase is a PowerShell module. The GUI will live in a `gui/` subdirectory 
 | Attack path / AI features deferred post-MVP | Ambitious scope; need core data exploration working first | — Pending |
 | Multi-tenancy explicitly out of scope | EntraOps is self-contained to a single org tenant for security reasons | — Pending |
 
+## Context
+
+Current codebase: ~10,968 LOC TypeScript across `gui/client`, `gui/server`, `gui/shared`.
+Tech stack: React + Vite + Tailwind CSS + shadcn/ui (client); Express.js + TypeScript (server); Zod validation; vitest for server tests.
+Two milestones shipped: v1.0 (6 phases, 30 plans) → v1.1 (2 phases, 6 plans).
+Pending todos: pre-install PowerShell modules, ConnectPage terminal line-spacing fix.
+
 ---
-*Last updated: 2026-03-24 after initialization*
+*Last updated: 2026-03-29 after v1.1 milestone*

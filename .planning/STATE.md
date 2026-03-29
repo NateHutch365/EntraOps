@@ -2,9 +2,9 @@
 gsd_state_version: 1.0
 milestone: v1.1
 milestone_name: Pre-Apply Intelligence
-status: verifying
-last_updated: "2026-03-28T14:59:42.043Z"
-last_activity: 2026-03-28 — 08-04 route wiring + browser verification complete, all 5 RECL requirements passed
+status: complete
+last_updated: "2026-03-29T00:00:00.000Z"
+last_activity: 2026-03-29 — v1.1 milestone archived, all 11 requirements validated
 progress:
   total_phases: 2
   completed_phases: 2
@@ -17,10 +17,10 @@ progress:
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated 2026-03-26)
+See: .planning/PROJECT.md (updated 2026-03-29)
 
 **Core value:** A user who has run `Save-EntraOpsPrivilegedEAMJson` can open a browser and immediately understand who holds ControlPlane access in their tenant — without writing a KQL query, opening Azure Portal, or reading raw JSON.
-**Current state:** v1.0 SHIPPED — all 6 phases complete. Run `/gsd-new-milestone` to start planning next milestone.
+**Current state:** v1.1 SHIPPED — milestones v1.0 and v1.1 complete. Run `/gsd-new-milestone` to start planning the next milestone.
 
 ## Current Position
 
