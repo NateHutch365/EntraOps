@@ -45,19 +45,17 @@
 
 ## Traceability
 
-Updated during roadmap creation.
-
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| EXCL-01 | TBD | — |
-| EXCL-02 | TBD | — |
-| EXCL-03 | TBD | — |
-| EXCL-04 | TBD | — |
-| EXCL-05 | TBD | — |
-| IMPL-01 | TBD | — |
-| IMPL-02 | TBD | — |
-| IMPL-03 | TBD | — |
-| IMPL-04 | TBD | — |
-| IMPL-05 | TBD | — |
-| IMPL-06 | TBD | — |
-| IMPL-07 | TBD | — |
+| EXCL-01 | Phase 9 | Pending |
+| EXCL-02 | Phase 9 | Pending |
+| EXCL-03 | Phase 9 | Pending |
+| EXCL-04 | Phase 10 | Pending |
+| EXCL-05 | Phase 10 | Pending |
+| IMPL-01 | Phase 11 | Pending |
+| IMPL-02 | Phase 11 | Pending |
+| IMPL-03 | Phase 11 | Pending |
+| IMPL-04 | Phase 11 | Pending |
+| IMPL-05 | Phase 12 | Pending |
+| IMPL-06 | Phase 11 | Pending |
+| IMPL-07 | Phase 11 | Pending |

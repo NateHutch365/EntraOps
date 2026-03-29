@@ -2,11 +2,11 @@
 gsd_state_version: 1.0
 milestone: v1.2
 milestone_name: Self-Service Implementation Workflow
-status: defining requirements
+status: roadmap ready
 last_updated: "2026-03-29T00:00:00.000Z"
-last_activity: 2026-03-29 — Milestone v1.2 started
+last_activity: 2026-03-29 — v1.2 roadmap created (4 phases, 12 requirements mapped)
 progress:
-  total_phases: 0
+  total_phases: 4
   completed_phases: 0
   total_plans: 0
   completed_plans: 0
@@ -20,14 +20,25 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-29)
 
 **Core value:** A user who has run `Save-EntraOpsPrivilegedEAMJson` can open a browser and immediately understand who holds ControlPlane access in their tenant — without writing a KQL query, opening Azure Portal, or reading raw JSON.
-**Current state:** v1.2 in planning — Self-Service Implementation Workflow. Run `/gsd-plan-phase` to start execution once roadmap is set.
+**Current state:** v1.2 roadmap ready — Self-Service Implementation Workflow. Run `/gsd-plan-phase 9` to begin.
 
 ## Current Position
 
-Phase: Not started (defining requirements)
+Phase: Phase 9: Exclusions Management (not started)
 Plan: —
-Status: Defining requirements
-Last activity: 2026-03-29 — Milestone v1.2 started
+Status: Roadmap ready — awaiting first plan
+Last activity: 2026-03-29 — v1.2 roadmap created (Phases 9–12, 12/12 requirements mapped)
+
+**Progress bar:** ░░░░░░░░░░ 0% (0/4 phases complete)
+
+## v1.2 Phase Overview
+
+| Phase | Goal | Requirements | Status |
+|-------|------|--------------|--------|
+| 9. Exclusions Management | Admins manage Global.json from browser | EXCL-01, EXCL-02, EXCL-03 | Not started |
+| 10. Inline Exclude Actions | Exclude objects from existing screens | EXCL-04, EXCL-05 | Not started |
+| 11. Implementation Workflow | Apply to Entra with confirmation + SSE | IMPL-01–04, IMPL-06–07 | Not started |
+| 12. Dry-run / Preview Mode | -SampleMode simulation toggle | IMPL-05 | Not started |
 
 ## Performance Metrics
 
@@ -78,41 +89,11 @@ Decisions are logged in PROJECT.md Key Decisions table. Key decisions affecting 
 - [Phase 05]: useCompare aggregates 5 parallel compare API calls (per-system endpoint requires rbac param)
 - [Phase 08-01]: Import Select from 'radix-ui' unified package consistent with all other ui/ components
 - [Phase 08-object-reclassification-screen]: fs.mkdir recursive guard in POST protects against missing Classification/ directory
-- [Phase 08-object-reclassification-screen]: Inner try/catch in GET swallows ENOENT and JSON.parse errors silently — returns empty overrides array
-- [Phase 08-03]: refreshKey pattern (not TanStack Query) matches existing useObjects.ts convention
-- [Phase 08-03]: empty string sentinel for Select maps to null in pending Map — avoids undefined ambiguity
-- [Phase 08-04]: Radix SelectItem rejects empty-string value — use `__none__` sentinel constant and convert to null on save
-- [Phase 08-04]: pageSize cap raised 200 → 10000 on GET /api/objects for bulk-load admin screens
 
-### Phase 2 Decisions (02-01 + 02-02)
+### v1.2 Context
 
-- **TEMPLATE_NAMES constant inlined in routes file**: avoids cross-workspace ESM resolution issues
-- **Zod v4 z.string().uuid() strict RFC compliance**: test GUIDs must use version 4 format
-- **Global endpoint returns { exclusions: [] } not 404**: simplifies client handling when Global.json missing
-- **DiffDialog uses diffLines() from diff package**: renders Change objects as span blocks with bg-green-950/bg-red-950
-- **TemplatesPage activeTab is TemplateName | 'global'**: fetch effect has early-return guard for 'global' tab
-- **diff + @testing-library/jest-dom installed in client workspace**
-
-### Phase 2 Decisions (02-03)
-
-- **Dirty state map keyed by 'tierIdx-entryIdx'**: per-entry edits in TierAccordion without managing an array of state objects — clean string-key lookup
-- **void savedAt pattern**: satisfies noUnusedLocals while preserving variable name for plan 02-04 SaveBanner (avoids renaming later)
-- **ChipEditor silently ignores empty/duplicate additions**: no error state needed; placeholder text communicates intent
-- **Robust PUT error handling**: try/catch around res.json() in error path — falls back to HTTP status string for non-JSON error bodies
-
-### Pending Todos
-
-- **Object-Level Reclassification** (`2026-03-26-object-level-reclassification.md`) — post-classification review screen for overriding individual object tier assignments inline. Deferred from Phase 5.5 to next milestone.
-
-### Blockers / Concerns
-
-- **Windows cross-platform testing must be verified in Phase 1**: macOS dev will mask path separator issues (backslash vs forward-slash, BOM on UTF-8 JSON). Must strip `\uFEFF` before `JSON.parse()` and normalize all paths to forward-slashes before sending to the client.
-- **Large `PrivilegedEAM/` file handling**: async reads + in-memory cache (mtime-invalidated, 5-min TTL) required to avoid blocking the Express event loop. Files ≥300 MB will need `stream-json` streaming parser — detect by file size on first load.
-- **Express must bind to `127.0.0.1` explicitly**: `app.listen(PORT)` binds to all interfaces. On a corporate laptop, the API becomes accessible to other machines. Add `Host` header validation middleware for DNS rebinding protection.
-- **Path traversal guards required on all file routes**: `path.join()` does NOT prevent traversal — it resolves `../` cleanly. Every file-read and file-write endpoint must assert `resolved.startsWith(BASE + path.sep)` after resolving.
-
-## Session Continuity
-
-Phase 8 (Object Reclassification Screen) complete (2026-03-28). All 4 plans done, all 5 RECL requirements human-verified in browser.
-
-Milestone v1.1 (Pre-Apply Intelligence) complete. Run `/gsd-complete-milestone` to archive and prepare for next milestone.
+- **Global.json format**: `[{ "ExcludedPrincipalId": ["guid1", "guid2", ...] }]` — array with one object; reads/writes must preserve this structure
+- **Name resolution source**: `PrivilegedEAM/**/*.json` files — scan all JSON files and match on GUID fields to resolve display names
+- **Implementation cmdlets on allowlist**: Update-EntraOpsPrivilegedAdministrativeUnit, Update-EntraOpsPrivilegedConditionalAccessGroup, Update-EntraOpsPrivilegedUnprotectedAdministrativeUnit, Update-EntraOpsClassificationControlPlaneScope
+- **Dry-run flag**: `-SampleMode` parameter on all 4 implementation cmdlets
+- **SSE streaming**: pattern established in Phase 4 (Connect wizard) — reuse same SSE infrastructure for implementation runner
