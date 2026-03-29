@@ -1,16 +1,16 @@
 ---
 gsd_state_version: 1.0
-milestone: v1.1
-milestone_name: Pre-Apply Intelligence
-status: complete
+milestone: v1.2
+milestone_name: Self-Service Implementation Workflow
+status: defining requirements
 last_updated: "2026-03-29T00:00:00.000Z"
-last_activity: 2026-03-29 — v1.1 milestone archived, all 11 requirements validated
+last_activity: 2026-03-29 — Milestone v1.2 started
 progress:
-  total_phases: 2
-  completed_phases: 2
-  total_plans: 6
-  completed_plans: 6
-  percent: 100
+  total_phases: 0
+  completed_phases: 0
+  total_plans: 0
+  completed_plans: 0
+  percent: 0
 ---
 
 # Project State
@@ -20,16 +20,14 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-29)
 
 **Core value:** A user who has run `Save-EntraOpsPrivilegedEAMJson` can open a browser and immediately understand who holds ControlPlane access in their tenant — without writing a KQL query, opening Azure Portal, or reading raw JSON.
-**Current state:** v1.1 SHIPPED — milestones v1.0 and v1.1 complete. Run `/gsd-new-milestone` to start planning the next milestone.
+**Current state:** v1.2 in planning — Self-Service Implementation Workflow. Run `/gsd-plan-phase` to start execution once roadmap is set.
 
 ## Current Position
 
-Phase: Phase 8 (Object Reclassification Screen) — COMPLETE
-Plan: 08-04 (done) → Phase 8 complete
-Status: 08-04 COMPLETE. /reclassify route wired, sidebar nav added, all 5 RECL requirements browser-verified.
-Last activity: 2026-03-28 — 08-04 route wiring + browser verification complete, all 5 RECL requirements passed
-
-Progress: [██████████] 100%
+Phase: Not started (defining requirements)
+Plan: —
+Status: Defining requirements
+Last activity: 2026-03-29 — Milestone v1.2 started
 
 ## Performance Metrics
 
