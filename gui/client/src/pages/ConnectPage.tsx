@@ -213,8 +213,11 @@ export function ConnectPage() {
             } else if (event.type === 'error') {
               setAuthStatus('failed');
             } else {
-              const html = authConverterRef.current.toHtml(event.data.replace(/\r/g, ''));
-              setAuthHtml(prev => prev + html);
+              const cleaned = event.data.replace(/\r/g, '').replace(/\n{2,}/g, '\n');
+              if (cleaned.trim()) {
+                const html = authConverterRef.current.toHtml(cleaned);
+                setAuthHtml(prev => prev + html);
+              }
               setRawAuthOutput(prev => prev + event.data);
             }
           } catch { /* malformed frame — skip */ }
@@ -269,8 +272,11 @@ export function ConnectPage() {
             } else if (event.type === 'error') {
               setClassifyStatus('failed');
             } else {
-              const html = classifyConverterRef.current.toHtml(event.data.replace(/\r/g, ''));
-              setClassifyHtml(prev => prev + html);
+              const cleaned = event.data.replace(/\r/g, '').replace(/\n{2,}/g, '\n');
+              if (cleaned.trim()) {
+                const html = classifyConverterRef.current.toHtml(cleaned);
+                setClassifyHtml(prev => prev + html);
+              }
             }
           } catch { /* malformed frame — skip */ }
         }

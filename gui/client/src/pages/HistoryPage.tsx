@@ -22,6 +22,7 @@ export function HistoryPage() {
   const { data, isLoading, error } = useCommits({ page: page ?? 1, pageSize: PAGE_SIZE });
 
   const totalPages = data ? Math.ceil(data.total / PAGE_SIZE) : 0;
+  const isFiltered = rbacFilter.length > 0;
 
   function handleToggleExpand(hash: string) {
     setExpandedHashes(prev => {
@@ -33,6 +34,12 @@ export function HistoryPage() {
       }
       return next;
     });
+  }
+
+  function handleRbacFilterChange(systems: RbacSystem[]) {
+    setRbacFilter(systems);
+    // Reset to page 1 when filter changes — filtered results are always a single page
+    void setPage(1);
   }
 
   function handleCheckChange(hash: string, checked: boolean) {
@@ -71,7 +78,7 @@ export function HistoryPage() {
       </div>
 
       {/* RBAC filter chips */}
-      <RbacFilterBar selected={rbacFilter} onChange={setRbacFilter} />
+      <RbacFilterBar selected={rbacFilter} onChange={handleRbacFilterChange} />
 
       {/* Error state */}
       {error && (
@@ -128,8 +135,8 @@ export function HistoryPage() {
         </div>
       )}
 
-      {/* Pagination */}
-      {!isLoading && !error && totalPages > 1 && (
+      {/* Pagination — hidden when a client-side filter is active (filtered results are single-page) */}
+      {!isLoading && !error && totalPages > 1 && !isFiltered && (
         <div className="flex items-center justify-center gap-2">
           <Button
             variant="outline"

@@ -2,7 +2,7 @@ import { spawn, spawnSync, type ChildProcess } from 'node:child_process';
 import { randomUUID } from 'node:crypto';
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import { getAuthTokens } from './connect.js';
+import { refreshAuthTokens } from './connect.js';
 import type {
   AllowlistedCmdlet,
   CmdletParameters,
@@ -38,8 +38,10 @@ function psq(s: string): string {
 // buildPwshArgs — assembles the pwsh argv for a cmdlet invocation.
 // Import-Module is required because -NoProfile skips profile scripts that load the module.
 // When auth tokens are present (post-connect), we prepend Connect-EntraOps AlreadyAuthenticated
-// so the cmdlet process has a live Az + MgGraph session. Connect-EntraOps also sets all
-// required globals (DefaultFolderClassification, TenantNameContext, etc.) in the same process.
+// WITH explicit token params (-AccountId, -AzArmAccessToken, -MsGraphAccessToken). Each pwsh
+// spawn is an isolated process with no Az/MgGraph context, so tokens must be passed explicitly.
+// refreshAuthTokens() re-extracts fresh tokens from the persisted Az context right before each
+// run, avoiding the 60–90 min access-token expiry issue.
 // Without tokens (e.g. Phase 3 Run Commands), we manually set the folder globals as a fallback.
 // SECURITY: all user-supplied string values are PS-single-quote-escaped via psq().
 function buildPwshArgs(cmdlet: AllowlistedCmdlet, parameters: CmdletParameters): string[] {
@@ -56,11 +58,13 @@ function buildPwshArgs(cmdlet: AllowlistedCmdlet, parameters: CmdletParameters):
       parts.push(`-${key}`, psq(String(value)));
     }
   }
-  const tokens = getAuthTokens();
+  const tokens = refreshAuthTokens();
   let prefix: string;
   if (tokens) {
-    // Re-establish auth session from stored tokens — Connect-EntraOps AlreadyAuthenticated
-    // also sets DefaultFolderClassification, DefaultFolderClassifiedEam, TenantNameContext globals.
+    // Re-establish auth in the fresh pwsh process via explicit tokens.
+    // refreshAuthTokens() re-extracts tokens from the persisted Az context right before
+    // each run, so they are seconds old — no risk of 60–90 min access-token expiry.
+    // MgGraph context is NOT persisted to disk, so tokens MUST be passed explicitly.
     // -NoWelcome suppresses the splash banner and connection summary from stdout.
     const authInit = [
       `Import-Module './EntraOps/EntraOps.psd1'; Connect-EntraOps -AuthenticationType 'AlreadyAuthenticated'`,

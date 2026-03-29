@@ -1,0 +1,112 @@
+{
+  "TenantId": "00000000-0000-0000-0000-000000000001",
+  "TenantName": "natehutchinson.onmicrosoft.com",
+  "AuthenticationType": "UserInteractive",
+  "ClientId": "00000000-0000-0000-0000-000000000002",
+  "DevOpsPlatform": "GitHub",
+  "RbacSystems": [
+    "Azure",
+    "EntraID",
+    "IdentityGovernance",
+    "DeviceManagement",
+    "ResourceApps",
+    "Defender"
+  ],
+  "WorkflowTrigger": {
+    "PullScheduledTrigger": true,
+    "PullScheduledCron": "0 2 * * 1",
+    "PushAfterPullWorkflowTrigger": true
+  },
+  "AutomatedControlPlaneScopeUpdate": {
+    "ApplyAutomatedControlPlaneScopeUpdate": false,
+    "PrivilegedObjectClassificationSource": [
+      "EntraOps"
+    ],
+    "EntraOpsScopes": [
+      "ControlPlane"
+    ],
+    "AzureHighPrivilegedRoles": [
+      "Owner",
+      "Contributor"
+    ],
+    "AzureHighPrivilegedScopes": [
+      "/"
+    ],
+    "ExposureCriticalityLevel": "High"
+  },
+  "AutomatedClassificationUpdate": {
+    "ApplyAutomatedClassificationUpdate": true,
+    "Classifications": [
+      "AadResources",
+      "AppRoles"
+    ]
+  },
+  "AutomatedEntraOpsUpdate": {
+    "ApplyAutomatedEntraOpsUpdate": true,
+    "UpdateScheduledTrigger": true,
+    "UpdateScheduledCron": "0 3 * * 0"
+  },
+  "LogAnalytics": {
+    "IngestToLogAnalytics": true,
+    "DataCollectionRuleName": "dcr-entraops-prod",
+    "DataCollectionRuleSubscriptionId": "00000000-0000-0000-0000-000000000003",
+    "DataCollectionResourceGroupName": "rg-entraops-prod",
+    "TableName": "PrivilegedEAM_CL"
+  },
+  "SentinelWatchLists": {
+    "IngestToWatchLists": false,
+    "WatchListTemplates": [],
+    "WatchListWorkloadIdentity": [],
+    "SentinelWorkspaceName": "",
+    "SentinelSubscriptionId": "",
+    "SentinelResourceGroupName": "",
+    "WatchListPrefix": "EntraOps"
+  },
+  "AutomatedAdministrativeUnitManagement": {
+    "ApplyAdministrativeUnitAssignments": false,
+    "ApplyToAccessTierLevel": [
+      "ControlPlane"
+    ],
+    "FilterObjectType": [
+      "User",
+      "ServicePrincipal"
+    ],
+    "RbacSystems": [
+      "EntraID"
+    ],
+    "RestrictedAuMode": "Restricted"
+  },
+  "AutomatedConditionalAccessTargetGroups": {
+    "ApplyConditionalAccessTargetGroups": false,
+    "AdminUnitName": "EntraOps-CA",
+    "ApplyToAccessTierLevel": [
+      "ControlPlane"
+    ],
+    "FilterObjectType": [
+      "User"
+    ],
+    "GroupPrefix": "EntraOps",
+    "RbacSystems": [
+      "EntraID"
+    ]
+  },
+  "AutomatedRmauAssignmentsForUnprotectedObjects": {
+    "ApplyRmauAssignmentsForUnprotectedObjects": false,
+    "ApplyToAccessTierLevel": [
+      "ControlPlane"
+    ],
+    "FilterObjectType": [
+      "User",
+      "ServicePrincipal"
+    ],
+    "RbacSystems": [
+      "EntraID"
+    ]
+  },
+  "CustomSecurityAttributes": {
+    "PrivilegedUserAttribute": "privilegedUser",
+    "PrivilegedUserPawAttribute": "privilegedUserPaw",
+    "PrivilegedServicePrincipalAttribute": "privilegedServicePrincipal",
+    "UserWorkAccountAttribute": "userWorkAccount"
+  }
+}
