@@ -1,0 +1,213 @@
+{
+  "ObjectId": "d4cdaf55-fe35-4e0a-ba07-9f006d88350b",
+  "ObjectType": "serviceprincipal",
+  "ObjectSubType": "Application",
+  "ObjectDisplayName": "Robopack",
+  "ObjectUserPrincipalName": "8a363ebc-c281-4360-bbcc-4b1ee485ef7e",
+  "ObjectAdminTierLevel": "Unclassified",
+  "ObjectAdminTierLevelName": "Unclassified",
+  "OnPremSynchronized": false,
+  "AssignedAdministrativeUnits": [],
+  "RestrictedManagementByRAG": false,
+  "RestrictedManagementByAadRole": false,
+  "RestrictedManagementByRMAU": false,
+  "RoleSystem": "ResourceApps",
+  "Classification": [
+    {
+      "AdminTierLevel": "0",
+      "AdminTierLevelName": "ControlPlane",
+      "Service": "Global Endpoint Management"
+    },
+    {
+      "AdminTierLevel": "0",
+      "AdminTierLevelName": "ControlPlane",
+      "Service": "Group Management"
+    },
+    {
+      "AdminTierLevel": "1",
+      "AdminTierLevelName": "ManagementPlane",
+      "Service": "Microsoft 365 Platform Management"
+    },
+    {
+      "AdminTierLevel": "2",
+      "AdminTierLevelName": "UserAccess",
+      "Service": "Default member"
+    }
+  ],
+  "RoleAssignments": [
+    {
+      "RoleAssignmentId": "Va_N1DX-Ck66B58AbYg1C4WTNO6oQJhIjII9jEhFUAQ",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "DeviceManagementApps.ReadWrite.All",
+      "RoleDefinitionId": "78145de6-330d-4800-a6ce-494ff2d33d07",
+      "RoleType": "Application",
+      "RoleIsPrivileged": "",
+      "ObjectId": "d4cdaf55-fe35-4e0a-ba07-9f006d88350b",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "0",
+          "AdminTierLevelName": "ControlPlane",
+          "Service": "Global Endpoint Management",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "Va_N1DX-Ck66B58AbYg1C5M7yOVfwchFpX2lbOPM5xU",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "DeviceManagementApps.ReadWrite.All",
+      "RoleDefinitionId": "7b3f05d5-f68c-4b8d-8c59-a2ecd12f24af",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "d4cdaf55-fe35-4e0a-ba07-9f006d88350b",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "0",
+          "AdminTierLevelName": "ControlPlane",
+          "Service": "Global Endpoint Management",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "Va_N1DX-Ck66B58AbYg1C2xspn_0ZKlOpfz9ghMMSEU",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "Group.ReadWrite.All",
+      "RoleDefinitionId": "62a82d76-70ea-41e2-9197-370581804d09",
+      "RoleType": "Application",
+      "RoleIsPrivileged": "",
+      "ObjectId": "d4cdaf55-fe35-4e0a-ba07-9f006d88350b",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "0",
+          "AdminTierLevelName": "ControlPlane",
+          "Service": "Group Management",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "Va_N1DX-Ck66B58AbYg1Czoi6iIWv59Bl78sY2Dhtxc",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "DeviceManagementConfiguration.Read.All",
+      "RoleDefinitionId": "dc377aa6-52d8-4e23-b271-2a7ae04cedf3",
+      "RoleType": "Application",
+      "RoleIsPrivileged": "",
+      "ObjectId": "d4cdaf55-fe35-4e0a-ba07-9f006d88350b",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "1",
+          "AdminTierLevelName": "ManagementPlane",
+          "Service": "Microsoft 365 Platform Management",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "Va_N1DX-Ck66B58AbYg1C5M7yOVfwchFpX2lbOPM5xU",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "Organization.Read.All",
+      "RoleDefinitionId": "4908d5b9-3fb2-4b1e-9336-1888b7937185",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "d4cdaf55-fe35-4e0a-ba07-9f006d88350b",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "2",
+          "AdminTierLevelName": "UserAccess",
+          "Service": "Default member",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "Va_N1DX-Ck66B58AbYg1C4Sq-rgtT9JLm0YC2iy_cKo",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "Organization.Read.All",
+      "RoleDefinitionId": "498476ce-e0fe-48b0-b801-37ba7e2685c6",
+      "RoleType": "Application",
+      "RoleIsPrivileged": "",
+      "ObjectId": "d4cdaf55-fe35-4e0a-ba07-9f006d88350b",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "2",
+          "AdminTierLevelName": "UserAccess",
+          "Service": "Default member",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "Va_N1DX-Ck66B58AbYg1C5M7yOVfwchFpX2lbOPM5xU",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "User.Read",
+      "RoleDefinitionId": "e1fe6dd8-ba31-4d61-89e7-88639da4683d",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "d4cdaf55-fe35-4e0a-ba07-9f006d88350b",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "2",
+          "AdminTierLevelName": "UserAccess",
+          "Service": "Default member",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    }
+  ],
+  "Sponsors": [],
+  "Owners": [],
+  "OwnedObjects": [],
+  "OwnedDevices": [],
+  "AssociatedWorkAccount": [],
+  "AssociatedPawDevice": []
+}

@@ -1,0 +1,78 @@
+{
+  "ObjectId": "4cc945e4-f75b-4f31-b685-1e30ead9bb55",
+  "ObjectType": "serviceprincipal",
+  "ObjectSubType": "Application",
+  "ObjectDisplayName": "AADInternals OSINT",
+  "ObjectUserPrincipalName": "08449b24-4aa6-4049-93ef-0c17b87c8d98",
+  "ObjectAdminTierLevel": "Unclassified",
+  "ObjectAdminTierLevelName": "Unclassified",
+  "OnPremSynchronized": false,
+  "AssignedAdministrativeUnits": [],
+  "RestrictedManagementByRAG": false,
+  "RestrictedManagementByAadRole": false,
+  "RestrictedManagementByRMAU": false,
+  "RoleSystem": "ResourceApps",
+  "Classification": [
+    {
+      "AdminTierLevel": "2",
+      "AdminTierLevelName": "UserAccess",
+      "Service": "Default member"
+    }
+  ],
+  "RoleAssignments": [
+    {
+      "RoleAssignmentId": "5EXJTFv3MU-2hR4w6tm7VZM7yOVfwchFpX2lbOPM5xXMVLPg_XpDSY91Nv_EWnI8",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "openid",
+      "RoleDefinitionId": "37f7f235-527c-4136-accd-4a02d197296e",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "4cc945e4-f75b-4f31-b685-1e30ead9bb55",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "2",
+          "AdminTierLevelName": "UserAccess",
+          "Service": "Default member",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "5EXJTFv3MU-2hR4w6tm7VZM7yOVfwchFpX2lbOPM5xXMVLPg_XpDSY91Nv_EWnI8",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "profile",
+      "RoleDefinitionId": "14dad69e-099b-42c9-810b-d002981feec1",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "4cc945e4-f75b-4f31-b685-1e30ead9bb55",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "2",
+          "AdminTierLevelName": "UserAccess",
+          "Service": "Default member",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    }
+  ],
+  "Sponsors": [],
+  "Owners": [],
+  "OwnedObjects": [],
+  "OwnedDevices": [],
+  "AssociatedWorkAccount": [],
+  "AssociatedPawDevice": []
+}

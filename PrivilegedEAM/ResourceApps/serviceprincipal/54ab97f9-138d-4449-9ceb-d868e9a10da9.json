@@ -1,0 +1,1727 @@
+{
+  "ObjectId": "54ab97f9-138d-4449-9ceb-d868e9a10da9",
+  "ObjectType": "serviceprincipal",
+  "ObjectSubType": "Application",
+  "ObjectDisplayName": "Microsoft Graph PowerShell",
+  "ObjectUserPrincipalName": "14d82eec-204b-4c2f-b7e8-296a70dab67e",
+  "ObjectAdminTierLevel": "Unclassified",
+  "ObjectAdminTierLevelName": "Unclassified",
+  "OnPremSynchronized": false,
+  "AssignedAdministrativeUnits": [],
+  "RestrictedManagementByRAG": false,
+  "RestrictedManagementByAadRole": false,
+  "RestrictedManagementByRMAU": false,
+  "RoleSystem": "ResourceApps",
+  "Classification": [
+    {
+      "AdminTierLevel": "0",
+      "AdminTierLevelName": "ControlPlane",
+      "Service": "Application and Workload Identity"
+    },
+    {
+      "AdminTierLevel": "0",
+      "AdminTierLevelName": "ControlPlane",
+      "Service": "Conditional Access"
+    },
+    {
+      "AdminTierLevel": "0",
+      "AdminTierLevelName": "ControlPlane",
+      "Service": "Global Endpoint Management"
+    },
+    {
+      "AdminTierLevel": "0",
+      "AdminTierLevelName": "ControlPlane",
+      "Service": "Global User Management"
+    },
+    {
+      "AdminTierLevel": "0",
+      "AdminTierLevelName": "ControlPlane",
+      "Service": "Group Management"
+    },
+    {
+      "AdminTierLevel": "0",
+      "AdminTierLevelName": "ControlPlane",
+      "Service": "Privileged ABAC"
+    },
+    {
+      "AdminTierLevel": "0",
+      "AdminTierLevelName": "ControlPlane",
+      "Service": "Privileged IAM"
+    },
+    {
+      "AdminTierLevel": "0",
+      "AdminTierLevelName": "ControlPlane",
+      "Service": "Tenant Management"
+    },
+    {
+      "AdminTierLevel": "1",
+      "AdminTierLevelName": "ManagementPlane",
+      "Service": "Microsoft 365 Platform Management"
+    },
+    {
+      "AdminTierLevel": "1",
+      "AdminTierLevelName": "ManagementPlane",
+      "Service": "Microsoft Teams"
+    },
+    {
+      "AdminTierLevel": "1",
+      "AdminTierLevelName": "ManagementPlane",
+      "Service": "Security and Compliance"
+    },
+    {
+      "AdminTierLevel": "1",
+      "AdminTierLevelName": "ManagementPlane",
+      "Service": "Tenant Configuration (Reader)"
+    },
+    {
+      "AdminTierLevel": "2",
+      "AdminTierLevelName": "UserAccess",
+      "Service": "Default member"
+    },
+    {
+      "AdminTierLevel": "Unclassified",
+      "AdminTierLevelName": "Unclassified",
+      "Service": "Unclassified"
+    }
+  ],
+  "RoleAssignments": [
+    {
+      "RoleAssignmentId": "-ZerVI0TSUSc69ho6aENqZM7yOVfwchFpX2lbOPM5xVA8PmItv-OQ6XuWpOZznEA",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "Agreement.ReadWrite.All",
+      "RoleDefinitionId": "ef4b5d93-3104-4664-9053-a5c49ab44218",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "54ab97f9-138d-4449-9ceb-d868e9a10da9",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "0",
+          "AdminTierLevelName": "ControlPlane",
+          "Service": "Tenant Management",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "-ZerVI0TSUSc69ho6aENqZM7yOVfwchFpX2lbOPM5xVA8PmItv-OQ6XuWpOZznEA",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "Application.ReadWrite.All",
+      "RoleDefinitionId": "bdfbf15f-ee85-4955-8675-146e8e5296b5",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "54ab97f9-138d-4449-9ceb-d868e9a10da9",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "0",
+          "AdminTierLevelName": "ControlPlane",
+          "Service": "Application and Workload Identity",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "-ZerVI0TSUSc69ho6aENqZM7yOVfwchFpX2lbOPM5xVA8PmItv-OQ6XuWpOZznEA",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "CloudPC.ReadWrite.All",
+      "RoleDefinitionId": "9d77138f-f0e2-47ba-ab33-cd246c8b79d1",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "54ab97f9-138d-4449-9ceb-d868e9a10da9",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "0",
+          "AdminTierLevelName": "ControlPlane",
+          "Service": "Global Endpoint Management",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "-ZerVI0TSUSc69ho6aENqZM7yOVfwchFpX2lbOPM5xVA8PmItv-OQ6XuWpOZznEA",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "CustomSecAttributeAssignment.Read.All",
+      "RoleDefinitionId": "b46ffa80-fe3d-4822-9a1a-c200932d54d0",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "54ab97f9-138d-4449-9ceb-d868e9a10da9",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "0",
+          "AdminTierLevelName": "ControlPlane",
+          "Service": "Privileged ABAC",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "-ZerVI0TSUSc69ho6aENqZM7yOVfwchFpX2lbOPM5xVA8PmItv-OQ6XuWpOZznEA",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "DelegatedPermissionGrant.ReadWrite.All",
+      "RoleDefinitionId": "41ce6ca6-6826-4807-84f1-1c82854f7ee5",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "54ab97f9-138d-4449-9ceb-d868e9a10da9",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "0",
+          "AdminTierLevelName": "ControlPlane",
+          "Service": "Application and Workload Identity",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "-ZerVI0TSUSc69ho6aENqZM7yOVfwchFpX2lbOPM5xVA8PmItv-OQ6XuWpOZznEA",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "DeviceManagementApps.ReadWrite.All",
+      "RoleDefinitionId": "7b3f05d5-f68c-4b8d-8c59-a2ecd12f24af",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "54ab97f9-138d-4449-9ceb-d868e9a10da9",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "0",
+          "AdminTierLevelName": "ControlPlane",
+          "Service": "Global Endpoint Management",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "-ZerVI0TSUSc69ho6aENqZM7yOVfwchFpX2lbOPM5xVA8PmItv-OQ6XuWpOZznEA",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "DeviceManagementConfiguration.ReadWrite.All",
+      "RoleDefinitionId": "0883f392-0a7a-443d-8c76-16a6d39c7b63",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "54ab97f9-138d-4449-9ceb-d868e9a10da9",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "0",
+          "AdminTierLevelName": "ControlPlane",
+          "Service": "Global Endpoint Management",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "-ZerVI0TSUSc69ho6aENqZM7yOVfwchFpX2lbOPM5xVA8PmItv-OQ6XuWpOZznEA",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "DeviceManagementManagedDevices.ReadWrite.All",
+      "RoleDefinitionId": "44642bfe-8385-4adc-8fc6-fe3cb2c375c3",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "54ab97f9-138d-4449-9ceb-d868e9a10da9",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "0",
+          "AdminTierLevelName": "ControlPlane",
+          "Service": "Global Endpoint Management",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "-ZerVI0TSUSc69ho6aENqZM7yOVfwchFpX2lbOPM5xVA8PmItv-OQ6XuWpOZznEA",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "DeviceManagementRBAC.ReadWrite.All",
+      "RoleDefinitionId": "0c5e8a55-87a6-4556-93ab-adc52c4d862d",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "54ab97f9-138d-4449-9ceb-d868e9a10da9",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "0",
+          "AdminTierLevelName": "ControlPlane",
+          "Service": "Privileged IAM",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "-ZerVI0TSUSc69ho6aENqZM7yOVfwchFpX2lbOPM5xVA8PmItv-OQ6XuWpOZznEA",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "DeviceManagementScripts.ReadWrite.All",
+      "RoleDefinitionId": "8b9d79d0-ad75-4566-8619-f7500ecfcebe",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "54ab97f9-138d-4449-9ceb-d868e9a10da9",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "0",
+          "AdminTierLevelName": "ControlPlane",
+          "Service": "Global Endpoint Management",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "-ZerVI0TSUSc69ho6aENqZM7yOVfwchFpX2lbOPM5xVA8PmItv-OQ6XuWpOZznEA",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "DeviceManagementServiceConfig.ReadWrite.All",
+      "RoleDefinitionId": "662ed50a-ac44-4eef-ad86-62eed9be2a29",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "54ab97f9-138d-4449-9ceb-d868e9a10da9",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "0",
+          "AdminTierLevelName": "ControlPlane",
+          "Service": "Global Endpoint Management",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "-ZerVI0TSUSc69ho6aENqZM7yOVfwchFpX2lbOPM5xVA8PmItv-OQ6XuWpOZznEA",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "Directory.ReadWrite.All",
+      "RoleDefinitionId": "c5366453-9fb0-48a5-a156-24f0c49a4b84",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "54ab97f9-138d-4449-9ceb-d868e9a10da9",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "0",
+          "AdminTierLevelName": "ControlPlane",
+          "Service": "Tenant Management",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "-ZerVI0TSUSc69ho6aENqZM7yOVfwchFpX2lbOPM5xVA8PmItv-OQ6XuWpOZznEA",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "Domain.ReadWrite.All",
+      "RoleDefinitionId": "0b5d694c-a244-4bde-86e6-eb5cd07730fe",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "54ab97f9-138d-4449-9ceb-d868e9a10da9",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "0",
+          "AdminTierLevelName": "ControlPlane",
+          "Service": "Tenant Management",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "-ZerVI0TSUSc69ho6aENqZM7yOVfwchFpX2lbOPM5xVA8PmItv-OQ6XuWpOZznEA",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "Group.ReadWrite.All",
+      "RoleDefinitionId": "4e46008b-f24c-477d-8fff-7bb4ec7aafe0",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "54ab97f9-138d-4449-9ceb-d868e9a10da9",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "0",
+          "AdminTierLevelName": "ControlPlane",
+          "Service": "Group Management",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "-ZerVI0TSUSc69ho6aENqZM7yOVfwchFpX2lbOPM5xVA8PmItv-OQ6XuWpOZznEA",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "Organization.ReadWrite.All",
+      "RoleDefinitionId": "46ca0847-7e6b-426e-9775-ea810a948356",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "54ab97f9-138d-4449-9ceb-d868e9a10da9",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "0",
+          "AdminTierLevelName": "ControlPlane",
+          "Service": "Tenant Management",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "-ZerVI0TSUSc69ho6aENqZM7yOVfwchFpX2lbOPM5xVA8PmItv-OQ6XuWpOZznEA",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "Policy.ReadWrite.ConditionalAccess",
+      "RoleDefinitionId": "ad902697-1014-4ef5-81ef-2b4301988e8c",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "54ab97f9-138d-4449-9ceb-d868e9a10da9",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "0",
+          "AdminTierLevelName": "ControlPlane",
+          "Service": "Conditional Access",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "-ZerVI0TSUSc69ho6aENqZM7yOVfwchFpX2lbOPM5xVA8PmItv-OQ6XuWpOZznEA",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "Policy.ReadWrite.MobilityManagement",
+      "RoleDefinitionId": "a8ead177-1889-4546-9387-f25e658e2a79",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "54ab97f9-138d-4449-9ceb-d868e9a10da9",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "0",
+          "AdminTierLevelName": "ControlPlane",
+          "Service": "Global Endpoint Management",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "-ZerVI0TSUSc69ho6aENqZM7yOVfwchFpX2lbOPM5xVA8PmItv-OQ6XuWpOZznEA",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "RoleAssignmentSchedule.ReadWrite.Directory",
+      "RoleDefinitionId": "8c026be3-8e26-4774-9372-8d5d6f21daff",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "54ab97f9-138d-4449-9ceb-d868e9a10da9",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "0",
+          "AdminTierLevelName": "ControlPlane",
+          "Service": "Privileged IAM",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "-ZerVI0TSUSc69ho6aENqZM7yOVfwchFpX2lbOPM5xVA8PmItv-OQ6XuWpOZznEA",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "RoleManagement.ReadWrite.Directory",
+      "RoleDefinitionId": "d01b97e9-cbc0-49fe-810a-750afd5527a3",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "54ab97f9-138d-4449-9ceb-d868e9a10da9",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "0",
+          "AdminTierLevelName": "ControlPlane",
+          "Service": "Privileged IAM",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "-ZerVI0TSUSc69ho6aENqZM7yOVfwchFpX2lbOPM5xVA8PmItv-OQ6XuWpOZznEA",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "User-LifeCycleInfo.ReadWrite.All",
+      "RoleDefinitionId": "7ee7473e-bd4b-4c9f-987c-bd58481f5fa2",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "54ab97f9-138d-4449-9ceb-d868e9a10da9",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "0",
+          "AdminTierLevelName": "ControlPlane",
+          "Service": "Global User Management",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "-ZerVI0TSUSc69ho6aENqZM7yOVfwchFpX2lbOPM5xVA8PmItv-OQ6XuWpOZznEA",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "User.ReadWrite.All",
+      "RoleDefinitionId": "204e0828-b5ca-4ad8-b9f3-f32a958e7cc4",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "54ab97f9-138d-4449-9ceb-d868e9a10da9",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "0",
+          "AdminTierLevelName": "ControlPlane",
+          "Service": "Global User Management",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "-ZerVI0TSUSc69ho6aENqZM7yOVfwchFpX2lbOPM5xVA8PmItv-OQ6XuWpOZznEA",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "Agreement.Read.All",
+      "RoleDefinitionId": "af2819c9-df71-4dd3-ade7-4d7c9dc653b7",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "54ab97f9-138d-4449-9ceb-d868e9a10da9",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "1",
+          "AdminTierLevelName": "ManagementPlane",
+          "Service": "Tenant Configuration (Reader)",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "-ZerVI0TSUSc69ho6aENqZM7yOVfwchFpX2lbOPM5xVA8PmItv-OQ6XuWpOZznEA",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "AppCatalog.Read.All",
+      "RoleDefinitionId": "88e58d74-d3df-44f3-ad47-e89edf4472e4",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "54ab97f9-138d-4449-9ceb-d868e9a10da9",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "1",
+          "AdminTierLevelName": "ManagementPlane",
+          "Service": "Microsoft Teams",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "-ZerVI0TSUSc69ho6aENqZM7yOVfwchFpX2lbOPM5xVA8PmItv-OQ6XuWpOZznEA",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "AuditLog.Read.All",
+      "RoleDefinitionId": "e4c9e354-4dc5-45b8-9e7c-e1393b0b1a20",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "54ab97f9-138d-4449-9ceb-d868e9a10da9",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "1",
+          "AdminTierLevelName": "ManagementPlane",
+          "Service": "Security and Compliance",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "-ZerVI0TSUSc69ho6aENqZM7yOVfwchFpX2lbOPM5xU",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "Chat.Create",
+      "RoleDefinitionId": "38826093-1258-4dea-98f0-00003be2b8d0",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "54ab97f9-138d-4449-9ceb-d868e9a10da9",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "1",
+          "AdminTierLevelName": "ManagementPlane",
+          "Service": "Microsoft Teams",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "-ZerVI0TSUSc69ho6aENqZM7yOVfwchFpX2lbOPM5xVA8PmItv-OQ6XuWpOZznEA",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "CrossTenantInformation.ReadBasic.All",
+      "RoleDefinitionId": "81594d25-e88e-49cf-ac8c-fecbff49f994",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "54ab97f9-138d-4449-9ceb-d868e9a10da9",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "1",
+          "AdminTierLevelName": "ManagementPlane",
+          "Service": "Tenant Configuration (Reader)",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "-ZerVI0TSUSc69ho6aENqZM7yOVfwchFpX2lbOPM5xVA8PmItv-OQ6XuWpOZznEA",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "DeviceManagementApps.Read.All",
+      "RoleDefinitionId": "4edf5f54-4666-44af-9de9-0144fb4b6e8c",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "54ab97f9-138d-4449-9ceb-d868e9a10da9",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "1",
+          "AdminTierLevelName": "ManagementPlane",
+          "Service": "Microsoft 365 Platform Management",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "-ZerVI0TSUSc69ho6aENqZM7yOVfwchFpX2lbOPM5xVA8PmItv-OQ6XuWpOZznEA",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "DeviceManagementConfiguration.Read.All",
+      "RoleDefinitionId": "f1493658-876a-4c87-8fa7-edb559b3476a",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "54ab97f9-138d-4449-9ceb-d868e9a10da9",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "1",
+          "AdminTierLevelName": "ManagementPlane",
+          "Service": "Microsoft 365 Platform Management",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "-ZerVI0TSUSc69ho6aENqZM7yOVfwchFpX2lbOPM5xVA8PmItv-OQ6XuWpOZznEA",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "DeviceManagementManagedDevices.Read.All",
+      "RoleDefinitionId": "314874da-47d6-4978-88dc-cf0d37f0bb82",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "54ab97f9-138d-4449-9ceb-d868e9a10da9",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "1",
+          "AdminTierLevelName": "ManagementPlane",
+          "Service": "Microsoft 365 Platform Management",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "-ZerVI0TSUSc69ho6aENqZM7yOVfwchFpX2lbOPM5xVA8PmItv-OQ6XuWpOZznEA",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "DeviceManagementRBAC.Read.All",
+      "RoleDefinitionId": "49f0cc30-024c-4dfd-ab3e-82e137ee5431",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "54ab97f9-138d-4449-9ceb-d868e9a10da9",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "1",
+          "AdminTierLevelName": "ManagementPlane",
+          "Service": "Microsoft 365 Platform Management",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "-ZerVI0TSUSc69ho6aENqZM7yOVfwchFpX2lbOPM5xVA8PmItv-OQ6XuWpOZznEA",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "DeviceManagementServiceConfig.Read.All",
+      "RoleDefinitionId": "8696daa5-bce5-4b2e-83f9-51b6defc4e1e",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "54ab97f9-138d-4449-9ceb-d868e9a10da9",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "1",
+          "AdminTierLevelName": "ManagementPlane",
+          "Service": "Microsoft 365 Platform Management",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "-ZerVI0TSUSc69ho6aENqZM7yOVfwchFpX2lbOPM5xVA8PmItv-OQ6XuWpOZznEA",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "DirectoryRecommendations.Read.All",
+      "RoleDefinitionId": "34d3bd24-f6a6-468c-b67c-0c365c1d6410",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "54ab97f9-138d-4449-9ceb-d868e9a10da9",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "1",
+          "AdminTierLevelName": "ManagementPlane",
+          "Service": "Tenant Configuration (Reader)",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "-ZerVI0TSUSc69ho6aENqZM7yOVfwchFpX2lbOPM5xVA8PmItv-OQ6XuWpOZznEA",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "EntitlementManagement.Read.All",
+      "RoleDefinitionId": "5449aa12-1393-4ea2-a7c7-d0e06c1a56b2",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "54ab97f9-138d-4449-9ceb-d868e9a10da9",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "1",
+          "AdminTierLevelName": "ManagementPlane",
+          "Service": "Tenant Configuration (Reader)",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "-ZerVI0TSUSc69ho6aENqZM7yOVfwchFpX2lbOPM5xVA8PmItv-OQ6XuWpOZznEA",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "Policy.Read.All",
+      "RoleDefinitionId": "572fea84-0151-49b2-9301-11cb16974376",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "54ab97f9-138d-4449-9ceb-d868e9a10da9",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "1",
+          "AdminTierLevelName": "ManagementPlane",
+          "Service": "Tenant Configuration (Reader)",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "-ZerVI0TSUSc69ho6aENqZM7yOVfwchFpX2lbOPM5xXMVLPg_XpDSY91Nv_EWnI8",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "Policy.Read.All",
+      "RoleDefinitionId": "572fea84-0151-49b2-9301-11cb16974376",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "54ab97f9-138d-4449-9ceb-d868e9a10da9",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "1",
+          "AdminTierLevelName": "ManagementPlane",
+          "Service": "Tenant Configuration (Reader)",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "-ZerVI0TSUSc69ho6aENqZM7yOVfwchFpX2lbOPM5xVA8PmItv-OQ6XuWpOZznEA",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "PrivilegedAccess.Read.AzureADGroup",
+      "RoleDefinitionId": "d329c81c-20ad-4772-abf9-3f6fdb7e5988",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "54ab97f9-138d-4449-9ceb-d868e9a10da9",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "1",
+          "AdminTierLevelName": "ManagementPlane",
+          "Service": "Tenant Configuration (Reader)",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "-ZerVI0TSUSc69ho6aENqZM7yOVfwchFpX2lbOPM5xVA8PmItv-OQ6XuWpOZznEA",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "PrivilegedEligibilitySchedule.Read.AzureADGroup",
+      "RoleDefinitionId": "8f44f93d-ecef-46ae-a9bf-338508d44d6b",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "54ab97f9-138d-4449-9ceb-d868e9a10da9",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "1",
+          "AdminTierLevelName": "ManagementPlane",
+          "Service": "Tenant Configuration (Reader)",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "-ZerVI0TSUSc69ho6aENqZM7yOVfwchFpX2lbOPM5xVA8PmItv-OQ6XuWpOZznEA",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "RoleAssignmentSchedule.Read.Directory",
+      "RoleDefinitionId": "344a729c-0285-42c6-9014-f12b9b8d6129",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "54ab97f9-138d-4449-9ceb-d868e9a10da9",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "1",
+          "AdminTierLevelName": "ManagementPlane",
+          "Service": "Tenant Configuration (Reader)",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "-ZerVI0TSUSc69ho6aENqZM7yOVfwchFpX2lbOPM5xVA8PmItv-OQ6XuWpOZznEA",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "RoleEligibilitySchedule.Read.Directory",
+      "RoleDefinitionId": "eb0788c2-6d4e-4658-8c9e-c0fb8053f03d",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "54ab97f9-138d-4449-9ceb-d868e9a10da9",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "1",
+          "AdminTierLevelName": "ManagementPlane",
+          "Service": "Tenant Configuration (Reader)",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "-ZerVI0TSUSc69ho6aENqZM7yOVfwchFpX2lbOPM5xVA8PmItv-OQ6XuWpOZznEA",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "ThreatHunting.Read.All",
+      "RoleDefinitionId": "b152eca8-ea73-4a48-8c98-1a6742673d99",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "54ab97f9-138d-4449-9ceb-d868e9a10da9",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "1",
+          "AdminTierLevelName": "ManagementPlane",
+          "Service": "Security and Compliance",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "-ZerVI0TSUSc69ho6aENqZM7yOVfwchFpX2lbOPM5xVA8PmItv-OQ6XuWpOZznEA",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "AdministrativeUnit.Read.All",
+      "RoleDefinitionId": "3361d15d-be43-4de6-b441-3c746d05163d",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "54ab97f9-138d-4449-9ceb-d868e9a10da9",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "2",
+          "AdminTierLevelName": "UserAccess",
+          "Service": "Default member",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "-ZerVI0TSUSc69ho6aENqZM7yOVfwchFpX2lbOPM5xVA8PmItv-OQ6XuWpOZznEA",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "Application.Read.All",
+      "RoleDefinitionId": "c79f8feb-a9db-4090-85f9-90d820caa0eb",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "54ab97f9-138d-4449-9ceb-d868e9a10da9",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "2",
+          "AdminTierLevelName": "UserAccess",
+          "Service": "Default member",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "-ZerVI0TSUSc69ho6aENqZM7yOVfwchFpX2lbOPM5xXMVLPg_XpDSY91Nv_EWnI8",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "Directory.Read.All",
+      "RoleDefinitionId": "06da0dbc-49e2-44d2-8312-53f166ab848a",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "54ab97f9-138d-4449-9ceb-d868e9a10da9",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "2",
+          "AdminTierLevelName": "UserAccess",
+          "Service": "Default member",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "-ZerVI0TSUSc69ho6aENqZM7yOVfwchFpX2lbOPM5xVA8PmItv-OQ6XuWpOZznEA",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "Directory.Read.All",
+      "RoleDefinitionId": "06da0dbc-49e2-44d2-8312-53f166ab848a",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "54ab97f9-138d-4449-9ceb-d868e9a10da9",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "2",
+          "AdminTierLevelName": "UserAccess",
+          "Service": "Default member",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "-ZerVI0TSUSc69ho6aENqZM7yOVfwchFpX2lbOPM5xVA8PmItv-OQ6XuWpOZznEA",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "Domain.Read.All",
+      "RoleDefinitionId": "2f9ee017-59c1-4f1d-9472-bd5529a7b311",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "54ab97f9-138d-4449-9ceb-d868e9a10da9",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "2",
+          "AdminTierLevelName": "UserAccess",
+          "Service": "Default member",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "-ZerVI0TSUSc69ho6aENqZM7yOVfwchFpX2lbOPM5xVA8PmItv-OQ6XuWpOZznEA",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "email",
+      "RoleDefinitionId": "64a6cdd6-aab1-4aaf-94b8-3cc8405e90d0",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "54ab97f9-138d-4449-9ceb-d868e9a10da9",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "2",
+          "AdminTierLevelName": "UserAccess",
+          "Service": "Default member",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "-ZerVI0TSUSc69ho6aENqZM7yOVfwchFpX2lbOPM5xVA8PmItv-OQ6XuWpOZznEA",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "Group.Read.All",
+      "RoleDefinitionId": "5f8c59db-677d-491f-a6b8-5f174b11ec1d",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "54ab97f9-138d-4449-9ceb-d868e9a10da9",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "2",
+          "AdminTierLevelName": "UserAccess",
+          "Service": "Default member",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "-ZerVI0TSUSc69ho6aENqZM7yOVfwchFpX2lbOPM5xXMVLPg_XpDSY91Nv_EWnI8",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "GroupMember.Read.All",
+      "RoleDefinitionId": "bc024368-1153-4739-b217-4326f2e966d0",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "54ab97f9-138d-4449-9ceb-d868e9a10da9",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "2",
+          "AdminTierLevelName": "UserAccess",
+          "Service": "Default member",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "-ZerVI0TSUSc69ho6aENqZM7yOVfwchFpX2lbOPM5xVA8PmItv-OQ6XuWpOZznEA",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "offline_access",
+      "RoleDefinitionId": "7427e0e9-2fba-42fe-b0c0-848c9e6a8182",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "54ab97f9-138d-4449-9ceb-d868e9a10da9",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "2",
+          "AdminTierLevelName": "UserAccess",
+          "Service": "Default member",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "-ZerVI0TSUSc69ho6aENqZM7yOVfwchFpX2lbOPM5xXMVLPg_XpDSY91Nv_EWnI8",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "offline_access",
+      "RoleDefinitionId": "7427e0e9-2fba-42fe-b0c0-848c9e6a8182",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "54ab97f9-138d-4449-9ceb-d868e9a10da9",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "2",
+          "AdminTierLevelName": "UserAccess",
+          "Service": "Default member",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "-ZerVI0TSUSc69ho6aENqZM7yOVfwchFpX2lbOPM5xVA8PmItv-OQ6XuWpOZznEA",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "openid",
+      "RoleDefinitionId": "37f7f235-527c-4136-accd-4a02d197296e",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "54ab97f9-138d-4449-9ceb-d868e9a10da9",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "2",
+          "AdminTierLevelName": "UserAccess",
+          "Service": "Default member",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "-ZerVI0TSUSc69ho6aENqZM7yOVfwchFpX2lbOPM5xXMVLPg_XpDSY91Nv_EWnI8",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "openid",
+      "RoleDefinitionId": "37f7f235-527c-4136-accd-4a02d197296e",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "54ab97f9-138d-4449-9ceb-d868e9a10da9",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "2",
+          "AdminTierLevelName": "UserAccess",
+          "Service": "Default member",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "-ZerVI0TSUSc69ho6aENqZM7yOVfwchFpX2lbOPM5xXMVLPg_XpDSY91Nv_EWnI8",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "Organization.Read.All",
+      "RoleDefinitionId": "4908d5b9-3fb2-4b1e-9336-1888b7937185",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "54ab97f9-138d-4449-9ceb-d868e9a10da9",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "2",
+          "AdminTierLevelName": "UserAccess",
+          "Service": "Default member",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "-ZerVI0TSUSc69ho6aENqZM7yOVfwchFpX2lbOPM5xVA8PmItv-OQ6XuWpOZznEA",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "Organization.Read.All",
+      "RoleDefinitionId": "4908d5b9-3fb2-4b1e-9336-1888b7937185",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "54ab97f9-138d-4449-9ceb-d868e9a10da9",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "2",
+          "AdminTierLevelName": "UserAccess",
+          "Service": "Default member",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "-ZerVI0TSUSc69ho6aENqZM7yOVfwchFpX2lbOPM5xVA8PmItv-OQ6XuWpOZznEA",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "profile",
+      "RoleDefinitionId": "14dad69e-099b-42c9-810b-d002981feec1",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "54ab97f9-138d-4449-9ceb-d868e9a10da9",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "2",
+          "AdminTierLevelName": "UserAccess",
+          "Service": "Default member",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "-ZerVI0TSUSc69ho6aENqZM7yOVfwchFpX2lbOPM5xXMVLPg_XpDSY91Nv_EWnI8",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "profile",
+      "RoleDefinitionId": "14dad69e-099b-42c9-810b-d002981feec1",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "54ab97f9-138d-4449-9ceb-d868e9a10da9",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "2",
+          "AdminTierLevelName": "UserAccess",
+          "Service": "Default member",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "-ZerVI0TSUSc69ho6aENqZM7yOVfwchFpX2lbOPM5xVA8PmItv-OQ6XuWpOZznEA",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "RoleManagement.Read.All",
+      "RoleDefinitionId": "48fec646-b2ba-4019-8681-8eb31435aded",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "54ab97f9-138d-4449-9ceb-d868e9a10da9",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "2",
+          "AdminTierLevelName": "UserAccess",
+          "Service": "Default member",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "-ZerVI0TSUSc69ho6aENqZM7yOVfwchFpX2lbOPM5xXMVLPg_XpDSY91Nv_EWnI8",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "RoleManagement.Read.Directory",
+      "RoleDefinitionId": "741c54c3-0c1e-44a1-818b-3f97ab4e8c83",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "54ab97f9-138d-4449-9ceb-d868e9a10da9",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "2",
+          "AdminTierLevelName": "UserAccess",
+          "Service": "Default member",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "-ZerVI0TSUSc69ho6aENqZM7yOVfwchFpX2lbOPM5xU",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "User.Read",
+      "RoleDefinitionId": "e1fe6dd8-ba31-4d61-89e7-88639da4683d",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "54ab97f9-138d-4449-9ceb-d868e9a10da9",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "2",
+          "AdminTierLevelName": "UserAccess",
+          "Service": "Default member",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "-ZerVI0TSUSc69ho6aENqZM7yOVfwchFpX2lbOPM5xVA8PmItv-OQ6XuWpOZznEA",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "User.Read",
+      "RoleDefinitionId": "e1fe6dd8-ba31-4d61-89e7-88639da4683d",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "54ab97f9-138d-4449-9ceb-d868e9a10da9",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "2",
+          "AdminTierLevelName": "UserAccess",
+          "Service": "Default member",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "-ZerVI0TSUSc69ho6aENqZM7yOVfwchFpX2lbOPM5xXMVLPg_XpDSY91Nv_EWnI8",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "User.Read.All",
+      "RoleDefinitionId": "a154be20-db9c-4678-8ab7-66f6cc099a59",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "54ab97f9-138d-4449-9ceb-d868e9a10da9",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "2",
+          "AdminTierLevelName": "UserAccess",
+          "Service": "Default member",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "-ZerVI0TSUSc69ho6aENqZM7yOVfwchFpX2lbOPM5xVA8PmItv-OQ6XuWpOZznEA",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "User.Read.All",
+      "RoleDefinitionId": "a154be20-db9c-4678-8ab7-66f6cc099a59",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "54ab97f9-138d-4449-9ceb-d868e9a10da9",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "2",
+          "AdminTierLevelName": "UserAccess",
+          "Service": "Default member",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "-ZerVI0TSUSc69ho6aENqZM7yOVfwchFpX2lbOPM5xXMVLPg_XpDSY91Nv_EWnI8",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "UserAuthenticationMethod.Read.All",
+      "RoleDefinitionId": "aec28ec7-4d02-4e8c-b864-50163aea77eb",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "54ab97f9-138d-4449-9ceb-d868e9a10da9",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "2",
+          "AdminTierLevelName": "UserAccess",
+          "Service": "Default member",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "-ZerVI0TSUSc69ho6aENqZM7yOVfwchFpX2lbOPM5xU",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "Chat.Read",
+      "RoleDefinitionId": "f501c180-9344-439a-bca0-6cbf209fd270",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "54ab97f9-138d-4449-9ceb-d868e9a10da9",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "Unclassified",
+          "AdminTierLevelName": "Unclassified",
+          "Service": "Unclassified",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "-ZerVI0TSUSc69ho6aENqZM7yOVfwchFpX2lbOPM5xU",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "Chat.ReadBasic",
+      "RoleDefinitionId": "9547fcb5-d03f-419d-9948-5928bbf71b0f",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "54ab97f9-138d-4449-9ceb-d868e9a10da9",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "Unclassified",
+          "AdminTierLevelName": "Unclassified",
+          "Service": "Unclassified",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "-ZerVI0TSUSc69ho6aENqZM7yOVfwchFpX2lbOPM5xU",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "Chat.ReadWrite",
+      "RoleDefinitionId": "9ff7295e-131b-4d94-90e1-69fde507ac11",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "54ab97f9-138d-4449-9ceb-d868e9a10da9",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "Unclassified",
+          "AdminTierLevelName": "Unclassified",
+          "Service": "Unclassified",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "-ZerVI0TSUSc69ho6aENqZM7yOVfwchFpX2lbOPM5xU",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "ChatMessage.Read",
+      "RoleDefinitionId": "cdcdac3a-fd45-410d-83ef-554db620e5c7",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "54ab97f9-138d-4449-9ceb-d868e9a10da9",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "Unclassified",
+          "AdminTierLevelName": "Unclassified",
+          "Service": "Unclassified",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    },
+    {
+      "RoleAssignmentId": "-ZerVI0TSUSc69ho6aENqZM7yOVfwchFpX2lbOPM5xU",
+      "RoleAssignmentScopeId": "e5c83b93-c15f-45c8-a57d-a56ce3cce715",
+      "RoleAssignmentScopeName": "Microsoft Graph",
+      "RoleAssignmentType": "Direct",
+      "PIMManagedRole": false,
+      "PIMAssignmentType": "Permanent",
+      "RoleDefinitionName": "ChatMessage.Send",
+      "RoleDefinitionId": "116b7235-7cc6-461e-b163-8e55691d839e",
+      "RoleType": "Delegated",
+      "RoleIsPrivileged": "",
+      "ObjectId": "54ab97f9-138d-4449-9ceb-d868e9a10da9",
+      "ObjectType": "serviceprincipal",
+      "TransitiveByObjectId": null,
+      "TransitiveByObjectDisplayName": null,
+      "Classification": [
+        {
+          "AdminTierLevel": "Unclassified",
+          "AdminTierLevelName": "Unclassified",
+          "Service": "Unclassified",
+          "TaggedBy": "JSONwithAction"
+        }
+      ]
+    }
+  ],
+  "Sponsors": [],
+  "Owners": [],
+  "OwnedObjects": [],
+  "OwnedDevices": [],
+  "AssociatedWorkAccount": [],
+  "AssociatedPawDevice": []
+}
