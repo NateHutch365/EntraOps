@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 import { NavLink } from 'react-router';
-import { LayoutDashboard, Users, SlidersHorizontal, FileJson, Terminal, PlugZap, PanelLeftClose, PanelLeftOpen, History, Settings } from 'lucide-react';
+import { LayoutDashboard, Users, SlidersHorizontal, ShieldMinus, FileJson, Terminal, PlugZap, PanelLeftClose, PanelLeftOpen, History, Settings } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 
@@ -8,6 +8,7 @@ const NAV_ITEMS = [
   { to: '/', icon: LayoutDashboard, label: 'Dashboard', end: true },
   { to: '/objects', icon: Users, label: 'Browse Objects', end: false },
   { to: '/reclassify', icon: SlidersHorizontal, label: 'Reclassify', end: false },
+  { to: '/exclusions', icon: ShieldMinus, label: 'Exclusions', end: false },
   { to: '/templates', icon: FileJson, label: 'Templates', end: false },
   { to: '/run', icon: Terminal, label: 'Run Commands', end: false },
   { to: '/connect', icon: PlugZap, label: 'Connect', end: false },

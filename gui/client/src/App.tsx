@@ -10,6 +10,7 @@ import { SettingsPage } from '@/pages/SettingsPage';
 import { HistoryPage } from '@/pages/HistoryPage';
 import { ComparePage } from '@/pages/ComparePage';
 import { ReclassifyPage } from '@/pages/ReclassifyPage';
+import { ExclusionsPage } from '@/pages/ExclusionsPage';
 import { Toaster } from '@/components/ui/sonner';
 
 export default function App() {
@@ -21,6 +22,7 @@ export default function App() {
           <Route path="objects" element={<ObjectBrowser />} />
           <Route path="objects/:objectId" element={<ObjectDetail />} />
           <Route path="reclassify" element={<ReclassifyPage />} />
+          <Route path="exclusions" element={<ExclusionsPage />} />
           <Route path="templates" element={<TemplatesPage />} />
           <Route path="history/compare" element={<ComparePage />} />
           <Route path="history" element={<HistoryPage />} />
