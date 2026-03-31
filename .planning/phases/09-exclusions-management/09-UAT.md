@@ -3,7 +3,7 @@ status: complete
 phase: 09-exclusions-management
 source: [09-01-SUMMARY.md, 09-02-SUMMARY.md, 09-03-SUMMARY.md]
 started: 2026-03-31T00:00:00Z
-updated: 2026-03-31T22:40:00Z
+updated: 2026-03-31T22:45:00Z
 ---
 
 ## Current Test
@@ -41,6 +41,8 @@ expected: Navigate to Templates, then open the Global (or Exclusions) tab. There
 result: issue
 reported: "Tab bar wraps to two rows on the Templates page; the wrapped second row of tabs visually overlaps the Global Exclusions tab panel content, partially hiding the 'Exclusions are managed on the dedicated' text and 'Exclusions page →' link behind the tab buttons."
 severity: cosmetic
+fixed: true
+fix: "Changed TabsList className from h-auto to !h-auto in TemplatesPage.tsx to override the base h-9 that was clipping the wrapping tab container. Commit 74f2fa1."
 
 ### 8. "Exclusions page →" Link Navigates Correctly
 expected: Click the "Exclusions page →" link in the Templates Global tab. It navigates to the /exclusions route, showing the Exclusions management page (not a 404 or blank page).
