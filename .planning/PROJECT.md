@@ -1,5 +1,13 @@
 # EntraOps GUI
 
+## Current Milestone: v1.2 Self-Service Implementation Workflow
+
+**Goal:** Turn the GUI into a point-and-click implementation tool — an admin can connect, review recommended classification, exclude specific objects, and apply the tier structure to Entra without touching a terminal or a JSON file.
+
+**Target features:**
+- GUI Exclusions Management — view/add/remove entries in Global.json directly from the UI, excludable from Object Browser and a dedicated Exclusions page
+- Implement Button — guided "Apply to Entra" workflow that streams real-time progress from Update-EntraOps* cmdlets after the admin has reviewed classification
+
 ## Current State
 
 **Shipped: v1.1 Pre-Apply Intelligence** ✅ (2026-03-29)
@@ -45,9 +53,14 @@ Additionally delivered 17 originally-deferred v2 requirements (RUN-01–06, CONN
 - ✓ RECL-04: Save All persists overrides to classification config files atomically — v1.1
 - ✓ RECL-05: Discard resets pending overrides with no server calls — v1.1
 
-### Active (v1.2 candidates)
+### Active (v1.2)
 
-- [ ] Pre-install prerequisite PowerShell modules (Az.Accounts, Az.Resources, Az.ResourceGraph) in UI setup gate — currently requires manual install
+- [ ] [EXCL] GUI Exclusions Management — add/remove entries in Global.json from the UI
+- [ ] [IMPL] Implement Button — guided "Apply to Entra" workflow with real-time streaming progress
+
+### Deferred to Future (removed from v1.2 short-list)
+
+- [ ] Pre-install prerequisite PowerShell modules (Az.Accounts, Az.Resources, Az.ResourceGraph) in UI setup gate — still requires manual install
 - [ ] Fix terminal line spacing in ConnectPage SSE output (ansi-to-html block-level wrapper injection)
 - [ ] Alerting / notifications — flag new ControlPlane identities after classification run
 - [ ] Attack path analysis — privilege chain tracing, blast radius, exposure scoring
@@ -117,8 +130,8 @@ The codebase is a PowerShell module. The GUI will live in a `gui/` subdirectory 
 
 Current codebase: ~10,968 LOC TypeScript across `gui/client`, `gui/server`, `gui/shared`.
 Tech stack: React + Vite + Tailwind CSS + shadcn/ui (client); Express.js + TypeScript (server); Zod validation; vitest for server tests.
-Two milestones shipped: v1.0 (6 phases, 30 plans) → v1.1 (2 phases, 6 plans).
-Pending todos: pre-install PowerShell modules, ConnectPage terminal line-spacing fix.
+Three milestones shipped: v1.0 (6 phases, 30 plans) → v1.1 (2 phases, 6 plans). v1.2 in progress.
+Implementation cmdlets (AU, CA Group, Unprotected AU, ControlPlane Scope) already on the command runner allowlist.
 
 ---
-*Last updated: 2026-03-29 after v1.1 milestone*
+*Last updated: 2026-03-29 after v1.2 milestone start*

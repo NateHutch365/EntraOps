@@ -37,27 +37,46 @@ function deriveAffectedSystems(files: string[]): RbacSystem[] {
 
 /**
  * Parse raw `git log --format=%H%n%h%n%an%n%aI%n%s --name-only` output into commit entries.
- * Each commit block is separated by a blank line.
+ *
+ * git log --name-only inserts a blank line between the format header and the file list,
+ * AND between commits. Splitting on double-newlines mixes commit headers with file lists.
+ * Instead, detect commit boundaries by 40-char hex full hashes.
  */
 function parseRawLog(raw: string): { fullHash: string; hash: string; author: string; date: string; message: string; files: string[] }[] {
-  const blocks = raw.trim().split(/\n\n+/);
-  const result = [];
+  const lines = raw.trim().split('\n');
+  const result: { fullHash: string; hash: string; author: string; date: string; message: string; files: string[] }[] = [];
+  let i = 0;
 
-  for (const block of blocks) {
-    const lines = block.trim().split('\n');
-    if (lines.length < 5) continue;
+  while (i < lines.length) {
+    const fullHash = lines[i]?.trim() ?? '';
+    // Full git hashes are exactly 40 hex chars — use as commit boundary marker
+    if (!/^[0-9a-f]{40}$/i.test(fullHash)) {
+      i++;
+      continue;
+    }
 
-    const [fullHash, hash, author, date, message, ...fileLines] = lines;
-    if (!fullHash || !hash) continue;
+    const hash = lines[i + 1]?.trim() ?? '';
+    const author = lines[i + 2]?.trim() ?? '';
+    const date = lines[i + 3]?.trim() ?? '';
+    const message = lines[i + 4]?.trim() ?? '';
+    i += 5;
 
-    result.push({
-      fullHash: fullHash.trim(),
-      hash: hash.trim(),
-      author: author?.trim() ?? '',
-      date: date?.trim() ?? '',
-      message: message?.trim() ?? '',
-      files: fileLines.map(l => l.trim()).filter(Boolean),
-    });
+    // Skip the blank line git inserts between the header block and the file list
+    if (lines[i]?.trim() === '') i++;
+
+    // Collect file names until a blank line or the start of the next commit
+    const files: string[] = [];
+    while (i < lines.length) {
+      const line = lines[i]?.trim() ?? '';
+      if (line === '' || /^[0-9a-f]{40}$/i.test(line)) break;
+      files.push(line);
+      i++;
+    }
+
+    // Skip any trailing blank lines between commits
+    while (i < lines.length && lines[i]?.trim() === '') i++;
+
+    result.push({ fullHash, hash, author, date, message, files });
   }
 
   return result;

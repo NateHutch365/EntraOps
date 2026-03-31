@@ -27,6 +27,15 @@ export function getAuthTokens(): AuthTokens | null {
   return authTokens;
 }
 
+// refreshAuthTokens — re-extract fresh Az + MgGraph tokens from the persisted Az context.
+// Called at classify-time so tokens are seconds old (not minutes/hours from connect-time).
+// Returns null if no prior connect session or extraction fails.
+export function refreshAuthTokens(): AuthTokens | null {
+  if (!authTokens) return null;
+  extractTokens(authTokens.tenantName);
+  return authTokens;
+}
+
 export function isConnecting(): boolean {
   return connectProcess !== null;
 }
@@ -47,7 +56,7 @@ function extractTokens(tenantName: string): void {
     "Import-Module './EntraOps/EntraOps.psd1'",
     "function ctps($s) { if ($s -is [securestring]) { [System.Net.NetworkCredential]::new('', $s).Password } else { [string]$s } }",
     '$ctx = Get-AzContext',
-    '$armToken = ctps (Get-AzAccessToken -ResourceTypeName ARM).Token',
+    '$armToken = ctps (Get-AzAccessToken -ResourceTypeName Arm).Token',
     '$graphToken = ctps (Get-AzAccessToken -ResourceTypeName MSGraph).Token',
     '[PSCustomObject]@{ AccountId = $ctx.Account.Id; AzArmToken = $armToken; MsGraphToken = $graphToken } | ConvertTo-Json -Compress',
   ].join('; ');
@@ -69,8 +78,10 @@ function extractTokens(tenantName: string): void {
     const parsed = JSON.parse(jsonLine) as { AccountId: string; AzArmToken: string; MsGraphToken: string };
     if (parsed.AccountId && parsed.AzArmToken && parsed.MsGraphToken) {
       authTokens = { accountId: parsed.AccountId, azArmToken: parsed.AzArmToken, msGraphToken: parsed.MsGraphToken, tenantName };
+      console.log('[connect] tokens extracted successfully for', parsed.AccountId);
     } else {
-      console.error('[connect] token extraction returned incomplete data');
+      console.error('[connect] token extraction returned incomplete data — AccountId:', !!parsed.AccountId, 'AzArmToken:', !!parsed.AzArmToken, 'MsGraphToken:', !!parsed.MsGraphToken);
+      if (result.stderr) console.error('[connect] stderr during extraction:', result.stderr.slice(0, 500));
     }
   } catch (err) {
     console.error('[connect] token extraction JSON parse failed:', err);
