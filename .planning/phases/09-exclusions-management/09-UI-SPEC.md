@@ -53,10 +53,11 @@ Exceptions:
 
 | Role | Size | Weight | Line Height | Usage |
 |------|------|--------|-------------|-------|
-| Body | 14px | 400 | 1.5 | Table cell text, display names |
-| Label | 14px | 500 | 1.25 | Table header text (`TableHead`), form labels |
+| Body | 14px | 400 | 1.5 | Table cell text, display names, table header text (`TableHead` — distinguished by `text-muted-foreground`) |
 | Heading | 20px | 600 | 1.2 | Page title "Exclusions" |
 | Mono | 12px | 400 | 1.4 | Truncated GUID display in Object ID column |
+
+> **Weight constraint:** Only 2 weights used — 400 (body/mono) and 600 (page heading only). `TableHead` elements use `font-normal` (400) + `text-muted-foreground` for visual distinction instead of a heavier weight.
 
 Font class: `font-sans` (resolves to Segoe UI Variable stack via `@theme inline`)
 
@@ -186,7 +187,7 @@ Active state: inherits existing pattern — `text-fluent-accent font-medium bg-[
 | Unresolvable display name | `Unknown (GUID)` — rendered as `text-muted-foreground` |
 | Remove confirmation title | `Remove exclusion?` |
 | Remove confirmation body | `[DisplayName] will be removed from exclusions and Global.json will be updated immediately. This cannot be undone.` |
-| Remove confirmation cancel | `Cancel` |
+| Remove confirmation cancel | `Keep Exclusion` |
 | Remove confirmation confirm | `Remove` (variant="destructive") |
 | Remove success toast | `Exclusion removed` (via `sonner` — matches existing toast pattern) |
 | Remove error toast | `Failed to remove exclusion` |
@@ -199,7 +200,7 @@ Active state: inherits existing pattern — `text-fluent-accent font-medium bg-[
 
 1. User clicks `Remove` button on a table row
 2. `<Dialog>` opens with confirmation copy (see Copywriting Contract above)
-3. Dialog footer: `Cancel` (variant="outline") + `Remove` (variant="destructive") buttons — 8px gap
+3. Dialog footer: `Keep Exclusion` (variant="outline") + `Remove` (variant="destructive") buttons — 8px gap
 4. On confirm: `DELETE /api/exclusions/:guid` → optimistic row removal + toast on success/error
 5. On cancel: Dialog closes, no change
 
@@ -212,7 +213,7 @@ Active state: inherits existing pattern — `text-fluent-accent font-medium bg-[
 
 - Render inside `<TableBody>` as a single `<TableRow>` with `<TableCell colSpan={4}>`
 - Centered vertically: `text-center text-muted-foreground py-12`
-- Two lines: heading (14px/500) + body (14px/400 mt-1)
+- Two lines: heading (14px/600 text-foreground) + body (14px/400 mt-1)
 
 ### Error State
 
