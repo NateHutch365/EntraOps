@@ -55,7 +55,7 @@ export function TemplatesPage() {
         value={activeTab}
         onValueChange={(v) => setActiveTab(v as TemplateName | 'global' | 'audit')}
       >
-        <TabsList className="mb-4 flex-wrap h-auto gap-1">
+        <TabsList className="mb-4 flex-wrap !h-auto gap-1">
           {TEMPLATE_NAMES.map((name) => (
             <TabsTrigger key={name} value={name}>
               {TAB_LABELS[name]}
