@@ -19,6 +19,7 @@ import {
 } from '@/components/ui/table';
 import { useObjects } from '@/hooks/useObjects';
 import { useOverrides } from '@/hooks/useOverrides';
+import { useExclusions } from '@/hooks/useExclusions';
 import { computedTierName } from '../../../shared/utils/tier.js';
 import type { Override } from '../../../shared/types/api.js';
 
@@ -83,9 +84,10 @@ export function ReclassifyPage() {
 
   const { data: objectsData, isLoading: objectsLoading } = useObjects({ pageSize: 10000 });
   const { data: persistedOverrides, isLoading: overridesLoading, invalidate } = useOverrides();
+  const { exclusions, isLoading: exclusionsLoading } = useExclusions();
 
   const objects = objectsData?.objects ?? [];
-  const isLoading = objectsLoading || overridesLoading;
+  const isLoading = objectsLoading || overridesLoading || exclusionsLoading;
 
   const pendingCount = getPendingCount(persistedOverrides, pending);
 
@@ -174,14 +176,28 @@ export function ReclassifyPage() {
               const computedTier = computedTierName(obj.Classification);
               const dirty = isDirty(obj.ObjectId, persistedOverrides, pending);
               const effectiveOverride = getEffectiveOverride(obj.ObjectId, persistedOverrides, pending);
+              const isExcluded = exclusions.has(obj.ObjectId);
 
               return (
                 <TableRow
                   key={obj.ObjectId}
-                  className={cn(dirty && 'bg-amber-500/10')}
+                  className={cn(dirty && 'bg-amber-500/10', isExcluded && 'opacity-60')}
                 >
                   {/* Object name */}
-                  <TableCell className="font-medium">{obj.ObjectDisplayName}</TableCell>
+                  <TableCell className="font-medium">
+                    <div className="flex items-center gap-2">
+                      {obj.ObjectDisplayName}
+                      {isExcluded && (
+                        <Badge
+                          variant="outline"
+                          className="text-xs font-medium text-muted-foreground border-muted-foreground/40"
+                          title="This object is in the Global Exclusions list and will be skipped by the classification engine"
+                        >
+                          Excluded
+                        </Badge>
+                      )}
+                    </div>
+                  </TableCell>
 
                   {/* Applied Tier — solid badge */}
                   <TableCell>
@@ -222,6 +238,7 @@ export function ReclassifyPage() {
                     <Select
                       value={effectiveOverride}
                       onValueChange={(val) => handleOverrideChange(obj.ObjectId, val)}
+                      disabled={isExcluded}
                     >
                       <SelectTrigger className="h-7 text-xs w-[160px]">
                         <SelectValue placeholder="— No override" />
