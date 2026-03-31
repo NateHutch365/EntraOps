@@ -46,6 +46,7 @@ Exceptions:
 - Touch target minimum: 44px height for all interactive row actions (Remove button)
 - Sidebar collapsed width: 56px (established pattern — do not change)
 - Sidebar expanded width: 220px (established pattern — do not change)
+- Sidebar active nav left padding: 6px (established codebase pattern — do not change)
 
 ---
 
@@ -118,10 +119,10 @@ New file to create:
 ├─────────────────────────────────────────────────────┤
 │ Table area (flex-1 overflow-auto px-6 py-4)          │
 │  ┌─────────────────────────────────────────────────┐ │
-│  │ Display Name │ Object ID    │ Tier   │ Actions   │ │
-│  ├──────────────┼──────────────┼────────┼───────────┤ │
-│  │ John Smith   │ 4a3f1b2c…   │ [badge]│ [Remove]  │ │
-│  │ SVC-Acct-01  │ 9d8e7f6a…   │ ——     │ [Remove]  │ │
+│  │ Display Name │ Object ID   │ Tier   │ Actions              │ │
+│  ├──────────────┼─────────────┼────────┼──────────────────────┤ │
+│  │ John Smith   │ 4a3f1b2c…  │ [badge]│ [Remove Exclusion]   │ │
+│  │ SVC-Acct-01  │ 9d8e7f6a…  │ ——     │ [Remove Exclusion]   │ │
 │  └─────────────────────────────────────────────────┘ │
 └─────────────────────────────────────────────────────┘
 ```
@@ -143,6 +144,8 @@ Layout class pattern (match existing pages):
 </div>
 ```
 
+**Focal point:** the exclusions table body — the primary visual anchor on this screen. The H1 "Exclusions" anchors the header zone.
+
 ---
 
 ## Table Columns
@@ -152,7 +155,7 @@ Layout class pattern (match existing pages):
 | Display Name | flex/auto | Resolved name from PrivilegedEAM JSON scan; fallback `"Unknown (GUID)"` in muted if unresolvable |
 | Object ID | 160px | First 8 chars of GUID + `…`, monospace 12px, `text-muted-foreground` |
 | Tier | 140px | `<Badge variant="outline">` with tier color if resolvable; `—` in `text-muted-foreground` if not |
-| Actions | 100px | `<Button variant="destructive" size="sm">Remove</Button>` |
+| Actions | 100px | `<Button variant="destructive" size="sm">Remove Exclusion</Button>` |
 
 ---
 
@@ -177,7 +180,7 @@ Active state: inherits existing pattern — `text-fluent-accent font-medium bg-[
 |---------|------|
 | Page title | `Exclusions` |
 | Page subtitle | `Objects excluded from EntraOps tier classification. Managed in Global.json.` |
-| Primary CTA label | `Remove` (destructive button, always visible on each row) |
+| Primary CTA label | `Remove Exclusion` (destructive button, always visible on each row) |
 | Empty state heading | `No exclusions configured` |
 | Empty state body | `Objects excluded via the Object Browser or Reclassify screen will appear here.` |
 | Empty state subtext | No action/button needed — exclusions are added from other screens |
@@ -188,7 +191,7 @@ Active state: inherits existing pattern — `text-fluent-accent font-medium bg-[
 | Remove confirmation title | `Remove exclusion?` |
 | Remove confirmation body | `[DisplayName] will be removed from exclusions and Global.json will be updated immediately. This cannot be undone.` |
 | Remove confirmation cancel | `Keep Exclusion` |
-| Remove confirmation confirm | `Remove` (variant="destructive") |
+| Remove confirmation confirm | `Remove Exclusion` (variant="destructive") |
 | Remove success toast | `Exclusion removed` (via `sonner` — matches existing toast pattern) |
 | Remove error toast | `Failed to remove exclusion` |
 
@@ -198,9 +201,9 @@ Active state: inherits existing pattern — `text-fluent-accent font-medium bg-[
 
 ### Remove Flow
 
-1. User clicks `Remove` button on a table row
+1. User clicks `Remove Exclusion` button on a table row
 2. `<Dialog>` opens with confirmation copy (see Copywriting Contract above)
-3. Dialog footer: `Keep Exclusion` (variant="outline") + `Remove` (variant="destructive") buttons — 8px gap
+3. Dialog footer: `Keep Exclusion` (variant="outline") + `Remove Exclusion` (variant="destructive") buttons — 8px gap
 4. On confirm: `DELETE /api/exclusions/:guid` → optimistic row removal + toast on success/error
 5. On cancel: Dialog closes, no change
 
