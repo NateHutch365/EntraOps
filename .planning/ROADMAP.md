@@ -42,7 +42,11 @@ See [archive](.planning/milestones/v1.1-ROADMAP.md) for full phase details.
   1. User can reach the Exclusions page from the sidebar nav
   2. Exclusions page lists every excluded object with its resolved display name (not raw GUID)
   3. User can remove any exclusion and it is immediately deleted from Global.json
-**Plans**: TBD
+**Plans**: 3 plans
+Plans:
+- [x] 09-01-PLAN.md — Backend API: GET /api/exclusions (PrivilegedEAM name resolution) + DELETE /api/exclusions/:guid
+- [x] 09-02-PLAN.md — ExclusionsPage client + App.tsx route + Sidebar.tsx nav entry
+- [x] 09-03-PLAN.md — Simplify GlobalExclusionsTab to read-only with link to Exclusions page
 **UI hint**: yes
 
 ### Phase 10: Inline Exclude Actions

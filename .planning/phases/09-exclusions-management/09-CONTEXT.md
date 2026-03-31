@@ -1,6 +1,6 @@
 # Phase 9: Exclusions Management — Context
 
-**Gathered:** 2026-03-31
+**Gathered:** 2026-03-31 (updated 2026-03-31 — full discuss-phase run)
 **Status:** Ready for planning
 
 <domain>
@@ -17,44 +17,59 @@ Phase 9 delivers: admins can manage `Global.json` exclusions entirely from the b
 <decisions>
 ## Implementation Decisions
 
+### Remove Interaction (Area A)
+
+- **D-01:** Removes are **immediate** — single click on the Remove button, no staging (no amber-row / Save All pattern like ReclassifyPage). The exclusion list is recoverable by re-running classification; accidental removal cost is low.
+- **D-02:** **No confirmation dialog.** Dialogs add friction for a low-cost reversible action.
+- **D-03:** After a successful remove, a brief **success toast** ("Exclusion removed") is shown via the existing `sonner` Toaster. No batch remove; each row is removed independently.
+- **D-04:** After at least one remove in the current page session, a **persistent info banner** appears above the table: `"Classification data may be stale — run Save-EntraOpsPrivilegedEAMJson to update."` with a "Go to Command Runner" action link. Dismissible. Does **not** appear on initial load.
+
+### Row Information Density (Area B)
+
+- **D-05:** The table shows: **display name**, **object type** (User / Service Principal — rendered as an icon or small badge, no separate column), and a **Remove button**. No tier level column; no UPN column.
+- **D-06:** The page header shows a **total count** ("N exclusions") as a subdued badge or count string. If any exclusions are unresolvable, a secondary count is also shown ("X unresolved").
+- **D-07:** Show the **full GUID** in an Object ID column for all rows (not truncated). Each GUID cell may include a hover tooltip with copy-to-clipboard action.
+
+### Unresolvable GUID Handling (Area C)
+
+- **D-08:** Unresolvable GUIDs (GUID exists in `Global.json` but matches no object in any PrivilegedEAM scan) are **always shown in the table** — never hidden. Hiding them would leave orphan entries with no UI path to clean them up.
+- **D-09:** Unresolvable rows show label **"Unknown object"** with the truncated GUID as secondary text (e.g. `550e8400…`). The row is visually de-emphasised (grayed out, no object-type icon). The full GUID is still shown in the Object ID column.
+- **D-10:** Unresolvable entries are **removable** via the same single-click Remove action as resolved entries. Cleaning up stale GUIDs is a valid and desirable operation.
+- **D-11:** "No match = stale" is the assumed interpretation. Pre-emptive exclusion of objects not yet in PrivilegedEAM is not a supported workflow in this UI.
+
+### Sidebar Navigation (Area D)
+
+- **D-12:** The Exclusions nav entry is inserted **after Reclassify** in the sidebar nav array: Dashboard → Browse Objects → Reclassify → **Exclusions** → Templates → Run Commands → Connect → History → Settings.
+- **D-13:** Sidebar label: **"Exclusions"** (short, matches domain term, fits collapsed width).
+- **D-14:** Icon: **`ShieldMinus`** from Lucide. Conveys "removing from protection scope"; distinct from all existing nav icons.
+
 ### GlobalExclusionsTab (Template Editor)
 
-- **D-01:** The existing `GlobalExclusionsTab.tsx` in the Template Editor (Phase 2) is **simplified to read-only** as part of Phase 9. The raw UUID textarea editor is removed; the tab becomes a display-only view of the current exclusions list.
-- **D-02:** The simplified tab adds a **"Manage in Exclusions page →"** link (navigates to `/exclusions`). This keeps it as an escape-hatch reference point without competing with the canonical Exclusions page for mutations.
-- **D-03:** The tab stays permanently — it is not removed in this phase or future phases. It serves as a read-only shortcut for admins who are already in the Template Editor.
+- **D-15:** The existing `GlobalExclusionsTab.tsx` in the Template Editor (Phase 2) is **simplified to read-only** as part of Phase 9. The raw UUID textarea editor is removed; the tab becomes a display-only view of the current exclusions list.
+- **D-16:** The simplified tab adds a **"Manage in Exclusions page →"** link (navigates to `/exclusions`). It does not compete with the canonical Exclusions page for mutations.
 
-### Object ID Column
+### Page Subtitle & Workflow Link
 
-- **D-04:** Show the **full GUID** in the Object ID column for all rows (not 8-char truncated). This overrides the UI-SPEC's truncation suggestion — the user explicitly wants full GUIDs visible at all times to aid identification.
-- **D-05:** Each Object ID cell has a **hover tooltip** (not a persistent copy button) that surfaces the full GUID and may include a copy-to-clipboard action.
-
-### Unresolvable GUIDs
-
-- **D-06:** Unresolvable GUIDs (not found in any PrivilegedEAM JSON scan) are rendered **mixed in with resolved entries** — no separate grouping. Prioritise user simplicity; alphabetical sort by display name, with `Unknown (GUID)` treated as a display name for sort purposes (sorts to bottom naturally).
-- **D-07:** The page header area shows a **count badge** indicating how many exclusions cannot be resolved (e.g., `X unresolved`). This gives at-a-glance awareness without cluttering rows.
-
-### Post-Remove Re-classification Messaging
-
-- **D-08:** The page **subtitle** (below the "Exclusions" H1) includes a note that Global.json changes take effect on the next `Save-EntraOpsPrivilegedEAMJson` run. Suggested copy: `"Objects excluded from EntraOps tier classification. Changes take effect on the next classification run."` with a **"Run Classification →"** link that navigates to the PowerShell Command Runner page (`/commands`).
-- **D-09:** After a successful remove, an **info banner** appears at the top of the page content area (above the table): `"Classification data may be stale — run Save-EntraOpsPrivilegedEAMJson to update."` with a "Go to Command Runner" action link. The banner persists until the user navigates away or dismisses it.
-- **D-10:** Each remove is independent — no session-level aggregate of "removed N this session" is tracked or displayed.
+- **D-17:** The page subtitle (below the "Exclusions" H1) reads: `"Objects excluded from EntraOps tier classification. Changes take effect on the next classification run."` with a **"Run Classification →"** link navigating to `/run`.
 
 ### Claude's Discretion
 
-- Exact copy for the info banner and subtitle — keep consistent with the project's neutral, instructional tone
-- Tooltip UX for Object ID (hover delay, whether to include a clipboard copy action)
-- Alphabetical sort tie-breaking for `Unknown (GUID)` entries
-- Route name resolution: scan `PrivilegedEAM/**/*.json` for `Id` / `ObjectId` GUID fields to build the lookup table
+- Exact copy polish for info banner and subtitle — maintain project's neutral, instructional tone
+- Hover delay and clipboard-copy UX for the GUID tooltip
+- Alphabetical sort tie-breaking for `Unknown (GUID)` entries (sorts to bottom is fine)
+- Name resolution strategy: scan `PrivilegedEAM/**/*.json` for `ObjectId` / `Id` fields to build a `Map<guid, { displayName, objectType }>` lookup at request time
 
 </decisions>
 
 <specifics>
 ## Specific Ideas
 
-- The GlobalExclusionsTab simplification is a "clean up in Phase 9" decision — do not defer to Phase 10
-- The subtitle + link to Command Runner doubles as a discoverability hint for the classification workflow; it is not an action button, just a contextual navigation aid
-- The info banner triggers **only after at least one remove action in the current page session** — it should not appear on initial load
-- The unresolved count badge in the header is separate from the info banner; it is always visible when there are unresolvable entries
+- Removes are immediate and toasted — no staging, no dialogs, no batch select
+- Object type shown as icon or badge inline in the name cell (no separate column) — keeps table compact
+- Info banner triggers only after a remove in the current session; not on initial load
+- The unresolved count in the header is always visible when there are unresolvable entries (independent of the info banner)
+- The GlobalExclusionsTab simplification is a "clean up in Phase 9" task — do not defer to Phase 10
+- Run Classification link in subtitle navigates to `/run` (the Run Commands page)
 
 </specifics>
 
@@ -86,21 +101,25 @@ Phase 9 delivers: admins can manage `Global.json` exclusions entirely from the b
 ## Existing Code Insights
 
 ### Reusable Assets
-- `atomicWrite` utility: already used in `overrides.ts` and `templates.ts` — Phase 9 DELETE handler must use this same utility for `Global.json` writes
-- `parseBomJson` helper in `templates.ts`: handles BOM-prefixed JSON — reuse in the new exclusions route when reading `Global.json`
-- `ReclassifyPage.tsx` layout pattern: `flex flex-col h-full` + shadow-less table — copy this structure for `ExclusionsPage.tsx`
-- All required shadcn components already installed: `Table`, `Button`, `Dialog`, `Badge`, `Skeleton` — no new installs needed
-- `sonner` toast pattern already established in Phase 8 — reuse for remove success/error toasts
+- `atomicWrite` utility: used in `overrides.ts` and `templates.ts` — Phase 9 remove handler must use this for `Global.json` writes
+- `parseBomJson` helper in `templates.ts`: handles BOM-prefixed JSON — reuse when reading `Global.json` in the new exclusions route
+- `ReclassifyPage.tsx` layout pattern: `flex flex-col h-full` + shadow-less table with skeleton/empty/error states — copy for `ExclusionsPage.tsx`
+- All required shadcn components already installed: `Table`, `Button`, `Badge`, `Skeleton` — no new installs needed
+- `sonner` Toaster already established — reuse for remove success/error toasts
+
+### Sidebar Integration Point
+- `gui/client/src/components/layout/Sidebar.tsx` — `NAV_ITEMS` const array. Insert `{ to: '/exclusions', icon: ShieldMinus, label: 'Exclusions', end: false }` after the Reclassify entry.
+- `gui/client/src/App.tsx` — Add `<Route path="exclusions" element={<ExclusionsPage />} />` inside the `<AppShell />` route.
+
+### Existing Exclusions Infrastructure
+- `gui/server/routes/templates.ts` — `GET /api/templates/global` and `PUT /api/templates/global` already exist. The new `GET /api/exclusions` is a separate route with a richer response (`displayName`, `objectType`, `resolved`). Do **not** modify the templates route.
+- `gui/shared/types/templates.ts` — `GlobalFile` shape: `[{ ExcludedPrincipalId: string[] }]`. Phase 9's DELETE/remove endpoint reads this structure.
+- `gui/client/src/components/templates/GlobalExclusionsTab.tsx` — Simplify to read-only + link to `/exclusions` as part of Phase 9.
+- `Classification/Global.json` — Source of truth: `[0].ExcludedPrincipalId[]` array of UUID strings.
 
 ### Name Resolution Strategy
-- Scan `PrivilegedEAM/**/*.json` files at request time for `GET /api/exclusions`
-- Each PrivilegedEAM JSON object has an `Id` (or `ObjectId`) field — build a `Map<guid, { displayName, tier }>` lookup
-- If a GUID from `ExcludedPrincipalId` is not found in the scan, return `displayName: null` and `tier: null` — client renders `Unknown (GUID)` per UI-SPEC
-
-### GlobalExclusionsTab Simplification Scope
-- Remove the `<Textarea>` / UUID editing controls from `GlobalExclusionsTab.tsx`
-- Display the existing exclusions list as read-only (flat list of GUIDs or basic text)
-- Add a `<Link to="/exclusions">` or navigation call
-- The tab's API call (`GET /api/templates/global`) can remain as-is — it still reads the raw data for display
+- Scan `PrivilegedEAM/**/*.json` at request time for `GET /api/exclusions`
+- Each PrivilegedEAM JSON object has `ObjectId` and `ObjectDisplayName` fields — build a `Map<guid, { displayName, objectType }>` lookup
+- If a GUID from `ExcludedPrincipalId` is not found: return `displayName: null`, `objectType: null`, `resolved: false` — client renders "Unknown object" per D-09
 
 </code_context>
