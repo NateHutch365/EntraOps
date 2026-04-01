@@ -98,7 +98,7 @@ All components are **already installed**. No new shadcn adds, no third-party reg
 | `<Button>` | `ui/button.tsx` | Exclude action: `variant="ghost" size="sm"` |
 | `<Badge>` | `ui/badge.tsx` | "Excluded" badge on already-excluded rows (existing pattern reused) |
 | `<Table>` / `<TableCell>` | `ui/table.tsx` | New "Actions" column added to ObjectTable and ReclassifyPage |
-| Toaster (sonner) | Existing — wired in `App.tsx` | "Object excluded" / "Failed to exclude object" toasts |
+| Toaster (sonner) | Existing — wired in `App.tsx` | "Object excluded" / "Failed to exclude object — please try again" toasts |
 
 **Excluded button icon:** `ShieldMinus` from `lucide-react` — same icon as the Exclusions nav entry (Phase 9). Reinforces conceptual link to the Exclusions page.
 
@@ -112,6 +112,8 @@ All components are **already installed**. No new shadcn adds, no third-party reg
 ---
 
 ## Screen Layout: ObjectTable (ObjectBrowser)
+
+**Focal element:** The Exclude button in the Actions column is the new focal element introduced by this phase.
 
 ### Current columns (6): Display Name | Object Type | Tier | RBAC System | PIM Type | On-Prem Sync
 ### Phase 10 adds: Actions column (7th, rightmost)
@@ -151,6 +153,8 @@ excludedIds?: Set<string>;  // or integrate with useExclusions at ObjectBrowser 
 
 ## Screen Layout: ReclassifyPage
 
+**Focal element:** The Exclude button in the Actions column is the new focal element introduced by this phase.
+
 ### Current columns (4): Object | Applied Tier | Computed Tier | Override
 ### Phase 10 adds: Actions column (5th, rightmost)
 
@@ -178,7 +182,7 @@ excludedIds?: Set<string>;  // or integrate with useExclusions at ObjectBrowser 
 | Default (not excluded) | Ghost button with `ShieldMinus` + "Exclude" | Click triggers POST, button disabled during request |
 | In-flight (POST pending) | Button disabled, `Loader2` replaces icon | Prevents double-submit |
 | Success | Toast: "Object excluded" + "View Exclusions →" action link | Row becomes `opacity-60`, button replaced by "Excluded" badge |
-| Error | Toast: "Failed to exclude object" | Button re-enabled, row state unchanged |
+| Error | Toast: "Failed to exclude object — please try again" | Button re-enabled, row state unchanged |
 | Already excluded | `opacity-60` row, "Excluded" badge (ObjectTable) or badge in Object cell (ReclassifyPage) | No button rendered |
 
 **Double-exclude prevention:** After a successful exclude, the button is immediately replaced by the "Excluded" badge. This is achieved by the `useExclusions` hook's `invalidate()` call after a successful POST, which refreshes the `exclusions` Set used by both pages.
@@ -208,7 +212,7 @@ Phase 10 requires one new server endpoint (all others from Phase 9 already exist
 | Exclude button aria-label | "Exclude {ObjectDisplayName} from classification" |
 | Success toast | "Object excluded" |
 | Success toast action | "View Exclusions →" (navigates to `/exclusions`) |
-| Error toast | "Failed to exclude object" |
+| Error toast | "Failed to exclude object — please try again" |
 | Already-excluded badge | "Excluded" |
 | Already-excluded title tooltip | "This object is in the Global Exclusions list and will be skipped by the classification engine" |
 | Already excluded (409 from server) | "Already excluded" (toast, not error) |
