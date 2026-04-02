@@ -59,7 +59,7 @@ Plans:
   3. After excluding from either screen, the Exclusions page shows the newly added entry with its display name
 **Plans**: 3 plans
 Plans:
-- [ ] 10-01-PLAN.md — POST /api/exclusions endpoint + useExclusions hook update (URL + addExclusion)
+- [x] 10-01-PLAN.md — POST /api/exclusions endpoint + useExclusions hook update (URL + addExclusion)
 - [ ] 10-02-PLAN.md — ObjectTable Actions column + ObjectBrowser wiring (EXCL-04)
 - [ ] 10-03-PLAN.md — ReclassifyPage Actions column + handleExclude with pending-map cleanup (EXCL-05)
 **UI hint**: yes
@@ -96,6 +96,6 @@ Plans:
 | 7. Computed Tier Surfaces | v1.1 | 2/2 | Complete | 2026-03-26 |
 | 8. Object Reclassification Screen | v1.1 | 4/4 | Complete | 2026-03-28 |
 | 9. Exclusions Management | v1.2 | 0/? | Not started | - |
-| 10. Inline Exclude Actions | v1.2 | 0/? | Not started | - |
+| 10. Inline Exclude Actions | v1.2 | 1/3 | In Progress|  |
 | 11. Implementation Workflow | v1.2 | 0/? | Not started | - |
 | 12. Dry-run / Preview Mode | v1.2 | 0/? | Not started | - |
