@@ -96,6 +96,6 @@ Plans:
 | 7. Computed Tier Surfaces | v1.1 | 2/2 | Complete | 2026-03-26 |
 | 8. Object Reclassification Screen | v1.1 | 4/4 | Complete | 2026-03-28 |
 | 9. Exclusions Management | v1.2 | 0/? | Not started | - |
-| 10. Inline Exclude Actions | v1.2 | 3/3 | Complete   | 2026-04-02 |
+| 10. Inline Exclude Actions | v1.2 | 3/3 | Complete    | 2026-04-02 |
 | 11. Implementation Workflow | v1.2 | 0/? | Not started | - |
 | 12. Dry-run / Preview Mode | v1.2 | 0/? | Not started | - |
