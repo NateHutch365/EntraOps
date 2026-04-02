@@ -28,7 +28,7 @@ See [archive](.planning/milestones/v1.1-ROADMAP.md) for full phase details.
 ### v1.2 Self-Service Implementation Workflow (Phases 9–12)
 
 - [ ] **Phase 9: Exclusions Management** — Backend API + dedicated Exclusions page with name resolution and remove action
-- [ ] **Phase 10: Inline Exclude Actions** — One-click exclude row action on Object Browser and Reclassify screens
+- [x] **Phase 10: Inline Exclude Actions** — One-click exclude row action on Object Browser and Reclassify screens (completed 2026-04-02)
 - [ ] **Phase 11: Implementation Workflow** — "Apply to Entra" page with action selection, pre-run confirmation, SSE streaming, and outcome summary
 - [ ] **Phase 12: Dry-run / Preview Mode** — -SampleMode flag plumbing exposed as toggle on the implementation screen
 
@@ -60,8 +60,8 @@ Plans:
 **Plans**: 3 plans
 Plans:
 - [x] 10-01-PLAN.md — POST /api/exclusions endpoint + useExclusions hook update (URL + addExclusion)
-- [ ] 10-02-PLAN.md — ObjectTable Actions column + ObjectBrowser wiring (EXCL-04)
-- [ ] 10-03-PLAN.md — ReclassifyPage Actions column + handleExclude with pending-map cleanup (EXCL-05)
+- [x] 10-02-PLAN.md — ObjectTable Actions column + ObjectBrowser wiring (EXCL-04)
+- [x] 10-03-PLAN.md — ReclassifyPage Actions column + handleExclude with pending-map cleanup (EXCL-05)
 **UI hint**: yes
 
 ### Phase 11: Implementation Workflow
@@ -96,6 +96,6 @@ Plans:
 | 7. Computed Tier Surfaces | v1.1 | 2/2 | Complete | 2026-03-26 |
 | 8. Object Reclassification Screen | v1.1 | 4/4 | Complete | 2026-03-28 |
 | 9. Exclusions Management | v1.2 | 0/? | Not started | - |
-| 10. Inline Exclude Actions | v1.2 | 1/3 | In Progress|  |
+| 10. Inline Exclude Actions | v1.2 | 3/3 | Complete   | 2026-04-02 |
 | 11. Implementation Workflow | v1.2 | 0/? | Not started | - |
 | 12. Dry-run / Preview Mode | v1.2 | 0/? | Not started | - |
