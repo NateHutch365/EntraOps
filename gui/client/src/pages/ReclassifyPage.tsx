@@ -22,6 +22,9 @@ import { useOverrides } from '@/hooks/useOverrides';
 import { useExclusions } from '@/hooks/useExclusions';
 import { computedTierName } from '../../../shared/utils/tier.js';
 import type { Override } from '../../../shared/types/api.js';
+import { ShieldMinus, Loader2 } from 'lucide-react';
+import { useNavigate } from 'react-router';
+import { toast } from 'sonner';
 
 const TIER_BADGE_CLASS: Record<string, string> = {
   ControlPlane: 'border-tier-control text-tier-control',
@@ -84,12 +87,14 @@ export function ReclassifyPage() {
 
   const { data: objectsData, isLoading: objectsLoading } = useObjects({ pageSize: 10000 });
   const { data: persistedOverrides, isLoading: overridesLoading, invalidate } = useOverrides();
-  const { exclusions, isLoading: exclusionsLoading } = useExclusions();
+  const { exclusions, isLoading: exclusionsLoading, addExclusion } = useExclusions();
 
   const objects = objectsData?.objects ?? [];
   const isLoading = objectsLoading || overridesLoading || exclusionsLoading;
 
   const pendingCount = getPendingCount(persistedOverrides, pending);
+  const navigate = useNavigate();
+  const [excludingIds, setExcludingIds] = useState<Set<string>>(new Set());
 
   function handleOverrideChange(objectId: string, value: string) {
     setPending((prev) => {
@@ -125,6 +130,51 @@ export function ReclassifyPage() {
 
   function handleDiscard() {
     setPending(new Map());
+  }
+
+  async function handleExclude(objectId: string) {
+    // D-14: Remove pending override synchronously before the async POST
+    // so getPendingCount reflects the correct count immediately (D-15)
+    const previousPendingValue = pending.get(objectId);
+    const hadPendingEntry = pending.has(objectId);
+
+    if (hadPendingEntry) {
+      setPending((prev) => {
+        const next = new Map(prev);
+        next.delete(objectId);
+        return next;
+      });
+    }
+
+    // D-12: mark in-flight
+    setExcludingIds((prev) => new Set([...prev, objectId]));
+
+    try {
+      await addExclusion(objectId);
+      // D-11: individual toast per action; D-16: user stays on Reclassify screen
+      toast.success('Object excluded', {
+        action: {
+          label: 'View Exclusions →',
+          onClick: () => navigate('/exclusions'),
+        },
+      });
+    } catch {
+      // Restore pending entry on failure (preserve user's unsaved override work)
+      if (hadPendingEntry) {
+        setPending((prev) => {
+          const next = new Map(prev);
+          next.set(objectId, previousPendingValue ?? null);
+          return next;
+        });
+      }
+      toast.error('Failed to exclude object — please try again');
+    } finally {
+      setExcludingIds((prev) => {
+        const next = new Set(prev);
+        next.delete(objectId);
+        return next;
+      });
+    }
   }
 
   if (isLoading) {
@@ -169,6 +219,7 @@ export function ReclassifyPage() {
               <TableHead>Applied Tier</TableHead>
               <TableHead>Computed Tier</TableHead>
               <TableHead>Override</TableHead>
+              <TableHead className="text-right w-[100px]">Actions</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -251,13 +302,36 @@ export function ReclassifyPage() {
                       </SelectContent>
                     </Select>
                   </TableCell>
+
+                  {/* Actions — per UI-SPEC: null cell for already-excluded rows (badge already in Object cell) */}
+                  <TableCell className="text-right">
+                    {!isExcluded && (
+                      excludingIds.has(obj.ObjectId) ? (
+                        <Button variant="ghost" size="sm" className="h-7 gap-1" disabled>
+                          <Loader2 size={14} className="animate-spin" />
+                          Exclude
+                        </Button>
+                      ) : (
+                        <Button
+                          variant="ghost"
+                          size="sm"
+                          className="h-7 gap-1"
+                          aria-label={`Exclude ${obj.ObjectDisplayName} from classification`}
+                          onClick={() => handleExclude(obj.ObjectId)}
+                        >
+                          <ShieldMinus size={14} />
+                          Exclude
+                        </Button>
+                      )
+                    )}
+                  </TableCell>
                 </TableRow>
               );
             })}
 
             {objects.length === 0 && (
               <TableRow>
-                <TableCell colSpan={4} className="text-center text-muted-foreground py-12">
+                <TableCell colSpan={5} className="text-center text-muted-foreground py-12">
                   No objects found. Run Save-EntraOpsPrivilegedEAMJson to load data.
                 </TableCell>
               </TableRow>
