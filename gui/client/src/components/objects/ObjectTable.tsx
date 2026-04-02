@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import {
   useReactTable,
   getCoreRowModel,
@@ -21,6 +22,7 @@ import {
   ArrowDown,
   ChevronLeft,
   ChevronRight,
+  ShieldMinus,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import type { PrivilegedObject } from '../../../../shared/types/eam';
@@ -39,21 +41,74 @@ const TIER_BADGE_CLASS: Record<string, string> = {
 // ----------------------------------------------------------------
 // Column definitions (6 columns per CONTEXT.md decision)
 // Using real PrivilegedObject field names from shared/types/eam.ts
-// ----------------------------------------------------------------
-const columns: ColumnDef<PrivilegedObject>[] = [
+// Columns the user can click to sort (mapped to server PrivilegedObject field names)
+const SORTABLE_COLUMNS = new Set([
+  'ObjectDisplayName',
+  'ObjectAdminTierLevelName',
+  'RoleSystem',
+  'ObjectType',
+]);
+
+export interface ObjectTableProps {
+  objects: PrivilegedObject[];
+  total: number;
+  page: number;       // 1-based
+  pageSize: number;
+  isLoading: boolean;
+  sort: string;       // current sort field (PrivilegedObject key)
+  order: 'asc' | 'desc';
+  onSortChange: (column: string) => void;
+  onPageChange: (page: number) => void;
+  onRowClick: (object: PrivilegedObject) => void;
+  // NEW — all optional for backward compatibility:
+  onExclude?: (object: PrivilegedObject) => void;
+  excludedIds?: Set<string>;
+  loadingIds?: Set<string>;
+}
+
+export function ObjectTable({
+  objects,
+  total,
+  page,
+  pageSize,
+  isLoading,
+  sort,
+  order,
+  onSortChange,
+  onPageChange,
+  onRowClick,
+  onExclude,
+  excludedIds,
+  loadingIds,
+}: ObjectTableProps) {
+  const columns = useMemo((): ColumnDef<PrivilegedObject>[] => [
   {
     accessorKey: 'ObjectDisplayName',
     header: 'Display Name',
-    cell: ({ row }) => (
-      <div className="min-w-0">
-        <p className="font-medium text-sm truncate">{row.original.ObjectDisplayName}</p>
-        {row.original.ObjectUserPrincipalName && (
-          <p className="text-xs text-muted-foreground truncate">
-            {row.original.ObjectUserPrincipalName}
-          </p>
-        )}
-      </div>
-    ),
+    cell: ({ row }) => {
+      const isExcluded = excludedIds?.has(row.original.ObjectId) ?? false;
+      return (
+        <div className="min-w-0">
+          <div className="flex items-center gap-2">
+            <p className="font-medium text-sm truncate">{row.original.ObjectDisplayName}</p>
+            {isExcluded && (
+              <Badge
+                variant="outline"
+                className="text-xs font-medium text-muted-foreground border-muted-foreground/40"
+                title="This object is in the Global Exclusions list and will be skipped by the classification engine"
+              >
+                Excluded
+              </Badge>
+            )}
+          </div>
+          {row.original.ObjectUserPrincipalName && (
+            <p className="text-xs text-muted-foreground truncate">
+              {row.original.ObjectUserPrincipalName}
+            </p>
+          )}
+        </div>
+      );
+    },
   },
   {
     accessorKey: 'ObjectType',
@@ -131,41 +186,55 @@ const columns: ColumnDef<PrivilegedObject>[] = [
       );
     },
   },
-];
+  {
+    id: 'actions',
+    header: () => <span className="block text-right">Actions</span>,
+    cell: ({ row }) => {
+      const obj = row.original;
+      const isExcluded = excludedIds?.has(obj.ObjectId) ?? false;
+      const isExcluding = loadingIds?.has(obj.ObjectId) ?? false;
 
-// Columns the user can click to sort (mapped to server PrivilegedObject field names)
-const SORTABLE_COLUMNS = new Set([
-  'ObjectDisplayName',
-  'ObjectAdminTierLevelName',
-  'RoleSystem',
-  'ObjectType',
-]);
+      if (isExcluded) {
+        return (
+          <div className="flex justify-end">
+            <Badge
+              variant="outline"
+              className="text-xs font-medium text-muted-foreground border-muted-foreground/40"
+              title="This object is in the Global Exclusions list and will be skipped by the classification engine"
+            >
+              Excluded
+            </Badge>
+          </div>
+        );
+      }
 
-export interface ObjectTableProps {
-  objects: PrivilegedObject[];
-  total: number;
-  page: number;       // 1-based
-  pageSize: number;
-  isLoading: boolean;
-  sort: string;       // current sort field (PrivilegedObject key)
-  order: 'asc' | 'desc';
-  onSortChange: (column: string) => void;
-  onPageChange: (page: number) => void;
-  onRowClick: (object: PrivilegedObject) => void;
-}
+      return (
+        <div className="flex justify-end">
+          <Button
+            variant="ghost"
+            size="sm"
+            className="h-7 gap-1"
+            disabled={isExcluding}
+            aria-label={`Exclude ${obj.ObjectDisplayName} from classification`}
+            onClick={(e) => {
+              e.stopPropagation();
+              onExclude?.(obj);
+            }}
+          >
+            {isExcluding ? (
+              <Loader2 size={14} className="animate-spin" />
+            ) : (
+              <ShieldMinus size={14} />
+            )}
+            Exclude
+          </Button>
+        </div>
+      );
+    },
+  },
 
-export function ObjectTable({
-  objects,
-  total,
-  page,
-  pageSize,
-  isLoading,
-  sort,
-  order,
-  onSortChange,
-  onPageChange,
-  onRowClick,
-}: ObjectTableProps) {
+  ], [excludedIds, loadingIds, onExclude]);
+
   // CRITICAL: getCoreRowModel ONLY — no getSortedRowModel or getPaginationRowModel
   // All pagination, sorting, and filtering is server-side (manualPagination: true)
   const table = useReactTable({
@@ -222,7 +291,10 @@ export function ObjectTable({
             {table.getRowModel().rows.map(row => (
               <TableRow
                 key={row.id}
-                className="cursor-pointer hover:bg-muted/50"
+                className={cn(
+                  'cursor-pointer hover:bg-muted/50',
+                  excludedIds?.has(row.original.ObjectId) && 'opacity-60',
+                )}
                 onClick={() => onRowClick(row.original)}
               >
                 {row.getVisibleCells().map(cell => (
@@ -235,7 +307,7 @@ export function ObjectTable({
             {objects.length === 0 && !isLoading && (
               <TableRow>
                 <TableCell
-                  colSpan={6}
+                  colSpan={7}
                   className="text-center text-muted-foreground py-12 text-sm"
                 >
                   No objects match the current filters

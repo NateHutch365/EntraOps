@@ -1,10 +1,13 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import { parseAsString, parseAsArrayOf, parseAsInteger, useQueryStates } from 'nuqs';
 import { useObjects } from '@/hooks/useObjects';
 import { ObjectFilters } from '@/components/objects/ObjectFilters';
 import { ObjectTable } from '@/components/objects/ObjectTable';
 import { ObjectDetailPanel } from '@/components/objects/ObjectDetailPanel';
 import type { PrivilegedObject } from '../../../shared/types/eam';
+import { useNavigate } from 'react-router';
+import { toast } from 'sonner';
+import { useExclusions } from '@/hooks/useExclusions';
 
 // nuqs URL param schema — RESEARCH.md Pattern 5 (react-router/v7 adapter)
 // sort stores an actual PrivilegedObject field name (used as sortBy on server)
@@ -57,6 +60,32 @@ export function ObjectBrowser() {
     setSelectedObject(object);
   }
 
+  const navigate = useNavigate();
+  const { exclusions, addExclusion } = useExclusions();
+  const [pendingExcludes, setPendingExcludes] = useState<Set<string>>(new Set());
+
+  const handleExclude = useCallback(async (object: PrivilegedObject) => {
+    const guid = object.ObjectId;
+    setPendingExcludes((prev) => new Set([...prev, guid]));
+    try {
+      await addExclusion(guid);
+      toast.success('Object excluded', {
+        action: {
+          label: 'View Exclusions →',
+          onClick: () => navigate('/exclusions'),
+        },
+      });
+    } catch {
+      toast.error('Failed to exclude object — please try again');
+    } finally {
+      setPendingExcludes((prev) => {
+        const next = new Set(prev);
+        next.delete(guid);
+        return next;
+      });
+    }
+  }, [addExclusion, navigate]);
+
   return (
     <div className="p-6 space-y-4">
       <div>
@@ -96,6 +125,9 @@ export function ObjectBrowser() {
           onSortChange={handleSortChange}
           onPageChange={page => setParams({ page })}
           onRowClick={handleRowClick}
+          excludedIds={exclusions}
+          loadingIds={pendingExcludes}
+          onExclude={handleExclude}
         />
       )}
 
