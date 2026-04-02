@@ -11,6 +11,7 @@ const GLOBAL_JSON = path.join(REPO_ROOT, 'Classification', 'Global.json');
 const PRIVILEGED_EAM_BASE = path.join(REPO_ROOT, 'PrivilegedEAM');
 
 const UUIDParam = z.string().uuid();
+const PostBodySchema = z.object({ guid: z.string().uuid() });
 const GlobalFileSchema = z.tuple([z.object({ ExcludedPrincipalId: z.array(z.string()) })]).rest(z.unknown());
 
 interface ExclusionItem {
@@ -113,6 +114,46 @@ router.delete('/:guid', async (req, res, next) => {
     data[0].ExcludedPrincipalId = data[0].ExcludedPrincipalId.filter(g => g.toLowerCase() !== guid.toLowerCase());
     await atomicWrite(GLOBAL_JSON, JSON.stringify(data, null, 2));
     res.status(204).end();
+  } catch (err) {
+    next(err);
+  }
+});
+
+router.post('/', async (req, res, next) => {
+  try {
+    const bodyResult = PostBodySchema.safeParse(req.body);
+    if (!bodyResult.success) {
+      res.status(400).json({ error: 'Invalid GUID' });
+      return;
+    }
+    const guid = bodyResult.data.guid;
+
+    let raw: string;
+    try {
+      raw = await fs.readFile(GLOBAL_JSON, 'utf-8');
+    } catch {
+      res.status(404).json({ error: 'Global.json not found' });
+      return;
+    }
+
+    const parseResult = GlobalFileSchema.safeParse(parseBomJson(raw));
+    if (!parseResult.success) {
+      res.status(500).json({ error: 'Failed to parse Global.json' });
+      return;
+    }
+
+    const data = parseResult.data;
+    const alreadyExists = data[0].ExcludedPrincipalId.some(
+      (g) => g.toLowerCase() === guid.toLowerCase(),
+    );
+    if (alreadyExists) {
+      res.status(409).json({ error: 'Already excluded' });
+      return;
+    }
+
+    data[0].ExcludedPrincipalId.push(guid);
+    await atomicWrite(GLOBAL_JSON, JSON.stringify(data, null, 2));
+    res.status(201).end();
   } catch (err) {
     next(err);
   }

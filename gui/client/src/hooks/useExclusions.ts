@@ -1,10 +1,18 @@
 import { useState, useEffect, useCallback } from 'react';
 import { fetchApi } from '@/lib/api';
 
+interface ExclusionResponse {
+  guid: string;
+  displayName: string | null;
+  objectType: string | null;
+  resolved: boolean;
+}
+
 interface UseExclusionsResult {
   exclusions: Set<string>;
   isLoading: boolean;
   invalidate: () => void;
+  addExclusion: (guid: string) => Promise<void>;
 }
 
 export function useExclusions(): UseExclusionsResult {
@@ -18,10 +26,10 @@ export function useExclusions(): UseExclusionsResult {
     let cancelled = false;
     setIsLoading(true);
 
-    fetchApi<{ exclusions: string[] }>('/api/templates/global')
+    fetchApi<ExclusionResponse[]>('/api/exclusions')
       .then((res) => {
         if (!cancelled) {
-          setExclusions(new Set(res.exclusions));
+          setExclusions(new Set(res.map((item) => item.guid.toLowerCase())));
           setIsLoading(false);
         }
       })
@@ -34,5 +42,17 @@ export function useExclusions(): UseExclusionsResult {
     };
   }, [refreshKey]);
 
-  return { exclusions, isLoading, invalidate };
+  const addExclusion = useCallback(async (guid: string): Promise<void> => {
+    const res = await fetch('/api/exclusions', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ guid }),
+    });
+    if (!res.ok && res.status !== 409) {
+      throw new Error(`Failed to exclude object (${res.status})`);
+    }
+    invalidate();
+  }, [invalidate]);
+
+  return { exclusions, isLoading, invalidate, addExclusion };
 }
