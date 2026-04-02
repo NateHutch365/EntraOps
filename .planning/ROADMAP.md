@@ -57,7 +57,11 @@ Plans:
   1. Object Browser rows expose a one-click "Exclude" action that persists the addition to Global.json
   2. Reclassify screen rows expose a one-click "Exclude" action that persists the addition to Global.json
   3. After excluding from either screen, the Exclusions page shows the newly added entry with its display name
-**Plans**: TBD
+**Plans**: 3 plans
+Plans:
+- [ ] 10-01-PLAN.md — POST /api/exclusions endpoint + useExclusions hook update (URL + addExclusion)
+- [ ] 10-02-PLAN.md — ObjectTable Actions column + ObjectBrowser wiring (EXCL-04)
+- [ ] 10-03-PLAN.md — ReclassifyPage Actions column + handleExclude with pending-map cleanup (EXCL-05)
 **UI hint**: yes
 
 ### Phase 11: Implementation Workflow
