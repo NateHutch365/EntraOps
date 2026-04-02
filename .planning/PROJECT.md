@@ -11,6 +11,7 @@
 ## Current State
 
 **Shipped: v1.1 Pre-Apply Intelligence** ✅ (2026-03-29)
+**In Progress: v1.2 Self-Service Implementation Workflow** — Phase 10 complete (2026-04-02)
 
 The GUI is fully functional and shipped through two milestones. A user who forks EntraOps and runs `Save-EntraOpsPrivilegedEAMJson` can then `cd gui && npm install && npm run dev` to get a working local browser dashboard with:
 - Tier dashboard (ControlPlane / ManagementPlane / UserAccess KPI cards, **applied + suggested counts**, RBAC breakdown, PIM chart)
@@ -21,6 +22,7 @@ The GUI is fully functional and shipped through two milestones. A user who forks
 - Git change history browser (commit list, structured diffs, any-two-commit compare)
 - Settings page for `EntraOpsConfig.json` editing
 - **Object Reclassification screen** — inline tier overrides with atomic persistence to classification config files
+- **Inline Exclude Actions** — Phase 10 complete (2026-04-02): admins can exclude objects directly from Object Browser and Reclassify screen; POST /api/exclusions endpoint with 201/409 semantics; useExclusions hook updated with addExclusion mutation; pending-map cleanup on exclude from Reclassify (EXCL-04, EXCL-05)
 
 See [.planning/milestones/v1.1-ROADMAP.md](.planning/milestones/v1.1-ROADMAP.md) for full milestone archive.
 
@@ -134,4 +136,4 @@ Three milestones shipped: v1.0 (6 phases, 30 plans) → v1.1 (2 phases, 6 plans)
 Implementation cmdlets (AU, CA Group, Unprotected AU, ControlPlane Scope) already on the command runner allowlist.
 
 ---
-*Last updated: 2026-03-29 after v1.2 milestone start*
+*Last updated: 2026-04-02 after Phase 10 (inline-exclude-actions) completion*
