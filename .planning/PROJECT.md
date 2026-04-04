@@ -1,31 +1,32 @@
 # EntraOps GUI
 
-## Current Milestone: v1.2 Self-Service Implementation Workflow
-
-**Goal:** Turn the GUI into a point-and-click implementation tool — an admin can connect, review recommended classification, exclude specific objects, and apply the tier structure to Entra without touching a terminal or a JSON file.
-
-**Target features:**
-- GUI Exclusions Management — view/add/remove entries in Global.json directly from the UI, excludable from Object Browser and a dedicated Exclusions page
-- Implement Button — guided "Apply to Entra" workflow that streams real-time progress from Update-EntraOps* cmdlets after the admin has reviewed classification
-
 ## Current State
 
-**Shipped: v1.1 Pre-Apply Intelligence** ✅ (2026-03-29)
-**In Progress: v1.2 Self-Service Implementation Workflow** — Phase 11 complete (2026-04-04)
+**Shipped: v1.2 Self-Service Implementation Workflow** ✅ (2026-04-04)
 
-The GUI is fully functional and shipped through two milestones. A user who forks EntraOps and runs `Save-EntraOpsPrivilegedEAMJson` can then `cd gui && npm install && npm run dev` to get a working local browser dashboard with:
-- Tier dashboard (ControlPlane / ManagementPlane / UserAccess KPI cards, **applied + suggested counts**, RBAC breakdown, PIM chart)
-- Filterable/sortable/paginated object browser with URL-bookmarkable state, detail panel, **and dashed computed-tier badge for unclassified objects**
+The GUI is fully functional and shipped through three milestones. A user who forks EntraOps and runs `Save-EntraOpsPrivilegedEAMJson` can then `cd gui && npm install && npm run dev` to get a working local browser dashboard with:
+- Tier dashboard (ControlPlane / ManagementPlane / UserAccess KPI cards, applied + suggested counts, RBAC breakdown, PIM chart)
+- Filterable/sortable/paginated object browser with URL-bookmarkable state, detail panel, and dashed computed-tier badge for unclassified objects
 - Safe in-browser classification template editor with Zod validation and diff preview
 - PowerShell command runner (13 allowlisted cmdlets, real-time SSE streaming)
 - Connect & Classify wizard (device code auth → classification → dashboard)
 - Git change history browser (commit list, structured diffs, any-two-commit compare)
 - Settings page for `EntraOpsConfig.json` editing
-- **Object Reclassification screen** — inline tier overrides with atomic persistence to classification config files
-- **Inline Exclude Actions** — Phase 10 complete (2026-04-02): admins can exclude objects directly from Object Browser and Reclassify screen
-- **Apply to Entra workflow** — Phase 11 complete (2026-04-04): full implementation workflow page (`/apply`) with 4-state machine (select → confirm → run → results); sidebar nav entry; CTA buttons on Object Browser and Reclassify pages (IMPL-01–04, IMPL-06, IMPL-07)
+- Object Reclassification screen — inline tier overrides with atomic persistence to classification config files
+- **Exclusions Management** — dedicated Exclusions page (sidebar nav) with display-name resolution, click-to-copy, and Remove; inline Exclude actions on Object Browser and Reclassify screens
+- **Apply to Entra workflow** — full 4-state implementation workflow (select → confirm → SSE stream → outcomes); 4 action toggles (AU, CA Groups, Unprotected AUs, ControlPlane Scope); real-time SSE log; per-cmdlet pass/fail summary
+- **Dry-run / Preview Mode** — -SampleMode toggle on Apply screen; amber visual indicators across all 4 states; server-side history exclusion guard
 
-See [.planning/milestones/v1.1-ROADMAP.md](.planning/milestones/v1.1-ROADMAP.md) for full milestone archive.
+See [.planning/milestones/v1.2-ROADMAP.md](.planning/milestones/v1.2-ROADMAP.md) for full v1.2 milestone archive.
+
+## Next Milestone Goals
+
+To be defined via `/gsd-new-milestone`. Candidates from deferred backlog:
+- Pre-install prerequisite PowerShell modules (Az.Accounts, Az.Resources, Az.ResourceGraph) in UI setup gate
+- Fix terminal line spacing in ConnectPage SSE output
+- Alerting / notifications — flag new ControlPlane identities after classification run
+- Attack path analysis — privilege chain tracing, blast radius, exposure scoring
+- AI/Copilot integration — plain-English tier explanations, natural language search
 
 ## What This Is
 
@@ -56,10 +57,24 @@ Additionally delivered 17 originally-deferred v2 requirements (RUN-01–06, CONN
 - ✓ RECL-04: Save All persists overrides to classification config files atomically — v1.1
 - ✓ RECL-05: Discard resets pending overrides with no server calls — v1.1
 
-### Active (v1.2)
+### Validated (v1.2)
 
-- [ ] [EXCL] GUI Exclusions Management — add/remove entries in Global.json from the UI
-- [ ] [IMPL] Implement Button — guided "Apply to Entra" workflow with real-time streaming progress
+- ✓ EXCL-01: Dedicated Exclusions page navigable from sidebar — v1.2
+- ✓ EXCL-02: Exclusions page shows resolved display names (not raw GUIDs) — v1.2
+- ✓ EXCL-03: Remove exclusion persists deletion to Global.json atomically — v1.2
+- ✓ EXCL-04: One-click Exclude from Object Browser, persists to Global.json — v1.2
+- ✓ EXCL-05: One-click Exclude from Reclassify screen, persists to Global.json — v1.2
+- ✓ IMPL-01: "Apply to Entra" screen navigable from sidebar — v1.2
+- ✓ IMPL-02: Implementation screen reachable via CTA from Object Browser and Reclassify — v1.2
+- ✓ IMPL-03: Pre-run confirmation screen with cmdlets + parameters — v1.2
+- ✓ IMPL-04: Select any combination of 4 implementation actions — v1.2
+- ✓ IMPL-05: Dry-run / preview mode with -SampleMode, no Entra writes, history guard — v1.2
+- ✓ IMPL-06: Real-time SSE streaming progress log during implementation run — v1.2
+- ✓ IMPL-07: Outcome summary with pass/fail per cmdlet after run completes — v1.2
+
+### Active
+
+_(No active requirements — start `/gsd-new-milestone` to define v1.3)_
 
 ### Deferred to Future (removed from v1.2 short-list)
 
@@ -131,10 +146,10 @@ The codebase is a PowerShell module. The GUI will live in a `gui/` subdirectory 
 
 ## Context
 
-Current codebase: ~10,968 LOC TypeScript across `gui/client`, `gui/server`, `gui/shared`.
+Current codebase: ~12,201 LOC TypeScript across `gui/client`, `gui/server`, `gui/shared`.
 Tech stack: React + Vite + Tailwind CSS + shadcn/ui (client); Express.js + TypeScript (server); Zod validation; vitest for server tests.
-Three milestones shipped: v1.0 (6 phases, 30 plans) → v1.1 (2 phases, 6 plans). v1.2 in progress.
-Implementation cmdlets (AU, CA Group, Unprotected AU, ControlPlane Scope) already on the command runner allowlist.
+Three milestones shipped: v1.0 (6 phases, 30 plans) → v1.1 (2 phases, 6 plans) → v1.2 (4 phases, 10 plans).
+Key tech debt: GlobalExclusionsTab fetches raw GUIDs (WARN-1); IMPL-03 tier scope not explicit column (WARN-2); ConnectPage terminal double-space (todo filed); Nyquist VALIDATION.md absent for v1.2 phases.
 
 ---
-*Last updated: 2026-04-04 after Phase 11 (implementation-workflow) completion*
+*Last updated: 2026-04-04 after v1.2 milestone completion*

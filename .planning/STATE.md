@@ -2,9 +2,9 @@
 gsd_state_version: 1.0
 milestone: v1.2
 milestone_name: Self-Service Implementation Workflow
-status: idle
-last_updated: "2026-04-04T22:25:47.542Z"
-last_activity: 2026-04-04 -- Phase 12 complete (dry-run / preview mode)
+status: complete
+last_updated: "2026-04-04T23:59:00Z"
+last_activity: 2026-04-04 -- v1.2 milestone archived and tagged
 progress:
   total_phases: 4
   completed_phases: 4
@@ -17,17 +17,16 @@ progress:
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated 2026-03-29)
+See: .planning/PROJECT.md (updated 2026-04-04 after v1.2)
 
 **Core value:** A user who has run `Save-EntraOpsPrivilegedEAMJson` can open a browser and immediately understand who holds ControlPlane access in their tenant — without writing a KQL query, opening Azure Portal, or reading raw JSON.
-**Current state:** v1.2 roadmap ready — Self-Service Implementation Workflow. Run `/gsd-plan-phase 9` to begin.
+**Current state:** v1.2 SHIPPED. Run `/gsd-new-milestone` to begin v1.3 planning.
 
 ## Current Position
 
-Phase: 12 (dry-run-preview-mode) — COMPLETE
-Plan: 2 of 2
-Status: All phases complete — milestone v1.2 execution done
-Last activity: 2026-04-04 -- Phase 12 complete (dry-run / preview mode)
+Milestone: v1.2 — COMPLETE AND ARCHIVED
+Status: All 4 phases complete, milestone tagged v1.2, archives created
+Last activity: 2026-04-04 — v1.2 milestone archived and tagged
 
 **Progress bar:** ██████████ 100% (4/4 phases complete)
 
@@ -35,18 +34,10 @@ Last activity: 2026-04-04 -- Phase 12 complete (dry-run / preview mode)
 
 | Phase | Goal | Requirements | Status |
 |-------|------|--------------|--------|
-| 9. Exclusions Management | Admins manage Global.json from browser | EXCL-01, EXCL-02, EXCL-03 | Not started |
-| 10. Inline Exclude Actions | Exclude objects from existing screens | EXCL-04, EXCL-05 | Not started |
-| 11. Implementation Workflow | Apply to Entra with confirmation + SSE | IMPL-01–04, IMPL-06–07 | Not started |
-| 12. Dry-run / Preview Mode | -SampleMode simulation toggle | IMPL-05 | ✓ Complete |
-
-## Performance Metrics
-
-**Velocity:**
-
-- Total plans completed: 4
-- Average duration: ~25 min/plan
-- Total execution time: ~50 min
+| 9. Exclusions Management | Admins manage Global.json from browser | EXCL-01, EXCL-02, EXCL-03 | ✓ Complete (2026-03-31) |
+| 10. Inline Exclude Actions | Exclude objects from existing screens | EXCL-04, EXCL-05 | ✓ Complete (2026-04-02) |
+| 11. Implementation Workflow | Apply to Entra with confirmation + SSE | IMPL-01–04, IMPL-06–07 | ✓ Complete (2026-04-04) |
+| 12. Dry-run / Preview Mode | -SampleMode simulation toggle | IMPL-05 | ✓ Complete (2026-04-04) |
 
 **By Phase:**
 
