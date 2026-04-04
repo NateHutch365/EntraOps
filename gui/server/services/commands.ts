@@ -179,9 +179,12 @@ export function runCommand(
     };
 
     // Write history async — do not block stream close
-    appendHistory(record).catch((err) => {
-      console.error('Failed to write run history:', err);
-    });
+    // Skip history for dry-run (SampleMode) runs — nothing was written to Entra, nothing to audit
+    if (!parameters.SampleMode) {
+      appendHistory(record).catch((err) => {
+        console.error('Failed to write run history:', err);
+      });
+    }
 
     // Clear active state AFTER writing history
     activeProcess = null;
