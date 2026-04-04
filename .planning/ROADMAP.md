@@ -74,7 +74,10 @@ Plans:
   3. User can toggle any combination of the 4 implementation actions (Administrative Units, CA Groups, Unprotected AUs, ControlPlane Scope) on or off before running
   4. A live SSE log streams each cmdlet's output in real time while implementation runs
   5. An outcome summary clearly shows pass/fail status for each cmdlet after the run completes
-**Plans**: TBD
+**Plans**: 2 plans
+Plans:
+- [ ] 11-01-PLAN.md — ApplyPage with 4-state workflow (action selection, confirmation, SSE execution, outcome) + routing + nav
+- [ ] 11-02-PLAN.md — Cross-page CTAs on ObjectBrowser and ReclassifyPage + human-verify
 **UI hint**: yes
 
 ### Phase 12: Dry-run / Preview Mode
@@ -97,5 +100,5 @@ Plans:
 | 8. Object Reclassification Screen | v1.1 | 4/4 | Complete | 2026-03-28 |
 | 9. Exclusions Management | v1.2 | 0/? | Not started | - |
 | 10. Inline Exclude Actions | v1.2 | 3/3 | Complete    | 2026-04-02 |
-| 11. Implementation Workflow | v1.2 | 0/? | Not started | - |
+| 11. Implementation Workflow | v1.2 | 0/2 | Planned | - |
 | 12. Dry-run / Preview Mode | v1.2 | 0/? | Not started | - |
