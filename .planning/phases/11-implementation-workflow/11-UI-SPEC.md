@@ -40,7 +40,7 @@ Declared values (multiples of 4 only):
 | 2xl | 48px | Major section breaks |
 | 3xl | 64px | Not used in this phase |
 
-Exceptions: **none** — all spacing follows the 8-point scale.
+Exceptions: **one** — sidebar active state uses `border-l-2 border-fluent-accent pl-[6px]`: the 2px left border + 6px padding = 8px visual indent, maintaining 8-point grid alignment. This is an existing production pattern (Sidebar.tsx) inherited unchanged.
 
 ---
 
@@ -49,9 +49,12 @@ Exceptions: **none** — all spacing follows the 8-point scale.
 | Role | Size | Weight | Line Height | Usage |
 |------|------|--------|-------------|-------|
 | Body | 14px (text-sm) | 400 (normal) | 1.5 | Action card descriptions, table body, general copy |
-| Label | 12px (text-xs) | 500 (medium) | 1.5 | Section sub-labels, parameter values, badge text |
-| Heading | 24px (text-2xl) | 700 (bold) | 1.2 | Page H1: "Apply to Entra" |
+| Label | 12px (text-xs) | 400 (normal) | 1.5 | Section sub-labels, parameter values, badge text — differentiated from Body via size + `text-muted-foreground` color |
+| Sub-page heading | 20px (text-xl) | 600 (semibold) | 1.2 | Outcome screen heading: "Implementation Complete" |
+| Heading | 24px (text-2xl) | 600 (semibold) | 1.2 | Page H1: "Apply to Entra" |
 | Sub-heading | 14px (text-sm) | 600 (semibold) | 1.2 | Section headings: "Review before running", "Actions" |
+
+**Weights used: 2** — `400 (normal)` and `600 (semibold)` only. No 500 or 700.
 
 ---
 
@@ -126,6 +129,8 @@ Layout wrapper: `p-6 max-w-2xl mx-auto` (focused task flow; narrower than Browse
 | 2 | Conditional Access Groups | Sync Conditional Access group membership with the current tier structure. | `Update-EntraOpsPrivilegedConditionalAccessGroup` |
 | 3 | Unprotected Administrative Units | Flag Administrative Units that lack Restricted Management protection. | `Update-EntraOpsPrivilegedUnprotectedAdministrativeUnit` |
 | 4 | ControlPlane Scope | Update ControlPlane scope boundaries based on current classification data. | `Update-EntraOpsClassificationControlPlaneScope` |
+
+**Primary visual anchor:** The action card group (4 stacked checkable cards) is the focal element on Screen 1. All other elements (H1, subtitle, separator, CTA) serve to frame and complete the card selection interaction.
 
 **Card visual specification:**
 ```
@@ -264,7 +269,7 @@ Layout wrapper: `p-6 max-w-2xl mx-auto` (focused task flow; narrower than Browse
 └──────────────────────────────────────────┴────────┘
 ```
 - Container: bordered `rounded-md border border-border overflow-hidden`
-- Each row: `flex items-center justify-between px-4 py-2.5 border-b border-border last:border-0`
+- Each row: `flex items-center justify-between px-4 py-3 border-b border-border last:border-0`
 - Action name: `text-sm font-medium text-foreground`
 - Badge states:
   - Pass: `bg-green-500/20 text-green-400 border-green-500/30` — "✓ Pass"
@@ -279,7 +284,7 @@ Layout wrapper: `p-6 max-w-2xl mx-auto` (focused task flow; narrower than Browse
 
 **Button row:**
 - "Apply Again": `variant="outline"` — resets to `idle` with previous selections preserved
-- "Done": `variant="default"` — navigates to `/` (dashboard)
+- "Back to Dashboard": `variant="default"` — navigates to `/` (dashboard)
 - Layout: `flex gap-2 justify-end mt-6`
 
 ---
@@ -343,7 +348,7 @@ Position: after `{ to: '/exclusions', icon: ShieldMinus, label: 'Exclusions' }`.
 | Per-cmdlet: fail | "✕ Fail" |
 | Per-cmdlet: skipped | "◼ Skipped" |
 | Post-run CTA: primary | "Apply Again" |
-| Post-run CTA: secondary | "Done" |
+| Post-run CTA: secondary | "Back to Dashboard" |
 | Cross-page CTA (header button) | "Apply to Entra" |
 | Error (fetch failed to start) | "Failed to start. Check your connection and try again." |
 | Error: command already running | "A command is already running. Stop it before starting a new run." |
@@ -399,11 +404,11 @@ No third-party registry components. All components are either already installed 
 
 ## Checker Sign-Off
 
-- [ ] Dimension 1 Copywriting: PASS
-- [ ] Dimension 2 Visuals: PASS
-- [ ] Dimension 3 Color: PASS
-- [ ] Dimension 4 Typography: PASS
-- [ ] Dimension 5 Spacing: PASS
-- [ ] Dimension 6 Registry Safety: PASS
+- [x] Dimension 1 Copywriting: PASS
+- [x] Dimension 2 Visuals: PASS
+- [x] Dimension 3 Color: PASS
+- [x] Dimension 4 Typography: PASS
+- [x] Dimension 5 Spacing: FLAG (non-blocking — pl-[6px] border-compensation exception documented)
+- [x] Dimension 6 Registry Safety: PASS
 
-**Approval:** pending
+**Approval:** approved 2026-04-04
