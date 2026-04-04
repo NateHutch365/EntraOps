@@ -1,5 +1,7 @@
 [
-    {
-        "ExcludedPrincipalId": []
-    }
+  {
+    "ExcludedPrincipalId": [
+      "a34e6b61-c7a8-4d7b-b0a2-f3ccc29992fa"
+    ]
+  }
 ]
