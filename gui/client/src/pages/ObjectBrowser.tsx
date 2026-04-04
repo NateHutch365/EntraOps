@@ -8,6 +8,8 @@ import type { PrivilegedObject } from '../../../shared/types/eam';
 import { useNavigate } from 'react-router';
 import { toast } from 'sonner';
 import { useExclusions } from '@/hooks/useExclusions';
+import { Button } from '@/components/ui/button';
+import { PlayCircle } from 'lucide-react';
 
 // nuqs URL param schema — RESEARCH.md Pattern 5 (react-router/v7 adapter)
 // sort stores an actual PrivilegedObject field name (used as sortBy on server)
@@ -88,11 +90,17 @@ export function ObjectBrowser() {
 
   return (
     <div className="p-6 space-y-4">
-      <div>
-        <h1 className="text-[22px] font-semibold">Object Browser</h1>
-        <p className="text-sm text-muted-foreground">
-          Browse and filter privileged identity objects across all RBAC systems
-        </p>
+      <div className="flex items-start justify-between">
+        <div>
+          <h1 className="text-[22px] font-semibold">Object Browser</h1>
+          <p className="text-sm text-muted-foreground">
+            Browse and filter privileged identity objects across all RBAC systems
+          </p>
+        </div>
+        <Button variant="secondary" onClick={() => navigate('/apply')}>
+          <PlayCircle size={16} className="mr-2" />
+          Apply to Entra
+        </Button>
       </div>
 
       <ObjectFilters

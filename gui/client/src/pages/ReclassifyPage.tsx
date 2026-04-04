@@ -22,7 +22,7 @@ import { useOverrides } from '@/hooks/useOverrides';
 import { useExclusions } from '@/hooks/useExclusions';
 import { computedTierName } from '../../../shared/utils/tier.js';
 import type { Override } from '../../../shared/types/api.js';
-import { ShieldMinus, Loader2 } from 'lucide-react';
+import { ShieldMinus, Loader2, PlayCircle } from 'lucide-react';
 import { useNavigate } from 'react-router';
 import { toast } from 'sonner';
 
@@ -189,10 +189,18 @@ export function ReclassifyPage() {
     <div className="flex flex-col h-full">
       {/* Page header */}
       <div className="px-6 py-4 border-b border-border">
-        <h1 className="text-xl font-semibold">Reclassify Objects</h1>
-        <p className="text-sm text-muted-foreground mt-1">
-          Override the tier assignment for individual objects. Changes are display-layer only.
-        </p>
+        <div className="flex items-start justify-between">
+          <div>
+            <h1 className="text-xl font-semibold">Reclassify Objects</h1>
+            <p className="text-sm text-muted-foreground mt-1">
+              Override the tier assignment for individual objects. Changes are display-layer only.
+            </p>
+          </div>
+          <Button variant="secondary" onClick={() => navigate('/apply')}>
+            <PlayCircle size={16} className="mr-2" />
+            Apply to Entra
+          </Button>
+        </div>
       </div>
 
       {/* Sticky action bar — only visible when there are pending changes */}
