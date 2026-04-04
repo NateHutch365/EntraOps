@@ -9,7 +9,9 @@ import { Button } from '@/components/ui/button';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Separator } from '@/components/ui/separator';
 import { Badge } from '@/components/ui/badge';
-import { Alert, AlertDescription } from '@/components/ui/alert';
+import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
+import { Switch } from '@/components/ui/switch';
+import { Label } from '@/components/ui/label';
 import {
   Table,
   TableBody,
@@ -19,7 +21,7 @@ import {
   TableRow,
 } from '@/components/ui/table';
 import { TerminalOutput, AnsiConvert } from '@/components/commands/TerminalOutput';
-import { PlayCircle, CheckCircle2, AlertCircle, XCircle, OctagonX } from 'lucide-react';
+import { PlayCircle, CheckCircle2, AlertCircle, XCircle, OctagonX, FlaskConical } from 'lucide-react';
 import { toast } from 'sonner';
 
 // ---------------------------------------------------------------------------
@@ -87,6 +89,9 @@ export function ApplyPage() {
   // Config fetched on mount
   const [tenantName, setTenantName] = useState('');
   const [subscriptionId, setSubscriptionId] = useState('');
+
+  // Dry-run mode — preserved across Apply Again resets (D-01, D-03)
+  const [isDryRun, setIsDryRun] = useState(false);
 
   // Refs
   const abortRef = useRef<AbortController | null>(null);
@@ -226,18 +231,20 @@ export function ApplyPage() {
       setRunningIndex(i);
       const action = selectedActions[i];
 
-      // Inject run separator
+      // Inject run separator — includes [DRY RUN] prefix when in dry-run mode (per UI-SPEC Screen 3)
       const timestamp = new Date().toLocaleString([], {
         year: 'numeric', month: '2-digit', day: '2-digit',
         hour: '2-digit', minute: '2-digit', second: '2-digit',
       });
-      const sep = `\n<span class="text-zinc-500">─── ${action.label} · ${timestamp} ───</span>\n`;
+      const dryRunPrefix = isDryRun ? '<span class="text-sky-500 font-semibold">[DRY RUN]</span> ' : '';
+      const sep = `\n<span class="text-zinc-500">─── ${dryRunPrefix}${action.label} · ${timestamp} ───</span>\n`;
       setHtmlContent((prev) => prev + sep);
 
       // Build parameters
       const parameters: CmdletParameters = {};
       if (tenantName.trim()) parameters.TenantName = tenantName.trim();
       if (subscriptionId.trim()) parameters.SubscriptionId = subscriptionId.trim();
+      if (isDryRun) parameters.SampleMode = true;
 
       const exitCode = await runSingleCmdlet(action.cmdlet, parameters, abort.signal);
 
@@ -266,7 +273,7 @@ export function ApplyPage() {
   }
 
   // ------------------------------------------------------------------
-  // Reset to idle (preserving selection)
+  // Reset to idle (preserving selection and isDryRun per D-03)
   // ------------------------------------------------------------------
   function handleApplyAgain() {
     setPageState('idle');
@@ -287,6 +294,15 @@ export function ApplyPage() {
     const isStopped = status === 'stopped';
 
     if (isStopped) {
+      if (isDryRun) {
+        return (
+          <div className="flex items-center gap-3">
+            <OctagonX size={20} className="text-zinc-500" />
+            <h2 className="text-xl font-semibold">Dry-run Stopped</h2>
+            <Badge className="bg-sky-500/10 text-sky-500 border border-sky-500/30">◈ Simulated</Badge>
+          </div>
+        );
+      }
       return (
         <div className="flex items-center gap-3">
           <OctagonX size={20} className="text-zinc-400" />
@@ -296,6 +312,15 @@ export function ApplyPage() {
       );
     }
     if (allPass) {
+      if (isDryRun) {
+        return (
+          <div className="flex items-center gap-3">
+            <CheckCircle2 size={20} className="text-sky-500" />
+            <h2 className="text-xl font-semibold">Dry-run Complete — No changes made</h2>
+            <Badge className="bg-sky-500/10 text-sky-500 border border-sky-500/30">◈ Simulated</Badge>
+          </div>
+        );
+      }
       return (
         <div className="flex items-center gap-3">
           <CheckCircle2 size={20} className="text-green-400" />
@@ -307,11 +332,29 @@ export function ApplyPage() {
     if (hasFail) {
       const allFail = values.filter((v) => v !== 'skipped').every((v) => v === 'fail');
       if (allFail) {
+        if (isDryRun) {
+          return (
+            <div className="flex items-center gap-3">
+              <XCircle size={20} className="text-red-500" />
+              <h2 className="text-xl font-semibold">Dry-run — Simulation Errors</h2>
+              <Badge className="bg-sky-500/10 text-sky-500 border border-sky-500/30">◈ Simulated</Badge>
+            </div>
+          );
+        }
         return (
           <div className="flex items-center gap-3">
             <XCircle size={20} className="text-red-400" />
             <h2 className="text-xl font-semibold">Implementation Failed</h2>
             <Badge className="bg-red-500/20 text-red-400 border border-red-500/30">Failed</Badge>
+          </div>
+        );
+      }
+      if (isDryRun) {
+        return (
+          <div className="flex items-center gap-3">
+            <AlertCircle size={20} className="text-amber-500" />
+            <h2 className="text-xl font-semibold">Dry-run Finished — Review Simulation Results</h2>
+            <Badge className="bg-sky-500/10 text-sky-500 border border-sky-500/30">◈ Simulated</Badge>
           </div>
         );
       }
@@ -368,6 +411,31 @@ export function ApplyPage() {
           })}
         </div>
 
+        <Separator className="my-4" />
+
+        <div className="flex items-start justify-between gap-4 py-4">
+          <Label htmlFor="dry-run-toggle" className="flex flex-col gap-0.5 cursor-pointer">
+            <span className="text-sm font-medium text-foreground">Dry-run mode</span>
+            <span className="text-xs text-muted-foreground mt-0.5 max-w-sm">
+              Simulate changes without writing to Entra. Cmdlets run with -SampleMode.
+            </span>
+          </Label>
+          <div className="flex items-center gap-3 shrink-0">
+            {isDryRun && (
+              <Badge className="bg-sky-500/10 text-sky-500 border border-sky-500/30 text-xs">
+                ◈ Simulation active
+              </Badge>
+            )}
+            <Switch
+              id="dry-run-toggle"
+              checked={isDryRun}
+              onCheckedChange={setIsDryRun}
+            />
+          </div>
+        </div>
+
+        <Separator className="my-4" />
+
         <p className="text-xs text-muted-foreground mt-4">
           {selected.size === 0
             ? 'Select at least one action to continue.'
@@ -379,7 +447,7 @@ export function ApplyPage() {
           onClick={() => setPageState('confirming')}
           className="w-full max-w-xs mt-2"
         >
-          Review &amp; Apply
+          {isDryRun ? 'Review & Simulate' : 'Review & Apply'}
         </Button>
       </div>
     );
@@ -396,15 +464,29 @@ export function ApplyPage() {
 
         <p className="text-sm font-semibold">Review before running</p>
         <p className="text-sm text-muted-foreground mt-1 mb-4">
-          The following cmdlets will run in order. Changes will be applied to your Entra tenant.
+          {isDryRun
+            ? 'The following cmdlets will simulate in order. No changes will be applied to your Entra tenant.'
+            : 'The following cmdlets will run in order. Changes will be applied to your Entra tenant.'}
         </p>
 
-        <Alert className="border-amber-500/30 bg-amber-500/5 mb-4">
-          <AlertCircle className="text-amber-500" size={16} />
-          <AlertDescription className="text-amber-700 dark:text-amber-400">
-            This will make changes to your live Entra tenant. Ensure your session token is valid before proceeding.
-          </AlertDescription>
-        </Alert>
+        {isDryRun ? (
+          <Alert className="border-sky-500/30 bg-sky-500/5 mb-4">
+            <FlaskConical className="text-sky-500" size={16} />
+            <AlertTitle className="text-sm font-medium text-sky-700 dark:text-sky-400">
+              Simulation Mode
+            </AlertTitle>
+            <AlertDescription className="text-sm text-sky-700 dark:text-sky-400">
+              Dry-run mode — No changes will be made to your Entra tenant. All cmdlets will execute with -SampleMode.
+            </AlertDescription>
+          </Alert>
+        ) : (
+          <Alert className="border-amber-500/30 bg-amber-500/5 mb-4">
+            <AlertCircle className="text-amber-500" size={16} />
+            <AlertDescription className="text-amber-700 dark:text-amber-400">
+              This will make changes to your live Entra tenant. Ensure your session token is valid before proceeding.
+            </AlertDescription>
+          </Alert>
+        )}
 
         <Table>
           <TableHeader>
@@ -422,7 +504,9 @@ export function ApplyPage() {
                 <TableCell className="text-sm font-medium">{action.label}</TableCell>
                 <TableCell className="text-xs font-mono text-muted-foreground">{action.cmdlet}</TableCell>
                 <TableCell className="text-xs text-muted-foreground">
-                  {tenantName.trim() ? tenantName.trim() : 'environment defaults'}
+                  {isDryRun
+                    ? (tenantName.trim() ? `${tenantName.trim()} -SampleMode` : '-SampleMode')
+                    : (tenantName.trim() ? tenantName.trim() : 'environment defaults')}
                 </TableCell>
               </TableRow>
             ))}
@@ -434,7 +518,7 @@ export function ApplyPage() {
             Back
           </Button>
           <Button onClick={() => void handleRun()}>
-            Run Now
+            {isDryRun ? 'Simulate Now' : 'Run Now'}
           </Button>
         </div>
       </div>
@@ -449,12 +533,27 @@ export function ApplyPage() {
     return (
       <div className="p-6 max-w-2xl mx-auto">
         <div className="flex items-center gap-3 mb-1">
-          <h2 className="text-lg font-semibold">Applying to Entra…</h2>
-          <Badge className="bg-amber-500/20 text-amber-400 border border-amber-500/30">Running</Badge>
+          <h2 className="text-lg font-semibold">
+            {isDryRun ? 'Simulating — Dry-run in progress…' : 'Applying to Entra…'}
+          </h2>
+          {isDryRun ? (
+            <Badge className="bg-sky-500/10 text-sky-500 border border-sky-500/30">◈ Simulating</Badge>
+          ) : (
+            <Badge className="bg-amber-500/20 text-amber-400 border border-amber-500/30">Running</Badge>
+          )}
         </div>
         <p className="text-xs text-muted-foreground mt-1 mb-4">
-          Running action {runningIndex + 1} of {selectedActions.length} — {runningAction?.label ?? ''}
+          {isDryRun ? 'Simulating' : 'Running'} action {runningIndex + 1} of {selectedActions.length} — {runningAction?.label ?? ''}
         </p>
+
+        {isDryRun && (
+          <Alert className="border-sky-500/30 bg-sky-500/5 py-2 mb-4">
+            <FlaskConical className="text-sky-500" size={14} />
+            <AlertDescription className="text-xs text-sky-700 dark:text-sky-400">
+              Dry-run mode active — no changes are being written to Entra.
+            </AlertDescription>
+          </Alert>
+        )}
 
         <div className="h-[400px]">
           <TerminalOutput htmlContent={htmlContent} status={status} onStop={() => void handleStop()} />
@@ -470,6 +569,19 @@ export function ApplyPage() {
     <div className="p-6 max-w-2xl mx-auto">
       <OutcomeHeader />
 
+      {isDryRun && (
+        <Alert className="border-sky-500/30 bg-sky-500/5 mb-4 mt-4">
+          <FlaskConical className="text-sky-500" size={16} />
+          <AlertTitle className="text-sm font-medium text-sky-700 dark:text-sky-400">
+            Dry-run complete — no changes were made
+          </AlertTitle>
+          <AlertDescription className="text-sm text-sky-700/80 dark:text-sky-400/80">
+            This was a simulation run. Your Entra tenant was not modified.
+            To apply real changes, return to the Apply screen and disable dry-run mode.
+          </AlertDescription>
+        </Alert>
+      )}
+
       <div className="mt-4 border border-border rounded-md overflow-hidden">
         {selectedActions.map((action) => {
           const result = results.get(action.cmdlet) ?? 'pending';
@@ -480,10 +592,18 @@ export function ApplyPage() {
             >
               <span className="text-sm font-medium">{action.label}</span>
               {result === 'pass' && (
-                <Badge className="bg-green-500/20 text-green-400 border border-green-500/30">✓ Pass</Badge>
+                isDryRun ? (
+                  <Badge className="bg-sky-500/10 text-sky-500 border border-sky-500/30">◈ Sim. Pass</Badge>
+                ) : (
+                  <Badge className="bg-green-500/20 text-green-400 border border-green-500/30">✓ Pass</Badge>
+                )
               )}
               {result === 'fail' && (
-                <Badge className="bg-red-500/20 text-red-400 border border-red-500/30">✕ Fail</Badge>
+                isDryRun ? (
+                  <Badge className="bg-red-500/20 text-red-400 border border-red-500/30">◈ Sim. Fail</Badge>
+                ) : (
+                  <Badge className="bg-red-500/20 text-red-400 border border-red-500/30">✕ Fail</Badge>
+                )
               )}
               {result === 'skipped' && (
                 <Badge className="bg-zinc-500/20 text-zinc-400 border border-zinc-500/30">◼ Skipped</Badge>
