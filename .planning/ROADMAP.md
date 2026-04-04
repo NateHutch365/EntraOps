@@ -29,7 +29,7 @@ See [archive](.planning/milestones/v1.1-ROADMAP.md) for full phase details.
 
 - [ ] **Phase 9: Exclusions Management** — Backend API + dedicated Exclusions page with name resolution and remove action
 - [x] **Phase 10: Inline Exclude Actions** — One-click exclude row action on Object Browser and Reclassify screens (completed 2026-04-02)
-- [ ] **Phase 11: Implementation Workflow** — "Apply to Entra" page with action selection, pre-run confirmation, SSE streaming, and outcome summary
+- [x] **Phase 11: Implementation Workflow** — "Apply to Entra" page with action selection, pre-run confirmation, SSE streaming, and outcome summary (completed 2026-04-04)
 - [ ] **Phase 12: Dry-run / Preview Mode** — -SampleMode flag plumbing exposed as toggle on the implementation screen
 
 ## Phase Details
@@ -76,8 +76,8 @@ Plans:
   5. An outcome summary clearly shows pass/fail status for each cmdlet after the run completes
 **Plans**: 2 plans
 Plans:
-- [ ] 11-01-PLAN.md — ApplyPage with 4-state workflow (action selection, confirmation, SSE execution, outcome) + routing + nav
-- [ ] 11-02-PLAN.md — Cross-page CTAs on ObjectBrowser and ReclassifyPage + human-verify
+- [x] 11-01-PLAN.md — ApplyPage with 4-state workflow (action selection, confirmation, SSE execution, outcome) + routing + nav
+- [x] 11-02-PLAN.md — Cross-page CTAs on ObjectBrowser and ReclassifyPage + human-verify
 **UI hint**: yes
 
 ### Phase 12: Dry-run / Preview Mode
@@ -100,5 +100,5 @@ Plans:
 | 8. Object Reclassification Screen | v1.1 | 4/4 | Complete | 2026-03-28 |
 | 9. Exclusions Management | v1.2 | 0/? | Not started | - |
 | 10. Inline Exclude Actions | v1.2 | 3/3 | Complete    | 2026-04-02 |
-| 11. Implementation Workflow | v1.2 | 0/2 | Planned | - |
+| 11. Implementation Workflow | v1.2 | 2/2 | Complete    | 2026-04-04 |
 | 12. Dry-run / Preview Mode | v1.2 | 0/? | Not started | - |
