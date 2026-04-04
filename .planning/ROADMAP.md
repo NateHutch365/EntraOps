@@ -88,7 +88,10 @@ Plans:
   1. User can enable dry-run mode via a toggle on the implementation screen before initiating a run
   2. In dry-run mode, cmdlets execute with -SampleMode and no changes are written to Entra
   3. The progress log clearly labels dry-run output as simulated so the admin cannot mistake it for a real run
-**Plans**: TBD
+**Plans**: 2 plans
+Plans:
+- [ ] 12-01-PLAN.md — Install Switch + ApplyPage.tsx dry-run toggle, all 4 screen visual deltas, SampleMode passthrough
+- [ ] 12-02-PLAN.md — Server-side history exclusion guard + human-verify dry-run flow
 **UI hint**: yes
 
 ## Progress Table
